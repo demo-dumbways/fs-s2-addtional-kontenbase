@@ -1,0 +1,74 @@
+---
+sidebar_position: 8
+---
+
+# 8. Combine Navbar with Form & Add Page Link (Challange)
+
+Setelah mempraktikkan bagaimana membuat navbar dan dikombinasikan dengan card pada pertemuan pertama, maka untuk tampilan form contact me pada pertemuan kedua dijadikan challange untuk menggabungkannya dengan navbar serta memberikan nilai pada atribut `href` agar dapat berpindah halaman.
+
+```html title="contact.html"
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Layouting & Linking</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NavBar -->
+    <nav>
+      <div class="left-side">
+        <a href="index.html">
+          <img src="assets/logo.png" alt="logo" />
+        </a>
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="blog.html">Blog</a>
+          </li>
+        </ul>
+      </div>
+      <div class="right-side">
+        <a href="contact.html"> Contact Me </a>
+      </div>
+    </nav>
+
+    <!-- Form Contact -->
+    <div class="form-contact">
+      <div class="container-form">
+        <form>
+          <div>
+            <label for="input-name">Name</label>
+            <input id="input-name" type="text" />
+          </div>
+          <div>
+            <label for="input-email">Email</label>
+            <input id="input-email" type="text" />
+          </div>
+          <div>
+            <label for="input-phone">Phone Number</label>
+            <input id="input-phone" type="text" />
+          </div>
+          <div>
+            <label for="input-subject">Subject</label>
+            <select id="input-subject">
+              <option value="Let's Talk">Let's Talk</option>
+              <option value="Let's Collaboration">Let's Collaboration</option>
+              <option value="I am Hiring">I am Hiring</option>
+            </select>
+          </div>
+          <div>
+            <label for="message">Your Message</label>
+            <textarea id="input-message"></textarea>
+          </div>
+          <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+      </div>
+    </div>
+    <script src="contact.js"></script>
+  </body>
+</html>
+
+```
+
