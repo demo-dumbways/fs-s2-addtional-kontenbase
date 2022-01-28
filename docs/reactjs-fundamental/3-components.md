@@ -65,7 +65,7 @@ export default App;
 
 Selanjutnya kita bisa membuat components dalam satu file `App.js`, untuk contohnya kita akan membuat components `contents` yang nantinya untuk menampung informasi content yang ada di dalam aplikasi kita, ketikan code berikut:
 
-```
+```js
 import React from "react";
 import './App.css';
 import Header from "./components/Header";
