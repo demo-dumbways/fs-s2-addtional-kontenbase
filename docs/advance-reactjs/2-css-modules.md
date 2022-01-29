@@ -105,7 +105,3 @@ function Form() {
 export default Form;
 ```
 Untuk penjelasan terkait code diatas adalah pemanggilan `class css`nya menggunakan `className` tidak lagi menggunakan `class` dalam react, setelah menuliskan property `className` kemudian masuk panggil `cssModules` yang sudah di `import` dan kemudian masukan nama `class` yang ada di css modulenya.
-
-Selanjutnya jalankan aplikasinya dengan perintah `npm start` dan akan tampil seperti gambar berikut:
-
-<img alt="image" src={useBaseUrl('img/docs/inline-style-1.png')} height="100px"/>
