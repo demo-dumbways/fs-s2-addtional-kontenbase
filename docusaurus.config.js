@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Full-Stack e-Book Guide",
-  tagline: "e-Book guide for pre-class mentor",
+  tagline: "e-Book guide for full-stack mentor",
   url: "https://dumbways.id",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -35,7 +35,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "Pre-Class e-Book Guide",
+        title: "Full-Stack e-Book Guide",
         logo: {
           alt: "DumbWays Logo",
           src: "img/logo.svg",
