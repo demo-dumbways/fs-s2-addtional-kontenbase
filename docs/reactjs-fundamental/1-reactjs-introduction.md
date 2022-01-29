@@ -6,7 +6,7 @@ sidebar_position: 2
 
 ## 1.1. Apa itu ReactJs?
 
-**React Js** adalah sebuah library JavaScript yang di buat oleh facebook. React bukanlah sebuah framework. React adalah library yang bersifat composable user interface, yang artinya kita dapat membuat berbagai UI yang bisa kita bagi menjadi beberapa komponen.
+**React Js** adalah sebuah library JavaScript yang di buat oleh `facebook`. React bukanlah sebuah framework. React adalah library yang bersifat composable user interface, yang artinya kita dapat membuat berbagai UI yang bisa kita bagi menjadi beberapa komponen.
 
 ## 1.2. Kenapa Mempelajari React Js
 
@@ -29,13 +29,21 @@ JSX atau bisa kita bilang extended javascript adalah suatu pengembangan javascri
 Hal pertama yang perlu diperhatikan ketika menggunakan sintaks JSX adalah bahwa React harus dalam ruang lingkupnya berdasarkan cara kompilasi JSX. <br />
 Contoh :
 
-`function Hello() {  return <h1>Hallo World!</h1>}`
+```js
+function App() {
+  return (
+    <div>
+      <h1>Hallo World!</h1>}
+    </div>
+  );
+}
+```
 
 ## 1.4 Menyematkan Ekspresi di JSX
 
 Dalam contoh di bawah ini, kita mendeklarasikan variabel bernama name dan kemudian menggunakannya di dalam JSX dengan cara membungkusnya di dalam tanda kurung kurawal (curly braces):
 
-```
+```js
 const name = 'Budi';
 const element = <h1>Halo, {name}</h1>;
 

@@ -3,7 +3,7 @@ sidebar_position: 2
 ---
 
 
-# Code Editor
+# Instalasi Code Editor
 
 :::caution
 Bagian ini wajib dilakukan sebelum melanjutkan ke bagian selanjutnya

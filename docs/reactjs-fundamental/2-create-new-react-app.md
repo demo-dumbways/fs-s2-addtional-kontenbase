@@ -11,22 +11,18 @@ Pada pembelajaran kali ini kita akan memulai membuat project aplikasi menggunaka
 langkah-langkahnya sebagai berikut:
 
 1. Buka terminal pilih directory penyimpanan
-2. ketikan perintah sebagai berikut, 
-```
-npx create-react-app my-app
-``` 
-&nbsp &nbsp `my-app` dinamakan dengan nama project aplikasi yang mau kita buat. <br />
-
-3. Silahkan tunggu instalasi sampai selesai
-
-4. masuk ke folder project app yang sudah di buat
-```
-cd my-app
-```
-5. Jalankan aplikasi yang sudah dibuat
-```
-npm start
-```
+2. ketik perintah berikut untuk membuat project aplikasi dengan nama `my-app`, 
+    ```
+    npx create-react-app my-app
+    ``` 
+3. masuk ke folder project app yang sudah di buat
+    ```
+    cd my-app
+    ```
+4. Jalankan aplikasi yang sudah dibuat
+    ```
+    npm start
+    ```
 
 <!-- Maka browser secara default akan menampilkan aplikasi ReactJs yang sudah kita buat, atau -->
 Kita bisa mengakses aplikasi React Js yang sudah kita buat dengan mengunjungi url `localhost:3000`

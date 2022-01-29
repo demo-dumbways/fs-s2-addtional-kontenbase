@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Buka folder project aplikasi react js kita di visual studio code,
 di folder `src` klik file `App.js` kemudian hapus tag `<header>` ganti dengan tag `h1` dan ketikan `Hello World` seperti contoh berikut:
 
-```
+```js
 import React from "react";
 import './App.css';
 
@@ -31,7 +31,7 @@ Maka akan tampil seperti gambar berikut:
 
 Selanjutnya kita akan membuat tampilan aplikasi dengan menggunakan components, untuk membuatnya kita buat folder `components`, didalam folder `src` buat file `Header.js`, dan ketikan code berikut:
 
-```
+```js
 import React from "react";
 
 function Header() {
@@ -45,7 +45,7 @@ export default Header;
 ```
 
 Selanjutnya kita import file components `Header` yang sudah kita buat kedalam `App.js` dengan mengetikan `import Header from "./components/Header"`, dan kita panggil dalam tag `div` dengan `<Header />`, untuk contohnya sebagai berikut:
-```
+```js
 import React from "react";
 import './App.css';
 import Header from "./components/Header";
