@@ -5,7 +5,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Pre-Class e-Book Guide",
+  title: "Full-Stack e-Book Guide",
   tagline: "e-Book guide for pre-class mentor",
   url: "https://dumbways.id",
   baseUrl: "/",
