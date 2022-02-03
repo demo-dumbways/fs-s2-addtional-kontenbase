@@ -7,4 +7,4 @@ slug: /
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Bagi para pemula yang ingin belajar Aplikasi Web e-book ini mencakup tentang materi React Js, mempelajari tentang `Fundamental React`, `Advance React` dan `Hook`, Penyusunan e-book ini berdasarkan hasil studi dan hasil dari materi latihan dalam proses belajar dan mengajar di dumbways.id.
+Bagi para pemula yang ingin belajar Aplikasi Web dan Mobile, e-book ini mencakup materi Basic hingga Advance tentang `ReactJs`, `ExpressJs`, `React Native`, dan terdapat materi tambahan seperti `Deployment` sehingga Aplikasi yang dibuat dapat diakses secara `public`. Penyusunan e-book ini berdasarkan hasil studi dan hasil dari materi latihan dalam proses belajar dan mengajar di dumbways.id.
