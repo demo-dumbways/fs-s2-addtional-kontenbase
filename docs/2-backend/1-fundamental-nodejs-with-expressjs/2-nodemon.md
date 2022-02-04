@@ -1,33 +1,3 @@
-<<<<<<< HEAD
----
-sidebar_position: 2
----
-
-# 2. Nodemon
-
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
-**Nodemon** adalah ...
-
-### 2.1 Installasi
-
-### 2.2 Menjalankan Nodemon
-
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/2-expressjs-fundamental/package.json">
-Contoh code
-</a>
-
-<br />
-<br />
-
-```json title=package.json
-
-```
-
-```
-npm start
-```
-=======
 ---
 sidebar_position: 2
 ---
@@ -151,4 +121,3 @@ Jalankan nodemon dengan perintah berikut ...
 ```
 npm start
 ```
->>>>>>> 756b6a3f3288e3e986ecc5b07a4988d400d5a2da
