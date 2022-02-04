@@ -95,8 +95,25 @@ Contoh code
 
 untuk menjalankan `Nodemon` juga dapat di setup seperti file berikut :
 
-```json title=package.json
-
+```json {7} title=package.json
+{
+  "name": "backend-concept",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  }
+}
 ```
 
 ```
