@@ -10,6 +10,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Struktur Routing :
 
+<<<<<<< HEAD
+
 ```bash
 app.METHOD(PATH, HANDLER)
 ```
@@ -29,6 +31,17 @@ Diaman :
 
 **API** adalah `Application Programming Interface` adalah antarmuka yang dapat menghubungkan satu aplikasi dengan aplikasi lain. Dengan demikian, API bertindak sebagai perantara antara aplikasi yang berbeda, baik dalam aplikasi yang sama
 platform atau lintas platform.
+=======
+
+### 3.1 Express.json()
+
+**Express.json()** penting karena ...
+
+### 3.2 Membuat API
+
+Tujuan membuat API ...
+
+> > > > > > > ab5fb628f8b59a458728cb8f36db9cd4a3415df2
 
 <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/2-expressjs-fundamental/package.json">
 Contoh code
@@ -109,6 +122,7 @@ app.listen(port, () => console.log(`Listening on port ${port}!`));
 
 ### 3.3 Akses API dengan Postman
 
+<<<<<<< HEAD
 Untuk Mencoba API yang sudah kita buat kita memerlukan sebuah aplikasi yang dapat mengakses dan menyajian data dari sebuah API. untuk itu pastikan kalian sudah memiliki aplikasi yang bernama Postman, jika belum bisa mendownload melalui link dibawah ini
 
 **Postman :[Download](https://www.postman.com/downloads/?utm_source=postman-home)**
@@ -118,6 +132,8 @@ Untuk Mencoba API yang sudah kita buat kita memerlukan sebuah aplikasi yang dapa
 ```link title=baseUrl
 https://ebook-code-results-stage-2-backend-git-3-e-d5f17e-demo-dumbways.vercel.app
 ```
+
+Berikut list route yang telah dibuat ...
 
 | Method | Route       |
 | ------ | ----------- |

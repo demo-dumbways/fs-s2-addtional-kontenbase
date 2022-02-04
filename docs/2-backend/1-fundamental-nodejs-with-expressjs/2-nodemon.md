@@ -10,6 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### 2.1 Installasi
 
+<<<<<<< HEAD
 Nodemon dapat di install dengan dua cara yaitu, `Instal utilitas secara global` maupun secara `lokal pada proyek Anda` menggunakan `npm` atau `yarn`:
 
 #### 2.1.1 Installasi Global
@@ -115,6 +116,8 @@ untuk menjalankan `Nodemon` juga dapat di setup seperti file berikut :
   }
 }
 ```
+
+Jalankan nodemon dengan perintah berikut ...
 
 ```
 npm start
