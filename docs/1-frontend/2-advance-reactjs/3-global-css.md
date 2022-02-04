@@ -6,9 +6,16 @@ sidebar_position: 3
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Selanjutnya kita akan memeplajari terkait Global Css, global css ini sama fungsinya ketika kita membuat file `css` yang dimana kita buat menggunkan ekstensi `.css`, global css ini yang nantinya kita bisa panggil secara global, jadi bisa dipanggil di component apa saja. kita buat file baru dengan nama `style.css`, Selanjutnya kita buat codenya seperti berikut.
+**Global CSS** adalah teknik styling yang digunakan untuk membuat `styling` secara `global` yang dimana bisa dipakai dalam semua `components`.
 
-```js
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2/tree/main/src">
+Contoh code
+</a>
+
+<br />
+<br />
+
+```css title=styles/styles.css
 .form-group {
   margin-bottom: 16px;
 }
@@ -41,29 +48,7 @@ Selanjutnya kita akan memeplajari terkait Global Css, global css ini sama fungsi
 }
 ```
 
-Selanjutnya import file css yang sudah dibuat kedalam file `App.js`
-
-```js
-// import global stylesheet in app.js
-import "./styles/styles.css";
-// import the components here
-import Form from "./components/Form";
-
-function App() {
-  return (
-    <div>
-      <Form />
-    </div>
-  );
-}
-
-export default App;
-```
-
-kemudian buat div di dalam `Form.js` untuk menampung tag `label` dan `select`, untuk codenya seperti berikut:
-
-```js
-// import css module file
+```jsx title=components/Form.js
 import cssModules from "./Form.module.css";
 
 const styles = {
@@ -133,4 +118,30 @@ function Form() {
 export default Form;
 ```
 
-Untuk penjelasan terkait code diatas adalah untuk pembuatan classnya sama dengan kita membuat di `html`, bedanya untuk di React menggunaka property `className`.
+```jsx title=App.js
+import "./styles/styles.css";
+import Form from "./components/Form";
+
+function App() {
+  return (
+    <div>
+      <Form />
+    </div>
+  );
+}
+
+export default App;
+```
+
+Dari code implementasi diatas, terdapat file `styles.css` yang memiliki `styling` untuk mengatur tampilan pada tag `label gender` dan `select` dalam `component` `Form.js`.
+
+<img alt="image1-2" src={useBaseUrl('img/docs/image-2-3.png')} width="60%"/>
+
+<br />
+<br />
+
+<div>
+<a class="btn-demo" href="https://ebook-code-results-stage-2-git-3-frontend-37d2af-demo-dumbways.vercel.app/">
+Demo
+</a>
+</div>

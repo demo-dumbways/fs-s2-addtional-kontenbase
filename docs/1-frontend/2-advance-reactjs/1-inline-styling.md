@@ -6,25 +6,29 @@ sidebar_position: 1
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Pada pembelajaran kali ini kita akan mempelajari terkait styling dalam React, untuk cara pemakaiannya menggunakan property `style` dan menggunakan kurung kurawal `{{}}` seperti berikut:
+**Inline Styling** adalah teknik `styling` yang digunakan didalam tag `html`
 
-```js
-function App() {
-  return (
-    <div style={{ backgroundColor: 'grey', height: '100px' }}>
-      <p style={{ color: 'orange' }}>Selamat datang</p>
-    </div>
-  );
-}
+Berikut contoh codenya: 
 
-export default App;
+
+```jsx {1}
+<div style={{ backgroundColor: 'grey', height: '100px' }}>
+  Selamat datang
+</div>
 ```
 
-Silahkan jalankan aplikasinya dengan perintah `npm start`
+Pada code diatas, terdapat contoh implementasi `inline styling` pada tag `div`, menambahkan attribute style didalamnya terdapat property `backgroundColor` yang memiliki value `grey` dan property `height` memiliki value `100px`, dimana `inline styling` tersebut bertipe `object`.
 
-Jika sudah berhasil, selanjutnya kita akan membuat form yang menggunakan style dalam variabel, sebelumnya kita pindah dulu ke component `Form.js` dan ketikan code berikut:
+Berikut code implementasi `inline styling`:
 
-```js
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2/tree/1-frontend-react-js-advance/src">
+Contoh code
+</a>
+
+<br />
+<br />
+
+```jsx title=components/Form.js {1-23,27-29,35}
 const styles = {
   form: {
     margin: '16px 20% 0',
@@ -69,9 +73,7 @@ function Form() {
 export default Form;
 ```
 
-selanjutnya di `App.js` import component `Form.js` seperti berikut:
-
-```js
+```jsx title=App.js
 import Form from './components/Form';
 
 function App() {
@@ -84,7 +86,15 @@ function App() {
 
 export default App;
 ```
+Dari code implementasi diatas, terdapat component `Form` yang memilki tag `form`, `div`, `label` dan `input` yang akan di `styling` menggunakan teknik `inline styling` agar terlihat menarik.
 
-Selanjutnya jalankan aplikasinya dengan perintah `npm start` dan akan tampil seperti gambar berikut:
+<img alt="image1-2" src={useBaseUrl('img/docs/image-2-2.png')} width="60%"/>
 
-<img alt="image" src={useBaseUrl('img/docs/image-2-1.png')} height="100px"/>
+<br />
+<br />
+
+<div>
+<a class="btn-demo" href="https://ebook-code-results-stage-2-git-1-frontend-05a450-demo-dumbways.vercel.app/">
+Demo
+</a>
+</div>
