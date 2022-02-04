@@ -10,9 +10,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 **API** adalah ...
 
-### 2.1 Express.json()
+### 3.1 Express.json()
 
-### 2.2 Membuat API
+**Express.json()** penting karena ...
+
+### 3.2 Membuat API
+
+Tujuan membuat API ...
 
 <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/2-expressjs-fundamental/package.json">
 Contoh code
@@ -85,11 +89,15 @@ app.delete('/todo/:id', (req, res) => {
 app.listen(port, () => console.log(`Listening on port ${port}!`));
 ```
 
-### 2.3 Akses API dengan Postman
+### 3.3 Akses API dengan Postman
+
+Cara akses API dengan postman ...
 
 ```link title=baseUrl
 https://ebook-code-results-stage-2-backend-git-3-e-d5f17e-demo-dumbways.vercel.app
 ```
+
+Berikut list route yang telah dibuat ...
 
 | Method | Route       |
 | ------ | ----------- |
