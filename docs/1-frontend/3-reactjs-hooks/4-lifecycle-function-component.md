@@ -6,7 +6,7 @@ sidebar_position: 4
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-**Lifecycle Functions Component** untuk fase methodnya sama dengan class component, yang berbeda dipenulisan menggunakan hooks yaitu menggunakan useEffect.
+**Lifecycle Functional Component** untuk fase methodnya sama dengan class component, yang berbeda dipenulisan menggunakan hooks yaitu menggunakan useEffect.
 
 Berikut contoh code implementasi:
 
@@ -143,14 +143,14 @@ export default function Welcome() {
 }
 ```
 
-<img alt="image1-2" src={useBaseUrl('img/docs/image-3-3.png')} width="60%"/>
-<img alt="image1-2" src={useBaseUrl('img/docs/image-3-4.png')} width="60%"/>
+<img alt="image1-2" src={useBaseUrl('img/docs/image-3-3.png')} width="100%"/>
+<img alt="image1-2" src={useBaseUrl('img/docs/image-3-4.png')} width="100%"/>
 
 <br />
 <br />
 
 <div>
-<a class="btn-demo" href="https://ebook-code-results-stage-2-git-3-frontend-132813-demo-dumbways.vercel.app/">
+<a class="btn-demo" href="https://ebook-code-results-stage-2-eui2mcltz-demo-dumbways.vercel.app/">
 Demo
 </a>
 </div>

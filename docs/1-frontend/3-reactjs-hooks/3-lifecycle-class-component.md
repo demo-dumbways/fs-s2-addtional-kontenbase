@@ -147,8 +147,8 @@ export default class Welcome extends Component {
 
 ```
 
-<img alt="image1-2" src={useBaseUrl('img/docs/image-3-3.png')} width="60%"/>
-<img alt="image1-2" src={useBaseUrl('img/docs/image-3-4.png')} width="60%"/>
+<img alt="image1-2" src={useBaseUrl('img/docs/image-3-3.png')} width="100%"/>
+<img alt="image1-2" src={useBaseUrl('img/docs/image-3-4.png')} width="100%"/>
 
 <br />
 <br />

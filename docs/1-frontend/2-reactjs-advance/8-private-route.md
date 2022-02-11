@@ -76,13 +76,13 @@ export default App
 
 Dari code implementasi diatas kita membuat `private route` untuk component About, Profile dan Detail User, yang hanya bisa diakses ketika `islogin true`, jika mengakses private route ketika `islogin false `akan dialihkan ke component `SignIn`.
 
-<img alt="image1-2" src={useBaseUrl('img/docs/image-2-3.png')} width="60%"/>
+<img alt="image1-2" src={useBaseUrl('img/docs/image-2-8.png')} width="100%"/>
 
 <br />
 <br />
 
 <div>
-<a class="btn-demo" href="https://ebook-code-results-stage-2-git-3-frontend-37d2af-demo-dumbways.vercel.app/">
+<a class="btn-demo" href="https://ebook-code-results-stage-2-9597up16x-demo-dumbways.vercel.app/signin">
 Demo
 </a>
 </div>

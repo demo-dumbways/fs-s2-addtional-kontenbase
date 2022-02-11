@@ -110,7 +110,7 @@ export default Form;
 Dari code implementasi diatas, terdapat file `Form.module.css` yang memiliki `styling` untuk mengatur tampilan pada tag `label email` dan `input` dalam `component` `Form.js`.
 
 
-<img alt="image1-2" src={useBaseUrl('img/docs/image-2-2A.png')} width="60%"/>
+<img alt="image1-2" src={useBaseUrl('img/docs/image-2-2A.png')} width="100%"/>
 
 <br />
 <br />

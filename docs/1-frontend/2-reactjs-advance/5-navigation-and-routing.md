@@ -66,7 +66,7 @@ export default App;
 
 Dari code implementasi diatas kita menggunakan package `react-router-dom` yang berfungsi untuk membuat `route` dengan menggunakan `Router`, `Switch`, `Route` dan `Link` untuk berpindah antar halaman.
 
-<img alt="image1-2" src={useBaseUrl('img/docs/image-2-5.png')} width="60%"/>
+<img alt="image1-2" src={useBaseUrl('img/docs/image-2-5.png')} width="100%"/>
 
 <br />
 <br />
