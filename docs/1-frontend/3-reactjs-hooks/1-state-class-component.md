@@ -6,9 +6,10 @@ sidebar_position: 1
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-**Hooks** merupakan fitur baru pada React versi 16.8. `Hooks` memungkinkan kita menggunakan `state` dan fitur React lainnya tanpa membuat sebuah `class component`.
+**Hooks** merupakan fitur baru pada React versi 16.8. `Hooks` memungkinkan kita menggunakan `state` dan fitur lainnya pada sebuah `functional component` yang dimana fitur-fitur tersebut hanya tersedia pada `class component`.
 
 contoh menggunakan functional component
+
 ```jsx
 function Welcome() {
   return <h1>Hallo World</h1>;
@@ -16,6 +17,7 @@ function Welcome() {
 ```
 
 contoh menggunakan class component
+
 ```jsx
 class Welcome extends React.Component {
   render() {

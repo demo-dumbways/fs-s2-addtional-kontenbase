@@ -6,15 +6,12 @@ sidebar_position: 1
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-**Inline Styling** adalah teknik `styling` yang digunakan didalam tag `html`
+**Inline Styling** adalah salah satu teknik `styling` yang digunakan didalam sebuah tag `html`, pada reactJs sendiri dapat mengimplementasikan `inline Styling` tetapi dengan penerapan yang sedikit berbeda
 
-Berikut contoh codenya: 
-
+Berikut contoh code nya:
 
 ```jsx {1}
-<div style={{ backgroundColor: 'grey', height: '100px' }}>
-  Selamat datang
-</div>
+<div style={{ backgroundColor: "grey", height: "100px" }}>Selamat datang</div>
 ```
 
 Pada code diatas, terdapat contoh implementasi `inline styling` pada tag `div`, menambahkan attribute style didalamnya terdapat property `backgroundColor` yang memiliki value `grey` dan property `height` memiliki value `100px`, dimana `inline styling` tersebut bertipe `object`.
@@ -31,25 +28,25 @@ Contoh code
 ```jsx title=components/Form.js {1-23,27-29,35}
 const styles = {
   form: {
-    margin: '16px 20% 0',
+    margin: "16px 20% 0",
   },
   formGroup: {
-    marginBottom: '16px',
+    marginBottom: "16px",
   },
   formLabel: {
-    marginBottom: '8px',
-    display: 'inline-block',
+    marginBottom: "8px",
+    display: "inline-block",
   },
   formInput: {
-    display: 'block',
-    width: '100%',
-    padding: '.375rem .75rem',
-    fontSize: '1rem',
+    display: "block",
+    width: "100%",
+    padding: ".375rem .75rem",
+    fontSize: "1rem",
     lineHeight: 1.5,
-    color: '#212529',
-    backgroundColor: '#fff',
-    border: '1px solid #ced4da',
-    borderRadius: '.25rem',
+    color: "#212529",
+    backgroundColor: "#fff",
+    border: "1px solid #ced4da",
+    borderRadius: ".25rem",
   },
 };
 
@@ -74,7 +71,7 @@ export default Form;
 ```
 
 ```jsx title=App.js
-import Form from './components/Form';
+import Form from "./components/Form";
 
 function App() {
   return (
@@ -86,6 +83,7 @@ function App() {
 
 export default App;
 ```
+
 Dari code implementasi diatas, terdapat component `Form` yang memilki tag `form`, `div`, `label` dan `input` yang akan di `styling` menggunakan teknik `inline styling` agar terlihat menarik.
 
 <img alt="image1-2" src={useBaseUrl('img/docs/image-2-2.png')} width="100%"/>

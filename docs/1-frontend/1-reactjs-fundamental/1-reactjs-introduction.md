@@ -61,7 +61,7 @@ Demo
 </a>
 </div>
 
-## 1.4 Menyematkan Ekspresi di JSX
+<!-- ## 1.4 Menyematkan Ekspresi di JSX
 
 Dalam contoh di bawah ini, kita mendeklarasikan variabel bernama name dan kemudian menggunakannya di dalam JSX dengan cara membungkusnya di dalam tanda kurung kurawal (curly braces):
 
@@ -92,4 +92,4 @@ export default App;
 <a class="btn-demo" href="https://ebook-code-results-stage-2-kkk12tp75-demo-dumbways.vercel.app/">
 Demo
 </a>
-</div>
+</div> -->

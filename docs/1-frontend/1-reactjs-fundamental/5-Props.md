@@ -30,7 +30,7 @@ export default List;
 
 ```jsx {2,8-11,13-15} title=App.js
 //Import List Components
-import List from './components/List';
+import List from "./components/List";
 
 function App() {
   return (
@@ -51,7 +51,7 @@ function App() {
 export default App;
 ```
 
-Pada implementasi `Props` diatas, kita mengirim data nama mobil ke component `List` melalui props yang diberi nama `data`. Perlu diperhatikan, didalam component terdapat Props `default` dan Props `costume`. Pada tag `img` terdapat props `default` yaitu `alt` dan `src`, sedangkan pada component `List` terdapat props `costume` yaitu `data`.
+Pada implementasi `Props` diatas, kita mengirim data nama mobil ke component `List` melalui props yang diberi nama `data`. Perlu diperhatikan, didalam component terdapat Props `default` dan Props `yang dapat dibuat sesuai dengan ke inginan`. Pada tag `img` terdapat props `default` yaitu `alt` dan `src`, sedangkan pada component `List` terdapat props `costume-props` yaitu `data`.
 
 <img alt="image1-2" src={useBaseUrl('img/docs/image-1-15.png')} width="60%"/>
 

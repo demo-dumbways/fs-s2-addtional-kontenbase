@@ -6,7 +6,7 @@ sidebar_position: 6
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-**Use Navigate** berfungsi untuk bernavigasi atau redirect ke route component ketika menjalankan suatu fungsi.
+**Use Navigate** adalah sebuah fungsi `hook` dimana berfungsi untuk menavigasikan secara terprogram misalnya ketika mengeksekusi sebuah fungsi tertentu sebelum halaman yang dituju.
 
 <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2/blob/6-frontend-react-js-advance/src/pages/Home.js">
 Contoh code
@@ -47,10 +47,9 @@ function Home() {
 export default Home;
 ```
 
-Dari code implementasi diatas kita menggunakan `useNavigate` untuk `meredirect` halaman, ketika tombol `Click to SignIn` diklik, akan menjalan sebuah `function` yang didalamnya terdapat `navigate` ke route `/signin`
+Dari code implementasi diatas kita menggunakan `useNavigate` untuk bernavigasi ke halaman yang dituju, ketika tombol `Click to SignIn` diklik, akan menjalan sebuah `function` yang didalamnya terdapat navigasi ke sebuah route `/signin`
 
 <img alt="image1-2" src={useBaseUrl('img/docs/image-2-6.png')} width="100%"/>
-
 
 <br />
 <br />

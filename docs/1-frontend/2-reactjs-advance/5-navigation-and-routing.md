@@ -6,9 +6,10 @@ sidebar_position: 5
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-**Navigation dan Routing** pada Ract Js menggunakan `react-router-dom` yang berfungsi untuk membuat `route` dan berpindah antar `halaman` sesuai dengan `routenya`.
+**Navigation dan Routing** pada Ract Js untuk dapat menavigasikan sebuah halaman kita perlu menggunakan sebuah library yaitu `react-router-dom` yang berfungsi untuk membuat `route` dan berpindah antar `halaman` sesuai dengan `routenya` konsep route ini mempermudah kita untuk memanagement path dari pada URL yang nanti nya akan menjadi alamat dari tiap page/component.
 
-Lakukan instalasi dengan perintah: 
+Lakukan instalasi dengan perintah:
+
 ```bash
 npm install react-router-dom
 ```
@@ -20,11 +21,11 @@ Contoh code
 <br />
 <br />
 
-```jsx title=App.js {3,5-8,12-37}
+```jsx title=App.js {3,5-8,14-31,34-37}
 import "bootstrap/dist/css/bootstrap.min.css";
-
+// Import Library yang di butuhkan
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-
+// Import Halaman yang ingin di Navigasikan
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Profile from "./pages/Profile";
@@ -33,6 +34,7 @@ import SignIn from "./pages/SignIn";
 function App() {
   return (
     <Router>
+      // Buat tampilan Navbar
       <div>
         <nav>
           <ul>
@@ -52,6 +54,7 @@ function App() {
         </nav>
       </div>
       <Routes>
+        // Fungsi menavigasikan antar Page
         <Route exact path="/" element={<Home />} />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/profile" element={<Profile />} />

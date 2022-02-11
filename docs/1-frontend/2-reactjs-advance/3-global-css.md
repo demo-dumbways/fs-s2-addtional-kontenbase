@@ -6,7 +6,7 @@ sidebar_position: 3
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-**Global CSS** adalah teknik styling yang digunakan untuk membuat `styling` secara `global` yang dimana bisa dipakai dalam semua `components`.
+**Global CSS** adalah teknik styling yang digunakan untuk membuat `styling` secara `global` teknik pengimplementasian `CSS Global` adalah teknik yang paling di rekomendasikan. Dimana pada teknik ini kita bisa menggunakan seluruh styling yang telah kita buat di semua `components`.
 
 <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2/tree/main/src">
 Contoh code
@@ -99,7 +99,7 @@ function Form() {
           className={cssModules.formInput}
         />
       </div>
-      
+
       {/* code here */}
       <div className="form-group">
         <label htmlFor="gender" className="form-label">

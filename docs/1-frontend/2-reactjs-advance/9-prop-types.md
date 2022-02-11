@@ -6,7 +6,7 @@ sidebar_position: 9
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-**Prop Types** berfungsi untuk membuat `type data` pada `props`, yang nantinya ketika dikirimkan pada `component` harus mengikuti aturan type data yang sudah ditentukan dalam `propTypes`.
+**Prop Types** berfungsi untuk mengecek `type data` pada sebuah `props`, yang nantinya ketika dikirimkan pada sebuah `component` harus mengikuti aturan type data yang sudah ditentukan dalam `propTypes`.
 
 <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2/tree/9-frontend-react-js-advance/src">
 Contoh code

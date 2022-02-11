@@ -6,7 +6,7 @@ sidebar_position: 2
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-**CSS Modules** adalah teknik styling yang digunakan untuk membuat styling secara sepesifik dalam component.
+**CSS Modules** adalah teknik `styling` yang digunakan untuk membuat styling secara sepesifik dalam sebuah component ber ekstensi `JSX` dimana penerapan ini cukup sering di lakukan dikarenakan membuat code lebih terlihat rapih hanya saja `CSS Module` memiliki sebuah kekurangan yaitu tidak semua style CSS dapat di implementasikan pada semua component.
 
 Berikut contoh codenya:
 
@@ -19,31 +19,31 @@ Contoh code
 
 ```css title=components/Form.module.css
 .formGroup {
-    margin-bottom: "16px";
+  margin-bottom: "16px";
 }
 .formLabel {
-    margin-bottom: 8px;
-    display: inline-block;
+  margin-bottom: 8px;
+  display: inline-block;
 }
 .formInput {
-    display: block;
-    width: 100%;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    appearance: none;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  appearance: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .formInput:focus {
-    color: #212529;
-    background-color: #fff;
-    border-color: #86b7fe;
-    outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  color: #212529;
+  background-color: #fff;
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 ```
 
@@ -108,7 +108,6 @@ export default Form;
 ```
 
 Dari code implementasi diatas, terdapat file `Form.module.css` yang memiliki `styling` untuk mengatur tampilan pada tag `label email` dan `input` dalam `component` `Form.js`.
-
 
 <img alt="image1-2" src={useBaseUrl('img/docs/image-2-2A.png')} width="100%"/>
 

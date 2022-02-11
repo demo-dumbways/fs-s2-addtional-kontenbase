@@ -6,7 +6,7 @@ sidebar_position: 8
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-**Private Route** yang berfungsi untuk mengamankan route agar tidak bisa diakses ketika user belum login.
+**Private Route** yang berfungsi untuk memisahkan antara routing yang bersifat publik dan routing yang bersifat private dimana pada beberapa kasus terdapat routing yang tidak boleh di akses oleh user biasa.
 
 <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2/tree/8-frontend-react-js-advance/src">
 Contoh code
@@ -21,9 +21,7 @@ import { Outlet, Navigate } from "react-router-dom";
 const PrivateRoute = ({ element: Component, ...rest }) => {
   const isSignin = false;
 
-  return (
-    isSignin ? <Outlet /> : <Navigate to="/signin" />
-  );
+  return isSignin ? <Outlet /> : <Navigate to="/signin" />;
 };
 
 export default PrivateRoute;
@@ -71,7 +69,7 @@ function App() {
   );
 }
 
-export default App
+export default App;
 ```
 
 Dari code implementasi diatas kita membuat `private route` untuk component About, Profile dan Detail User, yang hanya bisa diakses ketika `islogin true`, jika mengakses private route ketika `islogin false `akan dialihkan ke component `SignIn`.

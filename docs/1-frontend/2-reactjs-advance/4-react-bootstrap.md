@@ -6,9 +6,10 @@ sidebar_position: 4
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-**React Bootstrap** adalah `framework CSS` yang dimana nantinya akan mempermudah kita dalam melakukan `styling` pada saat membuat aplikasi menggunakan `React Js`, dalam tag `html` tinggal memanggil `class` yang sudah disediakan oleh `React Bootstrap`.
+**React Bootstrap** adalah `framework CSS` yang dimana nantinya akan mempermudah kita dalam melakukan `styling` pada saat membuat aplikasi menggunakan `React Js`, dalam pengimplementasian nya kita cukup memanggil tag `JSX` yang sudah di sediakan oleh `React Bootsrap` dan menyesuaikan style class yang sudah di sediakan.
 
-Lakukan instalasi `React Bootstrap` dengan perintah: 
+Langkah awal lakukan instalasi `React Bootstrap` dengan perintah:
+
 ```bash
 npm install react-bootstrap bootstrap@5.1.3
 ```

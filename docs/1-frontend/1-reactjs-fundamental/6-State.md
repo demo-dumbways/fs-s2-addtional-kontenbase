@@ -6,14 +6,14 @@ sidebar_position: 6
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-**State** merupakan data yang tersimpan dalam sebuah `component`. `State` bersifat `private` dan hanya relevan terhadap `component` itu sendiri. Berbeda dengan `props` yang value atau datanya dikirimkan dari `component` lain, `state` justru dapat menyimpan dan mengubah datanya sendiri dari dalam. Ketika data didalam `state` ada perubahan, komponen akan di render atau muat ulang.
+**State** merupakan data yang tersimpan dalam sebuah `component`. `State` bersifat `private` dan hanya relevan terhadap `component` itu sendiri. Berbeda dengan `props` yang value atau datanya dikirimkan dari `component` lain, `state` justru dapat menyimpan dan mengubah datanya sendiri dari dalam. Ketika data didalam `state` ada perubahan, komponen akan di render atau di muat ulang.
 
 ### Membuat State dengan useState
 
 Untuk membuat `state`, kita perlu memanggil `useState` dari `react` seperti berikut:
 
 ```jsx
-import { useState } from 'react';
+import { useState } from "react";
 ```
 
 Setelah memanggil `useState`, kita dapat membuat state dengan melakukan deklarasi data didalam parameter `useState`. Berikut contoh deklarasi number didalam state:
@@ -44,7 +44,7 @@ Contoh code
 <br />
 
 ```jsx {1,4,6-8,10-12,21,23,24} title=App.js
-import { useState } from 'react';
+import { useState } from "react";
 
 function App() {
   const [counter, setCounter] = useState(0);

@@ -91,9 +91,9 @@ function App() {
 export default App;
 ```
 
-Dari code implementasi diatas kita `fetch api`/`menampilkan data` dari json placeholder yang menampilkan data `user` berdasarkan dengan `id` yang dimasukan pada `url paramaternya`.
+Dari code implementasi diatas kita melakukan `fetch api`/`menampilkan data` dari fake api yang dimana datanya akan menampilkan data `user` berdasarkan dengan `id` yang dimasukan pada `url paramaternya`.
 
-untuk menampilkan data user sesuai dengan `id` melalui `url params`, kita ketikan di `url` `localhost:3000/users/1`, akan tampil data dengan `id 1`, dikarenakan kita memasukan `users/1` 
+untuk menampilkan data user sesuai dengan `id` melalui `url params`, kita dapat menuliskan pada `url` `localhost:3000/users/1`, maka akan tampil data dengan `id 1`, dikarenakan pada `url` tersebut terdapat sebuah parameter `users/1`
 
 <img alt="image1-2" src={useBaseUrl('img/docs/image-2-7.png')} width="100%"/>
 
