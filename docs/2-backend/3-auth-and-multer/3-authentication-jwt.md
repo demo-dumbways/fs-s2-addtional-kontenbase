@@ -13,9 +13,9 @@ contoh token seperti berikut:
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
 ```
 
-Contoh toke diatas terdiri 3 bagian yaitu:
+Contoh token diatas dipisahkan dengan `titik` yang terdiri 3 bagian yaitu:
 
-baris pertama adalah Header: Algorithm & Token Type
+bagian pertama adalah Header: Algorithm & Token Type
 
 ```js
 {
@@ -23,7 +23,7 @@ baris pertama adalah Header: Algorithm & Token Type
   "typ": "JWT"
 }
 ```
-baris kedua adalah Payload: DATA
+bagian kedua adalah Payload: DATA
 
 ```js
 {
@@ -32,7 +32,7 @@ baris kedua adalah Payload: DATA
   "iat": 1516239022
 }
 ```
-baris ketiga adalah Verify Signature
+bagian ketiga adalah Verify Signature
 ```js
 HMACSHA256(
   base64UrlEncode(header) + "." +
@@ -46,9 +46,11 @@ your-256-bit-secret
 
 Untuk menggunakan jwt kita harus install dengan perintah:
 
-```npm install jsonwebtoken```
+```shell
+npm install jsonwebtoken
+```
 
-Selanjutnya kita akan mencoba implementasikan, berikut contoh codenya:
+Selanjutnya kita implementasikan, berikut contoh codenya:
 
 <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/1-expressjs-fundamental/index.js">
 Contoh code
@@ -58,6 +60,7 @@ Contoh code
 <br />
 
 ```js title=controllers/auth.js
+
 
 ```
 

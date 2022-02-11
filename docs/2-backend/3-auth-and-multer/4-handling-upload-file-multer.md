@@ -10,7 +10,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 e
 Sebelumnya install terlebih dulu dengan perintah.
 
-```npm install multer```
+```shell
+npm install multer
+```
 
 Selanjutnya kita akan mencoba implementasikan, berikut contoh codenya:
 

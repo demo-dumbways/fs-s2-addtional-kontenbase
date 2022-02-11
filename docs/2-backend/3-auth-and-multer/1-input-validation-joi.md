@@ -10,7 +10,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sebelumnya kita install terlebih dahulu dengan perintah.
 
-```npm install joi```
+```shell
+npm install joi
+```
 
 Selanjutnya kita akan mencoba implementasi Joi pada controller login dan register, berikut contoh codenya:
 
@@ -21,18 +23,136 @@ Contoh code
 <br />
 <br />
 
-```js title=controllers/auth.js
-const express = require('express');
+```js title=controllers/auth.js {3,6-19,45-57}
+const { user } = require("../../models");
 
-const app = express();
+const Joi = require("joi");
 
-const port = 5000;
+exports.register = async (req, res) => {
+  const schema = Joi.object({
+    name: Joi.string().min(5).required(),
+    email: Joi.string().email().min(6).required(),
+    password: Joi.string().min(6).required(),
+  });
 
-app.get('/', (req, res) => {
-  res.send('Hello Express!');
-});
+  const { error } = schema.validate(req.body);
 
-app.listen(port, () => console.log(`Listening on port ${port}!`));
+  if (error)
+    return res.status(400).send({
+      error: {
+        message: error.details[0].message,
+      },
+    });
+
+  try {
+    const newUser = await user.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+    });
+
+    res.status(200).send({
+      status: "success...",
+      data: {
+        name: newUser.name,
+        email: newUser.email,
+      },
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      status: "failed",
+      message: "Server Error",
+    });
+  }
+};
+
+exports.login = async (req, res) => {
+  const schema = Joi.object({
+    email: Joi.string().email().min(6).required(),
+    password: Joi.string().min(6).required(),
+  });
+
+  const { error } = schema.validate(req.body);
+
+  if (error)
+    return res.status(400).send({
+      error: {
+        message: error.details[0].message,
+      },
+    });
+
+  try {
+    const userExist = await user.findOne({
+      where: {
+        email: req.body.email,
+      },
+      attributes: {
+        exclude: ["createdAt", "updatedAt"],
+      },
+    });
+
+    if (userExist.password !== req.body.password) {
+      return res.status(400).send({
+        status: "failed",
+        message: "credential is invalid",
+      });
+    }
+    res.status(200).send({
+      status: "success...",
+      data: {
+        name: userExist.name,
+        email: userExist.email,
+      },
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      status: "failed",
+      message: "Server Error",
+    });
+  }
+};
+```
+
+Selanjutnya import controller dan tambahkan route login dan register
+
+```jsx title=routes/index.js {18,32-33}
+const express = require("express");
+
+const router = express.Router();
+
+const {
+  addUsers,
+  getUsers,
+  getUser,
+  updateUser,
+  deleteUser,
+} = require("../controllers/user");
+const { getProduct, addProduct } = require("../controllers/product");
+const {
+  getTransactions,
+  addTransaction,
+} = require("../controllers/transaction");
+
+const { register, login } = require("../controllers/auth");
+
+router.post("/user", addUsers);
+router.get("/users", getUsers);
+router.get("/user/:id", getUser);
+router.patch("/user/:id", updateUser);
+router.delete("/user/:id", deleteUser);
+
+router.get("/products", getProduct);
+router.post("/product", addProduct);
+
+router.get("/transactions", getTransactions);
+router.post("/transaction", addTransaction);
+
+router.post("/register", register)
+router.post("/login", login)
+
+module.exports = router;
 ```
 
 <img alt="image1-2" src={useBaseUrl('img/docs/image-4-1.png')} width="60%"/>
