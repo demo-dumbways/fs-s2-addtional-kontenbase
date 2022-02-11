@@ -14,7 +14,7 @@ Struktur Routing :
 app.METHOD(PATH, HANDLER)
 ```
 
-Diaman :
+Ket :
 
 - app = contoh dari express
 - METHOD = Permintaan dari `HTTP Request`
