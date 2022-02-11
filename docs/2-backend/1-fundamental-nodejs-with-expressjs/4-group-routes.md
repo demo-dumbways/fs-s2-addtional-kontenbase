@@ -6,9 +6,11 @@ sidebar_position: 4
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-**Group Routes** adalah ...
+**Group Routes** adalah teknik mengelompokkan route API agar lebih teratur dan terdokumentasi dengan baik.
 
 ### 4.1 Persiapan Struktur File
+
+Tahap awal, perlu dilakukan persiapan dari sisi folder dan file. Jadi Anda perlu membuat folder baru seperti `src` yang didalamnya terdapat folder `controllers` dan `routes`. Kemudian didalam folder `controllers` terdapat file `todo.js`, kemudian didalam folder `routes` terdapat file `index.js`.
 
 ```text {3-7}
 express-api-app
@@ -27,9 +29,9 @@ express-api-app
 
 ### 4.2 Controllers
 
-Kenapa harus ada controller ...
+**Controller** berfungsi sebagai handler. Ketika client mengakses `route`, maka selanjutnya system akan membawa ke `controller` yang dituju kemudian akan mengeksekusi code yang terdapat didalam `controller` tersebut.
 
-```js title=todo.js
+```js {1-17,19-34,36-54,56-73,75-102,104-122} title=todo.js
 let todos = [
   {
     id: 1,
@@ -156,9 +158,9 @@ exports.deleteTodo = async (req, res) => {
 
 ### 4.3 Routes
 
-Fungsi routes file ...
+Pada file ini terdapat proses penghubung antara `route` dan `controller`.
 
-```js title=index.js
+```js {6-12,15-19} title=index.js
 const express = require('express');
 
 const router = express.Router();
@@ -184,9 +186,9 @@ module.exports = router;
 
 ### 4.4 Root file
 
-Root file terdapat ...
+Pada bagian ini kita melakukan `grouping` berdasarkan `route` yang telah dibuat pada folder `routes`.
 
-```js title=index.js
+```js {4,13} title=index.js
 const express = require('express');
 
 // Get routes to the variabel
@@ -206,13 +208,11 @@ app.listen(port, () => console.log(`Listening on port ${port}!`));
 
 ### 4.5 Akses API Group route dengan Postman
 
-Cara akses API Group route ...
-
 ```link title=baseUrl
 https://ebook-code-results-stage-2-backend-git-4-e-a80eda-demo-dumbways.vercel.app
 ```
 
-Berikut list route yang telah dibuat ...
+Berikut list route yang telah dibuat :
 
 | Method | Group     | Route       |
 | ------ | --------- | ----------- |
@@ -221,3 +221,9 @@ Berikut list route yang telah dibuat ...
 | POST   | `/api/v1` | `/todo`     |
 | PATCH  | `/api/v1` | `/todo/:id` |
 | DELETE | `/api/v1` | `/todo/:id` |
+
+Untuk menggunakan grouping route, Anda dapat menambahkan `baseUrl` terlebih dahulu kemudian `group`, lalu diikuti `route`, berikut contohnya:
+
+```
+https://ebook-code-results-stage-2-backend-git-4-e-a80eda-demo-dumbways.vercel.app/api/v1/todos
+```
