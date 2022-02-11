@@ -206,6 +206,10 @@ app.use('/api/v1/', router);
 app.listen(port, () => console.log(`Listening on port ${port}!`));
 ```
 
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/4-expressjs-fundamental">
+Contoh code
+</a>
+
 ### 4.5 Akses API Group route dengan Postman
 
 ```link title=baseUrl
