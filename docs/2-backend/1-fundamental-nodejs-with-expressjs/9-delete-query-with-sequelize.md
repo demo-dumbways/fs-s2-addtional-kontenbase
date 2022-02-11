@@ -63,3 +63,19 @@ Cara menghapus data menggunakan `Postman` sebagai berikut:
     "message": "Delete user id: 1 finished"
   }
   ```
+
+## 9.4 Practice
+
+Sesuaikan code Anda dengan contoh code berikut:
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+Contoh code
+</a>
+
+<br />
+<br />
+
+Berikut contoh endpoint yang dapat Anda gunakan:
+
+```
+https://ebook-code-results-stage-2-be.herokuapp.com/fundamental/api/v1/user/3
+```

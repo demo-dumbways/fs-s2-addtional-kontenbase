@@ -82,3 +82,23 @@ Cara mengambil data menggunakan `Postman` sebagai berikut:
   ```
   \*Angka `1` merupakan `id` dari `user`
 - Silakan tekan tombol `Send` dan pastikan response yang Anda terima sesuai dengan data yang tersimpan pada tabel `user`
+
+## 7.4 Practice
+
+Sesuaikan code Anda dengan contoh code berikut:
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+Contoh code
+</a>
+
+<br />
+<br />
+
+Berikut contoh endpoint yang dapat Anda gunakan:
+
+```
+https://ebook-code-results-stage-2-be.herokuapp.com/fundamental/api/v1/users
+```
+
+```
+https://ebook-code-results-stage-2-be.herokuapp.com/fundamental/api/v1/user/3
+```
