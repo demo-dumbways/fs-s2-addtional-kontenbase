@@ -95,6 +95,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   npx sequelize db:migrate
   ```
 
+- Jika anda ingin melakukan `migration` ke database online (heroku), silakan buat file `Procfile` dan tambahkan code berikut:
+
+  ```title=Procfile
+  Release: node_modules/.bin/sequelize db:migrate:undo:all; node_modules/.bin/sequelize db:migrate; node_modules/.bin/sequelize db:seed:all;
+
+  web: node index.js
+  ```
+
 ## 5.3 Database Connection
 
 ```js title=src/database/connection.js
