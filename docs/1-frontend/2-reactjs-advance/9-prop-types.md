@@ -64,7 +64,7 @@ export default About;
 
 Dari code implementasi diatas kita membuat `type data` pada `props title bertipe string, summary type string dan total number`, dicomponent `About` yang dikirimkan harus sesuai dengan yang dibuat pada `propTypes` component `DetailAbout`.
 
-<img alt="image1-2" src={useBaseUrl('img/docs/image-2-3.png')} width="60%"/>
+<img alt="image1-2" src={useBaseUrl('img/docs/image-2-9.png')} width="100%"/>
 
 <br />
 <br />

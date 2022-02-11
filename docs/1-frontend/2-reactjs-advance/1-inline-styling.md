@@ -88,7 +88,7 @@ export default App;
 ```
 Dari code implementasi diatas, terdapat component `Form` yang memilki tag `form`, `div`, `label` dan `input` yang akan di `styling` menggunakan teknik `inline styling` agar terlihat menarik.
 
-<img alt="image1-2" src={useBaseUrl('img/docs/image-2-2.png')} width="60%"/>
+<img alt="image1-2" src={useBaseUrl('img/docs/image-2-2.png')} width="100%"/>
 
 <br />
 <br />

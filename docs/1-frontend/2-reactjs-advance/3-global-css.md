@@ -135,7 +135,7 @@ export default App;
 
 Dari code implementasi diatas, terdapat file `styles.css` yang memiliki `styling` untuk mengatur tampilan pada tag `label gender` dan `select` dalam `component` `Form.js`.
 
-<img alt="image1-2" src={useBaseUrl('img/docs/image-2-3.png')} width="60%"/>
+<img alt="image1-2" src={useBaseUrl('img/docs/image-2-3.png')} width="100%"/>
 
 <br />
 <br />

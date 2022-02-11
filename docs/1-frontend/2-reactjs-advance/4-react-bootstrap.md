@@ -125,7 +125,7 @@ export default FormComponent;
 
 Dari code implementasi diatas kita membuat `Form` menggunakan `React Bootstrap` yang dimana terdapat component react bootrstap `Form` dan `Row`, harus di import terlebih dahulu agar bisa digunakan.
 
-<img alt="image1-2" src={useBaseUrl('img/docs/image-2-3.png')} width="60%"/>
+<img alt="image1-2" src={useBaseUrl('img/docs/image-2-3.png')} width="100%"/>
 
 <br />
 <br />

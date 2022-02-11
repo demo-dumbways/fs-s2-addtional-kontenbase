@@ -49,7 +49,7 @@ export default Home;
 
 Dari code implementasi diatas kita menggunakan `useNavigate` untuk `meredirect` halaman, ketika tombol `Click to SignIn` diklik, akan menjalan sebuah `function` yang didalamnya terdapat `navigate` ke route `/signin`
 
-<img alt="image1-2" src={useBaseUrl('img/docs/image-2-6.png')} width="60%"/>
+<img alt="image1-2" src={useBaseUrl('img/docs/image-2-6.png')} width="100%"/>
 
 
 <br />

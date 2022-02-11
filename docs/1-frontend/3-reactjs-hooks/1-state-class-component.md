@@ -9,14 +9,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 **Hooks** merupakan fitur baru pada React versi 16.8. `Hooks` memungkinkan kita menggunakan `state` dan fitur React lainnya tanpa membuat sebuah `class component`.
 
 contoh menggunakan functional component
-```
+```jsx
 function Welcome() {
-  return <h1>Hallo World/h1>;
+  return <h1>Hallo World</h1>;
 }
 ```
 
 contoh menggunakan class component
-```
+```jsx
 class Welcome extends React.Component {
   render() {
     return <h1>Hallo World</h1>;
@@ -116,9 +116,9 @@ class ExampleForm extends Component {
 export default ExampleForm;
 ```
 
-Dari code implementasi diatas kita membuat `state` dengan type data `object` yang propetynya `fullname`, `email` dan `password` dengan data `string kosong`, yang dimana datanya `diubah` dengan `data` yang diinputkan pada tag `input` dan disimpan kedalam `state`.
+Dari code implementasi diatas kita membuat `state` dengan type data `object` yang propertynya `fullname`, `email` dan `password`, dengan data `string kosong`, yang dimana datanya akan `diubah` dengan `data` yang diinputkan pada tag `input` dan disimpan kedalam `state`.
 
-<img alt="image1-2" src={useBaseUrl('img/docs/image-3-1.png')} width="60%"/>
+<img alt="image1-2" src={useBaseUrl('img/docs/image-3-1.png')} width="100%"/>
 
 <br />
 <br />

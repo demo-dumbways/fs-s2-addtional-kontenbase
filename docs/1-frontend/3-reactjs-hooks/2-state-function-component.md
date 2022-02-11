@@ -97,7 +97,7 @@ export default ExampleForm;
 
 Dari code implementasi diatas kita membuat `state` dengan type data `object` yang propetynya `fullname`, `email` dan `password` dengan data `string kosong`, yang dimana datanya `diubah` dengan `data` yang diinputkan pada tag `input` dan disimpan kedalam `state`.
 
-<img alt="image1-2" src={useBaseUrl('img/docs/image-3-2.png')} width="60%"/>
+<img alt="image1-2" src={useBaseUrl('img/docs/image-3-2.png')} width="100%"/>
 
 <br />
 <br />
