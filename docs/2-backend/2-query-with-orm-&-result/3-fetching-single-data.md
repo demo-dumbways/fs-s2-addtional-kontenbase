@@ -93,7 +93,7 @@ exports.getUser = async (req, res) => {
 }
 ```
 
-Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses fetching multiple data, agar nantinya pengguna bisa melihat seluruh baris data didalam table user.
+Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses fetching single data, agar nantinya pengguna bisa melihat baris data dari table user sesuai id yang dikirimkan.
 
 ```js {8,13} title=index.js
 const express = require('express')

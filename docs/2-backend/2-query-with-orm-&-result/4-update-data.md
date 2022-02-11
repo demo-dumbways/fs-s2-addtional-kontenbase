@@ -64,7 +64,7 @@ Pada proses update data, kita bisa mengirimkan `parameter` berupa `object`. Para
 
 ```js {7-11} title=user.js
 // this code continues from the above code
-exports.getUser = async (req, res) => {
+exports.updateUser = async (req, res) => {
     try {
       const { id } = req.params
       const newdata = req.body
@@ -80,11 +80,11 @@ exports.getUser = async (req, res) => {
 }
 ```
 
-Selanjutnya yang akan kita lakukan adalah mengirimkan response ketika data berhasil difetching ataupun gagal. Response ketika sukses akan kita letakkan kedalam bagian `try`, sedangkan ketika gagal akan kita masukkan kedalam bagian `catch`.
+Selanjutnya yang akan kita lakukan adalah mengirimkan response ketika data berhasil diupdate ataupun gagal. Response ketika sukses akan kita letakkan kedalam bagian `try`, sedangkan ketika gagal akan kita masukkan kedalam bagian `catch`.
 
 ```js {13-17,19-22} title=user.js
 // this code continues from the above code
-exports.getUser = async (req, res) => {
+exports.updateUser = async (req, res) => {
     try {
       const { id } = req.params
       const newdata = req.body
@@ -109,7 +109,7 @@ exports.getUser = async (req, res) => {
 }
 ```
 
-Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses fetching multiple data, agar nantinya pengguna bisa melihat seluruh baris data didalam table user.
+Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses update data, agar nantinya pengguna bisa melakukan update data pada tabel user sesuai id yang dikirimkan.
 
 ```js {9,15} title=index.js
 const express = require('express')
