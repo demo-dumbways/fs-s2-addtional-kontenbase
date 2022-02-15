@@ -6,7 +6,7 @@ sidebar_position: 5
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sebelum membuat relasi antara tabel, kita perlu membuat tabel terlebih dahulu. Berikut Design Database yang akan dibuat:
+Sebelum membuat relasi antara tabel, kita perlu melengkapi tabel terlebih dahulu, sesuai dengan Design Database berikut:
 
 <center>
 <img alt="image1-2" src={useBaseUrl('img/docs/database-design.png')} width="80%"/>
