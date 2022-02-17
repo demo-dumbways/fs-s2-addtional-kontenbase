@@ -60,10 +60,103 @@ Berikut langkah-langkah mengambil data dari `Server`:
   </>
   ```
 
+- Klik tombol dibawah ini untuk melihat `full code`
+
+    <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-integration-frontend/blob/main/src/pages/Product.js">
+    Contoh Code
+    </a>
+
+- Demo
+
+  <img alt="image1-2" src={useBaseUrl('img/docs/image-integration-5.png')} width="100%"/>
+
+  <br />
+  <br />
+
+    <a class="btn-demo" href="https://ebook-code-results-stage-2-integration-frontend-ruby.vercel.app/">
+    Demo
+    </a>
+
 ### 4.2 Product (Admin)
+
+> Path: `client/src/pages/ProductAdmin.js`
+
+- Klik tombol dibawah ini untuk melihat `full code`
+
+    <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-integration-frontend/blob/main/src/pages/ProductAdmin.js">
+    Contoh Code
+    </a>
+
+- Demo
+
+  <img alt="image1-2" src={useBaseUrl('img/docs/image-integration-8.png')} width="100%"/>
+
+  <br />
+  <br />
+
+    <a class="btn-demo" href="https://ebook-code-results-stage-2-integration-frontend-ruby.vercel.app/product-admin">
+    Demo
+    </a>
 
 ### 4.3 Detail Product
 
+> Path: `client/src/pages/DetailProduct.js`
+
+- Klik tombol dibawah ini untuk melihat `full code`
+
+    <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-integration-frontend/blob/main/src/pages/DetailProduct.js">
+    Contoh Code
+    </a>
+
+- Demo
+
+  <img alt="image1-2" src={useBaseUrl('img/docs/image-integration-6.png')} width="100%"/>
+
+  <br />
+  <br />
+
+    <a class="btn-demo" href="https://ebook-code-results-stage-2-integration-frontend-ruby.vercel.app/product/2">
+    Demo
+    </a>
+
 ### 4.4 Profile & Transaction
 
+> Path: `client/src/pages/Profile.js`
+
+- Klik tombol dibawah ini untuk melihat `full code`
+
+    <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-integration-frontend/blob/main/src/pages/Profile.js">
+    Contoh Code
+    </a>
+
+- Demo
+
+  <img alt="image1-2" src={useBaseUrl('img/docs/image-integration-7.png')} width="100%"/>
+
+  <br />
+  <br />
+
+    <a class="btn-demo" href="https://ebook-code-results-stage-2-integration-frontend-ruby.vercel.app/profile">
+    Demo
+    </a>
+
 ### 4.5 Category
+
+> Path: `client/src/pages/CategoryAdmin.js`
+
+- Klik tombol dibawah ini untuk melihat `full code`
+
+    <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-integration-frontend/blob/main/src/pages/CategoryAdmin.js">
+    Contoh Code
+    </a>
+
+- Demo
+
+  <img alt="image1-2" src={useBaseUrl('img/docs/image-integration-9.png')} width="100%"/>
+
+  <br />
+  <br />
+
+    <a class="btn-demo" href="https://ebook-code-results-stage-2-integration-frontend-ruby.vercel.app/category-admin">
+    Demo
+    </a>

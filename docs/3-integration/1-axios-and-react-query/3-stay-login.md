@@ -209,7 +209,7 @@ exports.checkAuth = async (req, res) => {
 
   - Function `UserContextProvider`
 
-    ```js
+    ```jsx
     export const UserContextProvider = ({ children }) => {
       const [state, dispatch] = useReducer(reducer, initialState);
 
