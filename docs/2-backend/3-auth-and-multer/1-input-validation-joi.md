@@ -14,6 +14,32 @@ Sebelumnya kita install terlebih dahulu dengan perintah.
 npm install joi
 ```
 
+Selanjutnya import joi pada component yang ingin menggunakan handle joi seperti berikut:
+```js
+const Joi = require("joi");
+```
+
+Dengan package joi kita bisa membuat aturan inputan yang harus di inputkan sesuai dengan yang kita buat, seperti type data, minimal inputan dan inputan yang harus wajib diisi.
+```js
+  const schema = Joi.object({
+    name: Joi.string().min(5).required(),
+    email: Joi.string().email().min(6).required(),
+    password: Joi.string().min(6).required(),
+  });
+```
+
+Jika inputan yang diinputkan tidak sesuai dengan yang kita buat, maka kita tampilkan error pada response agar yang diinputkan sesuai dengan aturan yang kita buat sebelumnya.
+```js
+  const { error } = schema.validate(req.body);
+
+  if (error)
+    return res.status(400).send({
+      error: {
+        message: error.details[0].message,
+      },
+    });
+```
+
 Selanjutnya kita akan mencoba implementasi Joi pada controller login dan register, berikut contoh codenya:
 
 <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/1-expressjs-fundamental/index.js">
