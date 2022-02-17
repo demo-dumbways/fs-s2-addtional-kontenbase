@@ -14,6 +14,97 @@ Sebelumnya install terlebih dulu dengan perintah.
 npm install multer
 ```
 
+selanjutnya import library multer yang sudah di instal
+```js title=middlewares/uploadFile.js
+const multer = require("multer");
+```
+
+configurasi untuk folder penyimpanan file upload dan untuk merubah nama file depannya dengan milisecond waktu sekarang dan digabungkan dengan nama file, dan jika ada spasi maka akan dihapus menjadi tidak ada spasi.
+
+```js title=middlewares/uploadFile.js
+exports.uploadFile = (imageFile) => {
+    const storage = multer.diskStorage({
+        destination: function (req, file, cb) {
+        cb(null, "uploads"); //file storage location
+        },
+        filename: function (req, file, cb) {
+        cb(null, Date.now() + "-" + file.originalname.replace(/\s/g, ""));
+        },
+    });
+}
+```
+
+Kemudian lakukan configurasi untuk ekstensi atau type filenya agar hanya file berbentuk gambar aja yang bisa di upload.
+
+```js title=middlewares/uploadFile.js
+// this code continues from the previous code
+const fileFilter = function (req, file, cb) {
+    if (file.fieldname === imageFile) {
+      if (!file.originalname.match(/\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF)$/)) {
+        req.fileValidationError = {
+          message: "Only image files are allowed!",
+        };
+        return cb(new Error("Only image files are allowed!"), false);
+      }
+    }
+    cb(null, true);
+};
+```
+
+Kemudian tentukan maksimal file yang akan diupload kedalam aplikasi
+
+```js title=middlewares/uploadFile.js
+// this code continues from the previous code
+const sizeInMB = 10;
+  const maxSize = sizeInMB * 1000 * 1000; // Maximum file size in MB
+```
+
+kemudian tampung semua configurasi sebelumnya di variabel upload
+
+```js title=middlewares/uploadFile.js
+// this code continues from the previous code
+const upload = multer({
+    storage,
+    fileFilter,
+    limits: {
+      fileSize: maxSize,
+    },
+  }).single(imageFile);
+```
+kemudian return dan buat kondisi terkait configurasi sebelumnya,jangan lupa kita kasih next ketika kondisi yang diatas semua terpenuhi, agar dilanjutkan ke controller nantinya.
+
+```js title=middlewares/uploadFile.js
+// this code continues from the previous code
+return (req, res, next) => {
+    upload(req, res, function (err) {
+      // show an error if validation failed
+      if (req.fileValidationError)
+        return res.status(400).send(req.fileValidationError);
+
+      // show an error if file doesn't provided in req
+      if (!req.file && !err)
+        return res.status(400).send({
+          message: "Please select files to upload",
+        });
+
+      // show an error if it exceeds the max size
+      if (err) {
+        if (err.code === "LIMIT_FILE_SIZE") {
+          return res.status(400).send({
+            message: "Max file sized 10MB",
+          });
+        }
+        return res.status(400).send(err);
+      }
+
+      // if okay next to controller
+      // in the controller we can access using req.file
+      return next();
+    });
+  };
+```
+
+
 Selanjutnya kita akan mencoba implementasikan, berikut contoh codenya:
 
 <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/1-expressjs-fundamental/index.js">

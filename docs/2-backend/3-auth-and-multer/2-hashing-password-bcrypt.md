@@ -21,7 +21,7 @@ npm install bcrypt
 ```
 
 Selanjutnya import bcrypt yang diinstal pada controller register
-```js
+```js title=controllers/auth.js 
 const bcrypt = require("bcrypt");
 ```
 
@@ -41,13 +41,13 @@ rounds=31: 2-3 days/hash
 ```
 
 Selanjutnya kita akan membuat salt untuk password kita adalah rounds 10, yang nantinya password akan di enkrip 10 hashes perdetiknya, dan selanjutnya kita buat variabel hashedPassword untuk menampung data req.body.password atau yang diinpukan oleh user dan diganti dengan password yang sudah di enkrip. 
-```js
+```js title=controllers/auth.js 
 const salt = await bcrypt.genSalt(10);
 const hashedPassword = await bcrypt.hash(req.body.password, salt);
 ```
 
 Selanjutnyya kita kirimkan password yang sudah di enkrip pada method create, agar yang masuk kedalam database password yang sudah terenkripsi.
-```js {4}
+```js title=controllers/auth.js {4}
 const newUser = await user.create({
   name: req.body.name,
   email: req.body.email,
@@ -63,7 +63,7 @@ Contoh code
 <br />
 <br />
 
-```js title=controllers/auth.js
+```js title=controllers/auth.js {4,23-24,29,73-79} 
 const { user } = require("../../models");
 
 const Joi = require("joi");
@@ -141,7 +141,7 @@ exports.login = async (req, res) => {
     if (!isValid) {
       return res.status(400).send({
         status: "failed",
-        message: "credential is invalid",
+        message: "password not match",
       });
     }
     res.status(200).send({

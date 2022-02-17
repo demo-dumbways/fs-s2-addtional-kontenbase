@@ -59,12 +59,12 @@ npm install jsonwebtoken
 ```
 
 kemudian import jwt pada controller
-```js
+```js title=controllers/auth.js 
 const jwt = require("jsonwebtoken")
 ```
 
 untuk mengenerate token, kita buat 2 variabel, yang pertama kita buat untuk menampung secret key dan yang kedua untuk menampung data user dan secret key yang hasil datanya akan berbentuk token.
-```js
+```js title=controllers/auth.js 
 const SECRET_KEY = 'rahasia'
 const token = jwt.sign({id: newUser.id}, SECRET_KEY)
 ```
