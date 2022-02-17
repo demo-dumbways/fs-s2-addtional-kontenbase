@@ -6,8 +6,8 @@ sidebar_position: 4
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-**Multer** merupakan middleware node.js untuk menangani multipart / form-data, yang digunakan untuk upload file, yang nantinya file upload akan disimpan ke dalam folder project, jadi hanya mengirimkan nama filenya saja kedalam database
-e
+**Multer** merupakan middleware node.js untuk menangani multipart / form-data, yang digunakan untuk upload file, yang nantinya file upload akan disimpan ke dalam folder project, lalu menyetorkan nama dari file tersebut kedalam database
+
 Sebelumnya install terlebih dulu dengan perintah.
 
 ```shell

@@ -6,13 +6,13 @@ sidebar_position: 2
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-**Bcrypt** merupakan package untuk mengamankan data password kita agar datanya tidak diketahui orang lain dengan cara dienkrip passwordnya, enkripsi akan menjamin data-data tetap aman meskipun berada di tangan orang lain, karena mereka tidak tahu isi asli dari datanya.
+**Bcrypt** merupakan sebuah package untuk mengamankan sebuah password dari serangan rainbow table dimana nantinya password tersebut akan di enkripsi dengan menggunakan salt, enkripsi akan menjamin data tetap aman meskipun berada di tangan orang lain.
 
 contoh password belum di enkrip
-```123456```
+`123456`
 
 contoh password sudah di enkrip
-```$2a$10$BLMmNP5ERgFYq3HZEH2b9.2uZG6qYrUbDbPx8GGluNGWbPz7/Oh72```
+`$2a$10$BLMmNP5ERgFYq3HZEH2b9.2uZG6qYrUbDbPx8GGluNGWbPz7/Oh72`
 
 Sebelumnya kita install terlebih dahulu dengan perintah.
 
@@ -52,7 +52,6 @@ exports.register = async (req, res) => {
     });
 
   try {
-
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
@@ -115,7 +114,7 @@ exports.login = async (req, res) => {
       status: "success...",
       data: {
         name: userExist.name,
-        email: userExist.email
+        email: userExist.email,
       },
     });
   } catch (error) {
