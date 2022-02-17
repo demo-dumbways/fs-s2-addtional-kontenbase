@@ -6,11 +6,16 @@ sidebar_position: 3
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-**JWT** JSON Web Token atau lebih dikenal dengan JWT yang mana JWT ini adalah sebuah token berbentuk string yang nantinya akan menyimpan data user ketika melakukan login.
+Sebelum memahami apa itu JWT (JSON Web Token) baik nya memahami terlebih dahulu apa itu **Token**. **Token** adalah standar Internet yang diusulkan untuk membuat data dengan tanda tangan opsional dan/atau enkripsi opsional yang muatannya menampung JSON yang menegaskan sejumlah klaim. Token ditandatangani baik menggunakan rahasia pribadi atau kunci publik/pribadi.
+
+**JWT** JSON Web Token atau lebih dikenal dengan JWT yang mana JWT ini adalah sebuah library yang bekerja untuk membuat sebuah token berbentuk string panjang yang berbentuk random yang berguna untuk melakukan sistem Autentikasi dan Pertukaran Informasi.
 
 contoh token seperti berikut:
+
 ```js
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+  .eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ
+  .SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c;
 ```
 
 Contoh token diatas dipisahkan dengan `titik` yang terdiri 3 bagian yaitu:
@@ -23,6 +28,7 @@ bagian pertama adalah Header: Algorithm & Token Type
   "typ": "JWT"
 }
 ```
+
 bagian kedua adalah Payload: DATA
 
 ```js
@@ -32,12 +38,14 @@ bagian kedua adalah Payload: DATA
   "iat": 1516239022
 }
 ```
+
 bagian ketiga adalah Verify Signature
+
 ```js
 HMACSHA256(
   base64UrlEncode(header) + "." +
   base64UrlEncode(payload),
-  
+
 your-256-bit-secret
 
 ) secret base64 encoded
@@ -60,7 +68,6 @@ Contoh code
 <br />
 
 ```js title=controllers/auth.js
-
 
 ```
 

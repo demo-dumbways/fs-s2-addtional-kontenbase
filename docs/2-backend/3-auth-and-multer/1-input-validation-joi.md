@@ -6,7 +6,7 @@ sidebar_position: 1
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-**Joi** merupakan package validation untuk menghandle sebuah form inputan, untuk mencegah user memasukan inputan yang tidak sesuai dengan kriteria yang ditentukan.
+**Joi** merupakan sebuah package validation untuk membantu kita menghandle sebuah form input, untuk mencegah user memasukan input yang tidak sesuai dengan kriteria yang ditentukan.
 
 Sebelumnya kita install terlebih dahulu dengan perintah.
 
@@ -175,8 +175,8 @@ router.post("/product", addProduct);
 router.get("/transactions", getTransactions);
 router.post("/transaction", addTransaction);
 
-router.post("/register", register)
-router.post("/login", login)
+router.post("/register", register);
+router.post("/login", login);
 
 module.exports = router;
 ```
