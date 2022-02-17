@@ -38,6 +38,7 @@ Kita perlu menginstall beberapa package yang akan digunakan untuk keperluan pros
   npm i concurrently
   ```
 - CORS
+
   ```bash
   npm i cors
   ```
@@ -45,9 +46,24 @@ Kita perlu menginstall beberapa package yang akan digunakan untuk keperluan pros
 ### Package for `Client Side`
 
 - Axios
+
+  A promise based HTTP client for the browser and Node.js
+
   ```bash
   npm install axios
   ```
+
+  For more info about `Axios` please refer to this [Link](https://axios-http.com/docs/intro)
+
+- React Query
+
+  React query is a collection of hooks for fetching, caching, and updating asynchronous state in React.
+
+  ```bash
+  npm i react-query
+  ```
+
+  For more info about `React-Query` please refer to this [Link](https://react-query.tanstack.com/overview)
 
 ## 1.3 Code
 
@@ -117,3 +133,36 @@ Kita juga perlu menambahkan beberapa code dibawah ini, baik pada `Server Side` d
   </a>
 
   Code diatas terdapat 2 function, Function `API` untuk setup baseURL atau `Server Url` agar `client` dapat mengetahui `server` yang akan dituju, `Server Url` dapat diambil dari `Environment Variable` `REACT_APP_SERVER_URL` jika telah melakukan `deploy`. Function `setAuthToken` bertujuan agar dapat menyimpan token kedalam `headers`.
+
+- Tambahkan code dibawah ini pada file `index.js`
+
+  Import QueryClient and QueryClientProvider :
+
+  ```js
+  import { QueryClient, QueryClientProvider } from 'react-query';
+  ```
+
+  Init Client and set QueryClientProvider:
+
+  ```jsx {1,6,10}
+  const client = new QueryClient();
+
+  ReactDOM.render(
+    <React.StrictMode>
+      <UserContextProvider>
+        <QueryClientProvider client={client}>
+          <Router>
+            <App />
+          </Router>
+        </QueryClientProvider>
+      </UserContextProvider>
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+  ```
+
+  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-integration-frontend/blob/main/src/index.js">
+  Contoh Code
+  </a>
+
+  Menggunakan component `QueryClientProvider` untuk `menghubungkan` dan `menyediakan` `QueryClient` ke aplikasi.
