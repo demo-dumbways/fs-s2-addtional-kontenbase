@@ -14,12 +14,12 @@ Sebelumnya kita install terlebih dahulu dengan perintah.
 npm install joi
 ```
 
-Selanjutnya import joi pada component yang ingin menggunakan handle joi seperti berikut:
+Selanjutnya import joi pada controller yang ingin menggunakan handle joi seperti berikut:
 ```js
 const Joi = require("joi");
 ```
 
-Dengan package joi kita bisa membuat aturan inputan yang harus di inputkan sesuai dengan yang kita buat, seperti type data, minimal inputan dan inputan yang harus wajib diisi.
+Untuk menghandle sebuah form input, kita bisa memberi aturan terkait type data, minimal input dan inputan yang harus wajib diisi.
 ```js
   const schema = Joi.object({
     name: Joi.string().min(5).required(),
@@ -28,7 +28,7 @@ Dengan package joi kita bisa membuat aturan inputan yang harus di inputkan sesua
   });
 ```
 
-Jika inputan yang diinputkan tidak sesuai dengan yang kita buat, maka kita tampilkan error pada response agar yang diinputkan sesuai dengan aturan yang kita buat sebelumnya.
+Jika inputan yang diinputkan tidak sesuai dengan yang kita buat, maka kita tampilkan error pada response, agar yang diinputkan sesuai dengan aturan yang kita buat sebelumnya.
 ```js
   const { error } = schema.validate(req.body);
 

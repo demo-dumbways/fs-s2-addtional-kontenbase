@@ -20,8 +20,42 @@ Sebelumnya kita install terlebih dahulu dengan perintah.
 npm install bcrypt
 ```
 
-Selanjutnya kita implementasikan, berikut contoh codenya:
+Selanjutnya import bcrypt yang diinstal pada controller register
+```js
+const bcrypt = require("bcrypt");
+```
 
+Sebelumnya kita perlu tahu, bahwa kita harus memasukan round ketika kita ingin membuat enkrip pada password, rounds ini adalah jumlah enkrip atau hash yang akan dilakukan enkrip perdetiknya. 
+
+```js
+rounds=8 : ~40 hashes/sec
+rounds=9 : ~20 hashes/sec
+rounds=10: ~10 hashes/sec
+rounds=11: ~5  hashes/sec
+rounds=12: 2-3 hashes/sec
+rounds=13: ~1 sec/hash
+rounds=14: ~1.5 sec/hash
+rounds=15: ~3 sec/hash
+rounds=25: ~1 hour/hash
+rounds=31: 2-3 days/hash
+```
+
+Selanjutnya kita akan membuat salt untuk password kita adalah rounds 10, yang nantinya password akan di enkrip 10 hashes perdetiknya, dan selanjutnya kita buat variabel hashedPassword untuk menampung data req.body.password atau yang diinpukan oleh user dan diganti dengan password yang sudah di enkrip. 
+```js
+const salt = await bcrypt.genSalt(10);
+const hashedPassword = await bcrypt.hash(req.body.password, salt);
+```
+
+Selanjutnyya kita kirimkan password yang sudah di enkrip pada method create, agar yang masuk kedalam database password yang sudah terenkripsi.
+```js {4}
+const newUser = await user.create({
+  name: req.body.name,
+  email: req.body.email,
+  password: hashedPassword,
+});
+```
+
+Selanjutnya kita implementasikan, berikut contoh codenya:
 <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/1-expressjs-fundamental/index.js">
 Contoh code
 </a>
