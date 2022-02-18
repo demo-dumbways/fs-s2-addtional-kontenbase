@@ -12,7 +12,10 @@ Untuk menginisialisasi koneksi antara klien dan server, kita dapat menambahkan c
 
 - Tambahkan code berikut pada file `index.js` yang terdapat didalam folder `socket`
 
-  ```js {1-5,7} title=server/src/socket/index.js
+  ```js {1-2,4-8,10} title=server/src/socket/index.js
+  const http = require('http');
+  const { Server } = require('socket.io');
+
   const socketIo = (io) => {
     io.on('connection', (socket) => {
       console.log('client connect:', socket.id);
@@ -51,6 +54,11 @@ Untuk menginisialisasi koneksi antara klien dan server, kita dapat menambahkan c
   > Path : `client/src/pages/ComplainAdmin.js`
 
   ```js
+  // import socket.io-client
+  import { io } from 'socket.io-client';
+  ```
+
+  ```js
   // initial variable outside component
   let socket;
   ```
@@ -58,7 +66,7 @@ Untuk menginisialisasi koneksi antara klien dan server, kita dapat menambahkan c
   ```js
   // connect to server in useEffect function
   useEffect(() => {
-    socket = io('http://localhost:5000');
+    socket = io(process.env.REACT_APP_SERVER_URL || 'http://localhost:5000');
 
     return () => {
       socket.disconnect();
