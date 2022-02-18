@@ -25,7 +25,7 @@ Contoh Folder
 <br />
 <br />
 
-Folder `client` berisikan aplikasi `ReactJs` (Frontend) dan Folder Server berisikan aplikasi `ExpressJS` (Backend)
+Folder `client` berisikan aplikasi `ReactJs` (Frontend) dan Folder `Server` berisikan aplikasi `ExpressJS` (Backend)
 
 ## 1.2 Installasi Package
 

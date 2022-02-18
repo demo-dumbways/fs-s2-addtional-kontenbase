@@ -10,8 +10,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Oleh karena itu kita perlu `useContext` untuk membuat `sistem` yang dapat mengecek apakah `user` tersebut telah `login` ke `sistem` dan jika browser di `refresh` status user akan `tetap login` disetiap komponent.
 
-Berikut beberapa tahapan yang perlu diikuti:
-
 ## 3.1 Server Side
 
 Pada sisi `Server` kita perlu membuat sebuah `endpoint` yang dapat menangani pengecekan `token` yang dikirim dari `client`.

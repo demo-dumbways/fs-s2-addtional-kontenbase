@@ -128,6 +128,8 @@ Berikut langkah-langkah mengupdate data:
 
 ### 5.2 Category
 
+`Login as Admin`
+
 > Path: `client/src/pages/UpdateCategoryAdmin.js`
 
 - Klik tombol dibawah ini untuk melihat `full code`
