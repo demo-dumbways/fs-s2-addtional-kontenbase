@@ -20,14 +20,14 @@ exports.deleteUser = async (req, res) => {
     await db.sequelize.query(query);
 
     res.send({
-      status: 'success',
+      status: "success",
       message: `Delete user id: ${id} finished`,
     });
   } catch (error) {
     console.log(error);
     res.send({
-      status: 'failed',
-      message: 'Server Error',
+      status: "failed",
+      message: "Server Error",
     });
   }
 };
@@ -35,12 +35,12 @@ exports.deleteUser = async (req, res) => {
 
 ## 9.2 Route
 
-Buat route untuk controller `deleteUser` menggunakan HTTP method `delete`
+Tahap akhir yang perlu kita lakukan adalah buat sebuah route untuk menjalakan atau mengakases fungsi pada controller `deleteUser` menggunakan HTTP method `delete`
 
 ```js {1,3} title=src/routes/index.js
-const { deleteUser } = require('../controllers/user');
+const { deleteUser } = require("../controllers/user");
 
-router.patch('/user/:id', deleteUser);
+router.patch("/user/:id", deleteUser);
 ```
 
 ## 9.3 Penggunaan
