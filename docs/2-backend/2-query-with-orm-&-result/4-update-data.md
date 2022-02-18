@@ -111,7 +111,7 @@ exports.updateUser = async (req, res) => {
 
 Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses update data, agar nantinya pengguna bisa melakukan update data pada tabel user sesuai id yang dikirimkan.
 
-```js {9,15} title=index.js
+```js {9,15} title=routes/index.js
 const express = require('express')
 
 const router = express.Router()

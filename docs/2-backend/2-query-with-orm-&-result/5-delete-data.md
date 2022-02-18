@@ -107,7 +107,7 @@ exports.deleteUser = async (req, res) => {
 
 Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses delete data, agar nantinya pengguna bisa menghapus data pada tabel user sesuai id yang dikirimkan.
 
-```js {10,17} title=index.js
+```js {10,17} title=routes/index.js
 const express = require('express')
 
 const router = express.Router()

@@ -95,7 +95,7 @@ exports.getUser = async (req, res) => {
 
 Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses fetching single data, agar nantinya pengguna bisa melihat baris data dari table user sesuai id yang dikirimkan.
 
-```js {8,13} title=index.js
+```js {8,13} title=routes/index.js
 const express = require('express')
 
 const router = express.Router()

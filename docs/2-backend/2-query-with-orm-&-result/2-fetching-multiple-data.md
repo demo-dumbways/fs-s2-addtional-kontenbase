@@ -85,7 +85,7 @@ exports.getUsers = async (req, res) => {
 
 Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses fetching multiple data, agar nantinya pengguna bisa melihat seluruh baris data didalam table user.
 
-```js {7,11} title=index.js
+```js {7,11} title=routes/index.js
 const express = require('express')
 
 const router = express.Router()

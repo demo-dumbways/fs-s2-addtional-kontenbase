@@ -70,7 +70,7 @@ exports.addUser = async (req, res) => {
 
 Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses entri data kedalam database, agar nantinya pengguna bisa melakukan penambahan data user ketika melakukan registrasi
 
-```js title=index.js
+```js title=routes/index.js
 const express = require('express')
 
 const router = express.Router()
