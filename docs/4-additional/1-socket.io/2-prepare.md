@@ -31,7 +31,7 @@ Server
  ┣ package.json
 ```
 
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-socket-io-backend/tree/master/src">
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-socket-io">
 Contoh Folder
 </a>
 
@@ -78,6 +78,6 @@ Kita juga perlu menambahkan beberapa code dibawah ini pada sisi `Server`
   server.listen(port, () => console.log(`Listening on port ${port}!`));
   ```
 
-  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-socket-io-backend/blob/master/index.js">
+  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-socket-io/blob/1.prepare/server/index.js">
   Contoh Code
   </a>

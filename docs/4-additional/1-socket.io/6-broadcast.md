@@ -59,7 +59,7 @@ Untuk melengkapi fitur `chat` ini, kita akan coba membuat `broadcast` message ke
 
 - Full code socket `server side`
 
-  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-socket-io-backend/blob/master/src/socket/index.js">
+  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-socket-io/blob/5.socket.io-event-messages/server/src/socket/index.js">
     Contoh code
     </a>
 
@@ -112,11 +112,11 @@ Untuk melengkapi fitur `chat` ini, kita akan coba membuat `broadcast` message ke
 
 - Full code untuk component `Complain (customer)`
 
-  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-socket-io-frontend/blob/master/src/pages/Complain.js">
+  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-socket-io/blob/5.socket.io-event-messages/client/src/pages/Complain.js">
   Contoh code
   </a>
 
 - Full code untuk component `Complain (Admin)`
-  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-socket-io-frontend/blob/master/src/pages/ComplainAdmin.js">
+  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-socket-io/blob/5.socket.io-event-messages/client/src/pages/ComplainAdmin.js">
   Contoh code
   </a>

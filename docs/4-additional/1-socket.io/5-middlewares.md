@@ -12,7 +12,7 @@ Catatan: Handshake adalah properti yang menyimpan objek dengan nilai opsi yang d
 
 Referensi: [Link](https://socket.io/docs/v3/middlewares/)
 
-## 5.1 Client
+## 5.1 Server
 
 - Tambahkan code berikut pada file index.js yang terdapat didalam folder `socket`
 
@@ -34,13 +34,13 @@ Referensi: [Link](https://socket.io/docs/v3/middlewares/)
   module.exports = socketIo;
   ```
 
-  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-socket-io-backend/blob/master/src/socket/index.js">
+  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-socket-io/blob/4.socket.io-middlewares/server/src/socket/index.js">
   Contoh code
   </a>
 
   Pada code diatas, kita membuat `middlewares` pada `Socket`, dimana `server` akan mengecek `token` yang dikirim dari `client`, jika `client` mengirim token maka dapat melanjutkan ke tahap berikutnya yaitu penanganan `Event`.
 
-## 5.2 Server
+## 5.2 Client
 
 - Tambahkan code berikut pada file `Complain.js`
 
@@ -65,7 +65,7 @@ Referensi: [Link](https://socket.io/docs/v3/middlewares/)
   }, []);
   ```
 
-  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-socket-io-frontend/blob/master/src/pages/Complain.js">
+  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-socket-io/blob/4.socket.io-middlewares/client/src/pages/Complain.js">
   Contoh code
   </a>
 
