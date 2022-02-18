@@ -73,3 +73,13 @@ Untuk menginisialisasi koneksi antara klien dan server, kita dapat menambahkan c
     };
   }, []);
   ```
+
+## 3.3 Result
+
+Jika `Client` berhasil `connect` ke `Server` maka pada terminal Anda akan muncul tulisan seperti berikut:
+
+```bash
+client connect:  GJotZJhkDe2p5FcPAAAD
+```
+
+`GJotZJhkDe2p5FcPAAAD` merupakan `id client` yang secara otomatis tergenerate jika ada client yang connect ke server.
