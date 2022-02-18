@@ -198,11 +198,12 @@ Cara mengambil data menggunakan `Postman` sebagai berikut:
 - Gunakan HTTP Method: `GET` dan `POST`
 - Gunakan endpoint: `/products` dan `/add-product`
 - Contoh endpoint :
+
   ```
   http://localhost:5000/api/v1/products
   ```
   ```
-  http://localhost:5000/api/v1/product
+  http://localhost:5000/api/v1/add-product
   ```
 - Tekan tombol `Send` dan pastikan response yang Anda terima sesuai dengan data yang tersimpan pada tabel `product`
 

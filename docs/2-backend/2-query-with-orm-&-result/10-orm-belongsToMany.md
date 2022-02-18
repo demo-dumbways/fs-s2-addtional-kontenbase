@@ -6,185 +6,128 @@ sidebar_position: 10
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## 9.1 Models
+## 10.1 Models
 
-**Method belongsToMany** merupakan sebuah method yang digunakan pada tabel yang berelasi dengan relasi `One to Many` (ada hubungan antara A dan B, dengan `foreignkey` didefinisikan dalam model target (B)).  Relasi **One to Many** ada ketika satu record di tabel ke-1 memiliki hubungan lebih dari satu record di tabel ke-2.
+**Method belongsToMany** merupakan sebuah method yang digunakan pada tabel yang berelasi dengan relasi `Many to Many`.  Relasi **Many to Many** ada ketika satu record di tabel ke-1 memiliki hubungan lebih dari satu record di tabel ke-2, dan dengan cara yang sama, kita dapat mengatakan bahwa satu record di tabel ke-2 terkait dengan lebih dari satu record di tabel ke-1.
 
-Pada rancangan database yang memiliki relasi One to Many adalah user &rarr; product
+Pada rancangan database yang memiliki relasi Many to Many adalah product &rarr; category. Sehingga kita membutuhkan satu tabel untuk menjadi `jembatan` yang menyimpan `foreignkey` untuk dua tabel tersebut. Di sini, tabel `jembatan` kami adalah `productCategory`. Mari kita definisikan Many to Many menggunakan metode `ManyToMany()` pada model product dan category.
 
-Kita akan mencoba melakukan fetching . oleh karna itu pertama kita perlu menentukan relasi `hasMany` kedalam model user.
-
-```js title=models/user.js {12-17}
+```js title=models/product.js {12-19}
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class user extends Model {
+  class product extends Model {
     static associate(models) {
-      user.hasOne(models.profile, {
-        as: "profile",
+      product.belongsTo(models.user, {
+        as: "user",
         foreignKey: {
           name: "idUser",
         },
       });
 
-      user.hasMany(models.product, {
+      product.belongsToMany(models.category, {
+        as: "categories",
+        through: {
+          model: "productCategory",
+          as: "bridge",
+        },
+        foreignKey: "idProduct",
+      });
+    }
+  }
+  // continuation code is the same as in the template
+};
+```
+
+```js title=models/category.js {5-12}
+const { Model } = require("sequelize");
+module.exports = (sequelize, DataTypes) => {
+  class category extends Model {
+    static associate(models) {
+      category.belongsToMany(models.product, {
         as: "products",
-        foreignKey: {
-          name: "idUser",
+        through: {
+          model: "productCategory",
+          as: "bridge",
         },
+        foreignKey: "idCategory",
       });
     }
   }
-  user.init(
-    {
-      email: DataTypes.STRING,
-      password: DataTypes.STRING,
-      name: DataTypes.STRING,
-      status: DataTypes.STRING,
-    },
-    {
-      sequelize,
-      modelName: "user",
-    }
-  );
-  return user;
-};
-```
-
-## 7.2 Controllers
-
-### 7.2.1 getUserProducts
-Setelah menentukan relasi pada model user, maka selanjutnya kita akan melakukan proses fetching data akan kita simpan kedalam sebuah modul. Pada modul ini juga akan menangani error handling dengan menggunakan try and catch. 
-
-```js title=controllers/user.js {25-31}
-// this code continues from the previous code
-exports.deleteUser = async (req, res) => {
-  try {
-    const { id } = req.params;
-
-    await user.destroy({
-      where: {
-        id,
-      },
-    });
-
-    res.send({
-      status: "success",
-      message: `Delete user id: ${id} finished`,
-    });
-  } catch (error) {
-    console.log(error);
-    res.send({
-      status: "failed",
-      message: "Server Error",
-    });
-  }
+  // continuation code is the same as in the template
 };
 
-exports.getUserProducts = async (req, res) => {
-  try {
-      
-  } catch (error) {
-
-  }
-}
 ```
 
-Melakukan fetching data sama saja seperti proses fecthing sebelumnya, yakni bisa menggunakan metode `findAll()`. Pada proses melakukan fetching, kita bisa mengirimkan `parameter` berupa `object`. Parameter yang dikirimkan dapat berupa sebuah kondisi field - field yang tidak ingin kita fetching dan tentunya adalah `model yang akan direlasikan` yakni model `product`. 
+## 10.2 Controllers
 
-```js title=controllers/user.js {4-12}
-//  this code continues from the above code
-exports.getUserProducts = async (req, res) => {
+Setelah menentukan relasi pada model product dan categiry, maka selanjutnya kita akan melakukan proses untuk melakukan fetching data category product. Pada bagian sebelumnya kita telah membuat proses fetching product, maka kali ini kita cukup menambahkan proses `fetching multitable` yakni table product dan category. Melakukan fethcing multitable make kita perlu menjadikan properti `include` menyimpan data berupa `array of object`
+
+
+```js title=controllers/product.js {6,14-26}
+const { product, user } = require('../../models')
+
+exports.getProducts = async (req, res) => {
   try {
-    const data = await user.findAll({
-      include: {
-        model: product,
-        as: "products"
-      },
+    const data = await product.findAll({
+      include: [
+        {
+          model: user,
+          as: 'user',
+          attributes: {
+            exclude: ['createdAt', 'updatedAt', 'password']
+          }
+        },
+        {
+          model: category,
+          as: "categories",
+          through: {
+            model: productCategory,
+            as: "bridge",
+            attributes: [],
+          },
+          attributes: {
+            exclude: ["createdAt", "updatedAt"],
+          },
+        },
+      ]
       attributes: {
-        exclude: ['createdAt', 'updatedAt']
-      }
-    })      
-  } catch (error) {
-
-  }
-}
-```
-
-Selanjutnya yang akan kita lakukan adalah mengirimkan response ketika data berhasil dimasukkan kedalam database ataupun gagal. Response ketika sukses akan kita letakkan kedalam bagian `try`, sedangkan ketika gagal akan kita masukkan kedalam bagian `catch`.
-
-```js title=controllers/user.js {14-17,19-22}
-//  this code continues from the above code
-exports.getUserProducts = async (req, res) => {
-  try {
-    const data = await user.findAll({
-      include: {
-        model: product,
-        as: "products"
-      },
-      attributes: {
-        exclude: ['createdAt', 'updatedAt']
+        exclude: ['createdAt', 'updatedAt', 'idUser']
       }
     })
 
     res.send({
-      status: "success",
+      status: 'success...',
       data
-    });      
+    })
   } catch (error) {
     res.send({
-      status: "failed",
-      message: "Server Error",
-    });
+      status: 'failed',
+      message: 'Server Error'
+    })
   }
-}
+};
+// continuation code is the same as in the template
 ```
 
-## 7.3 Routes
+## 10.3 Routes
 
-Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses fetching data user product
+Routes yang digunakan untuk melakukan fetching data product beserta category nya masih sama dengan section sebelumnya, yakni 
 
-```js {11,26} title=routes/index.js
-const express = require('express')
-
-const router = express.Router()
-
-const {
-    addUsers,
-    getUsers,
-    getUser,
-    updateUser,
-    deleteUser,
-    getUserProducts
-} = require('../controllers/user')
-
-const { getProducts, addProduct } = require('../controllers/product')
-
-
-router.post('/user', addUser)
-router.get('/users', getUsers)
-router.get('/user', getUser)
-router.patch('/user/:id', updateUser)
-router.delete('/user/:id', deleteUser)
-
+```
 router.get('/products', getProducts)
-router.post('/product', addProduct)
-
-router.get('/user-products', getUserProducts)
-
-module.exports = router
 ```
 
-## 7.4 Penggunaan
+## 10.4 Penggunaan
 
 Cara mengambil data menggunakan `Postman` sebagai berikut:
 
-- Buat dua request baru, yang bernama `user product`
 - Gunakan HTTP Method: `GET`
-- Gunakan endpoint: `/user-products
-- Contoh endpoint
+- Gunakan endpoint: `/products` 
+- Contoh endpoint :
 
   ```
-  http://localhost:5000/api/v1/user-products
+  http://localhost:5000/api/v1/products
   ```
-- Silakan tekan tombol `Send` 
+
+- Tekan tombol `Send` dan pastikan response yang Anda terima sesuai dengan data yang tersimpan pada tabel `product` dan `category`
         
