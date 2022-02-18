@@ -2,20 +2,20 @@
 sidebar_position: 7
 ---
 
-# 7. Relation BelongsTo
+# 7. Relation belongsTo
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## 7.1 Models
 
-**Method belongsTo** merupakan sebuah method yang digunakan pada tabel yang berelasi dengan relasi `One to One`.  Relasi **One to One** ada ketika satu record di tabel ke-1 memiliki hubungan dengan hanya satu record di tabel ke-2, dan dengan cara yang sama, kita dapat mengatakan bahwa satu record di tabel ke-2 terkait dengan hanya satu record di tabel ke-1.
+**Method belongsTo** merupakan sebuah method yang digunakan pada tabel yang berelasi dengan relasi `One to One` (ada hubungan antara A dan B, dengan `foreignkey` didefinisikan dalam model target (A)).  Relasi **One to One** ada ketika satu record di tabel ke-1 memiliki hubungan dengan hanya satu record di tabel ke-2, dan dengan cara yang sama, kita dapat mengatakan bahwa satu record di tabel ke-2 terkait dengan hanya satu record di tabel ke-1.
 
-Pada rancangan database yang memiliki relaso One to One adalah
-- profile -> user
-- product -> user
-- transaction -> user
+Pada rancangan database yang memiliki relasi One to One adalah
+- profile &rarr; user
+- product &rarr; user
+- transaction &rarr; user
 
-Kita akan mencoba melakukan fetching dan insert data pada `Tabel Transaction`. oleh karna itu pertama kita perlu menentukan relasi `belongsTo` kedalam model - model yang saling berkaitan yakni product dan transaction.
+Kita akan mencoba melakukan fetching dan insert data product. oleh karna itu pertama kita perlu menentukan relasi `belongsTo` kedalam model - model yang saling berkaitan yakni product.
 
 ```js title=models/product.js {5-9}
 const { Model } = require("sequelize");
@@ -34,38 +34,10 @@ module.exports = (sequelize, DataTypes) => {
 };
 ```
 
-```js title=models/transaction.js {5-22}
-const { Model } = require("sequelize");
-module.exports = (sequelize, DataTypes) => {
-  class transaction extends Model {
-    static associate(models) {
-      transaction.belongsTo(models.product, {
-        as: 'product',
-        foreignKey: {
-          name: 'idProduct'
-        }
-      }),
-      transaction.belongsTo(models.user, {
-        as: 'buyer',
-        foreignKey: {
-          name: 'idBuyer'
-        }
-      }),
-      transaction.belongsTo(models.user, {
-        as: 'seller',
-        foreignKey: {
-          name: 'idSeller'
-        }
-      })
-    }
-    // continuation code is the same as in the template
-  }
-};
-```
 ## 7.2 Controllers
 
 ### 7.2.1 getProducts
-Setelah menentukan relasi pada setiap model, maka selanjutnya kita akan melakukan proses untuk melakuakn fetching data product. Pertama kita akan melakukan import model - model yang nantinya akan kita gunakan yakni model product dan user.
+Setelah menentukan relasi pada setiap model, maka selanjutnya kita akan melakukan proses untuk melakukan fetching data product. Pertama kita akan melakukan import model - model yang nantinya akan kita gunakan yakni model product dan user.
 
 ```js title=controllers/product.js
 const { product, user } = require('../../models')
