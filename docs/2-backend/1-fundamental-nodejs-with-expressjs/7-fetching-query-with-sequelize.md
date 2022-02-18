@@ -60,7 +60,7 @@ Mulai dengan membuat sebuah `controller` yang menghandle proses `pengambilan dat
 
 ## 7.2 Route
 
-Tahap berikut nya adalah buat sebuah route untuk menjalakan atau mengakases fungsi pada controller `getUsers` dan `getUser` menggunakan HTTP method `get`
+Tahap akhir yang perlu kita lakukan adalah buat sebuah route untuk menjalakan atau mengakases fungsi pada controller `getUsers` dan `getUser` menggunakan HTTP method `get`
 
 ```js {1,3-4} title=src/routes/index.js
 const { getUsers, getUser } = require("../controllers/user");

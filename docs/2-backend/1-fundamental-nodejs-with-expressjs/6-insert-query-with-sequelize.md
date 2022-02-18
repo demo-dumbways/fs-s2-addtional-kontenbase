@@ -43,7 +43,7 @@ exports.addUsers = async (req, res) => {
 
 ## 6.2 Route
 
-Tahap akhir yang perlu kita lakukan nya adalah buat sebuah route untuk menjalakan atau mengakases fungsi pada controller `addUsers` menggunakan HTTP method `post`
+Tahap akhir yang perlu kita lakukan adalah buat sebuah route untuk menjalakan atau mengakases fungsi pada controller `addUsers` menggunakan HTTP method `post`
 
 ```js {1,3} title=src/routes/index.js
 const { addUsers } = require("../controllers/user");
