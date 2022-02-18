@@ -13,6 +13,7 @@ Sebelumnya install terlebih dulu dengan perintah.
 ```shell
 npm install multer
 ```
+### 4.1 Middlewares
 
 selanjutnya import library multer yang sudah di instal
 ```js title=middlewares/uploadFile.js
@@ -39,15 +40,15 @@ Kemudian lakukan configurasi untuk ekstensi atau type filenya agar hanya file be
 ```js title=middlewares/uploadFile.js
 // this code continues from the previous code
 const fileFilter = function (req, file, cb) {
-    if (file.fieldname === imageFile) {
-      if (!file.originalname.match(/\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF)$/)) {
-        req.fileValidationError = {
-          message: "Only image files are allowed!",
-        };
-        return cb(new Error("Only image files are allowed!"), false);
-      }
+  if (file.fieldname === imageFile) {
+    if (!file.originalname.match(/\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF)$/)) {
+      req.fileValidationError = {
+        message: "Only image files are allowed!",
+      };
+      return cb(new Error("Only image files are allowed!"), false);
     }
-    cb(null, true);
+  }
+  cb(null, true);
 };
 ```
 
@@ -56,7 +57,7 @@ Kemudian tentukan maksimal file yang akan diupload kedalam aplikasi
 ```js title=middlewares/uploadFile.js
 // this code continues from the previous code
 const sizeInMB = 10;
-  const maxSize = sizeInMB * 1000 * 1000; // Maximum file size in MB
+const maxSize = sizeInMB * 1000 * 1000; // Maximum file size in MB
 ```
 
 kemudian tampung semua configurasi sebelumnya di variabel upload
@@ -185,50 +186,31 @@ exports.uploadFile = (imageFile) => {
 };
 ```
 
-```js title=controllers/product.js {51,108}
-const { product, user, category, productCategory } = require("../../models");
+Selanjutnya kita buat path di index.js agar gambar bisa tampil
+```js {16}
+// import dotenv and call config function to load environment
+require('dotenv').config()
+const express = require('express')
 
-exports.getProduct = async (req, res) => {
-  try {
-    const data = await product.findAll({
-      include: [
-        {
-          model: user,
-          as: "user",
-          attributes: {
-            exclude: ["createdAt", "updatedAt", "password"],
-          },
-        },
-        {
-          model: category,
-          as: "categories",
-          through: {
-            model: productCategory,
-            as: "bridge",
-            attributes: [],
-          },
-          attributes: {
-            exclude: ["createdAt", "updatedAt"],
-          },
-        },
-      ],
-      attributes: {
-        exclude: ["createdAt", "updatedAt", "idUser"],
-      },
-    });
+// Get routes to the variabel
+const router = require('./src/routes')
 
-    res.send({
-      status: "success...",
-      data,
-    });
-  } catch (error) {
-    console.log(error);
-    res.send({
-      status: "failed",
-      message: "Server Error",
-    });
-  }
-};
+const app = express()
+
+const port = 5000
+
+app.use(express.json())
+
+// Add endpoint grouping and router
+app.use('/api/v1/', router)
+app.use('/uploads', express.static('uploads'))
+
+app.listen(port, () => console.log(`Listening on port ${port}!`))
+```
+
+Selanjutnya tambahkan request file filename pada function controller `addProduct` agar bisa masuk kedalam database.
+
+```js title=controllers/product.js {8,65}
 
 exports.addProduct = async (req, res) => {
   try {
@@ -306,6 +288,8 @@ exports.addProduct = async (req, res) => {
 };
 ```
 
+Selanjutnya import middleware uploadFile.js yang sebelumnya dibuat, kemudian pasangkan pada route product, agar ketika form upload file akan di handle dengan middlewares yang sudah kita buat.
+
 ```js title=routes/index.js {13,23}
 const express = require('express')
 
@@ -338,28 +322,6 @@ router.post('/register', register)
 router.post('/login', login)
 
 module.exports = router
-```
-
-Selanjutnya kita buat path di index.js agar gambarnya bisa tampil atau bisa diakses secara public
-```js {16}
-// import dotenv and call config function to load environment
-require('dotenv').config()
-const express = require('express')
-
-// Get routes to the variabel
-const router = require('./src/routes')
-
-const app = express()
-
-const port = 5000
-
-app.use(express.json())
-
-// Add endpoint grouping and router
-app.use('/api/v1/', router)
-app.use('/uploads', express.static('uploads'))
-
-app.listen(port, () => console.log(`Listening on port ${port}!`))
 ```
 
 <img alt="image1-2" src={useBaseUrl('img/docs/image-4-1.png')} width="60%"/>
