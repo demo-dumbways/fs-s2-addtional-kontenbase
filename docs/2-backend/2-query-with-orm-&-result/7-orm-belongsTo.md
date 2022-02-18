@@ -17,6 +17,13 @@ Pada rancangan database yang memiliki relasi One to One adalah
 
 Kita akan mencoba melakukan fetching dan insert data product. oleh karna itu pertama kita perlu menentukan relasi `belongsTo` kedalam model - model yang saling berkaitan yakni product.
 
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+Contoh code
+</a>
+
+<br />
+<br />
+
 ```js title=models/product.js {5-9}
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
@@ -143,6 +150,13 @@ exports.addProduct = async (req, res) => {
 
 Selanjutnya yang akan kita lakukan adalah mengirimkan response ketika data berhasil dimasukkan kedalam database ataupun gagal. Response ketika sukses akan kita letakkan kedalam bagian `try`, sedangkan ketika gagal akan kita masukkan kedalam bagian `catch`.
 
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+Contoh code
+</a>
+
+<br />
+<br />
+
 ```js title=controllers/product.js {6-9,11-14}
 exports.addProduct = async (req, res) => {
   try {
@@ -164,6 +178,13 @@ exports.addProduct = async (req, res) => {
 ## 7.3 Routes
 
 Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses fetching dan insert data product
+
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+Contoh code
+</a>
+
+<br />
+<br />
 
 ```js {7-10,19-20} title=routes/index.js
 const express = require('express')

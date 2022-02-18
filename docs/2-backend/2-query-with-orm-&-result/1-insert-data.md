@@ -46,6 +46,13 @@ exports.addUser = async (req, res) => {
 
 Selanjutnya yang akan kita lakukan adalah mengirimkan response ketika data berhasil dimasukkan kedalam database ataupun gagal. Response ketika sukses akan kita letakkan kedalam bagian `try`, sedangkan ketika gagal akan kita masukkan kedalam bagian `catch`.
 
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+Contoh code
+</a>
+
+<br />
+<br />
+
 ```js {9-12,14-17} title=user.js
 const { user } = require('../../models')
 
@@ -69,6 +76,13 @@ exports.addUser = async (req, res) => {
 ```
 
 Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses entri data kedalam database, agar nantinya pengguna bisa melakukan penambahan data user ketika melakukan registrasi
+
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+Contoh code
+</a>
+
+<br />
+<br />
 
 ```js title=routes/index.js
 const express = require('express')

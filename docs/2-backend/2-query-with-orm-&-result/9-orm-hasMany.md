@@ -14,6 +14,13 @@ Pada rancangan database yang memiliki relasi One to Many adalah user &rarr; prod
 
 Kita akan mencoba melakukan fetching . oleh karna itu pertama kita perlu menentukan relasi `hasMany` kedalam model user.
 
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+Contoh code
+</a>
+
+<br />
+<br />
+
 ```js title=models/user.js {12-17}
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
@@ -111,6 +118,13 @@ exports.getUserProducts = async (req, res) => {
 
 Selanjutnya yang akan kita lakukan adalah mengirimkan response ketika data berhasil dimasukkan kedalam database ataupun gagal. Response ketika sukses akan kita letakkan kedalam bagian `try`, sedangkan ketika gagal akan kita masukkan kedalam bagian `catch`.
 
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+Contoh code
+</a>
+
+<br />
+<br />
+
 ```js title=controllers/user.js {14-17,19-22}
 //  this code continues from the above code
 exports.getUserProducts = async (req, res) => {
@@ -141,6 +155,13 @@ exports.getUserProducts = async (req, res) => {
 ## 9.3 Routes
 
 Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses fetching data user product
+
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+Contoh code
+</a>
+
+<br />
+<br />
 
 ```js {11,26} title=routes/index.js
 const express = require('express')

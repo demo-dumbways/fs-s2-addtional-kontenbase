@@ -14,6 +14,13 @@ Pada rancangan database yang memiliki relasi One to One adalah user &rarr; profi
 
 Kita akan mencoba melakukan fetching dan insert data product. oleh karna itu pertama kita perlu menentukan relasi `hasOne` kedalam model user.
 
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+Contoh code
+</a>
+
+<br />
+<br />
+
 ```js title=models/user.js {5-9}
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
@@ -46,6 +53,13 @@ module.exports = (sequelize, DataTypes) => {
 ## 8.2 Controllers
 
 Setelah menentukan relasi pada model user, maka selanjutnya kita akan melakukan proses untuk melakukan fetching data user. Pada bagian sebelumnya kita telah membuat proses CRUD terkait data user, maka kali ini kita cukup menambahkan proses `fetching multitable` yakni table profile dan user.
+
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+Contoh code
+</a>
+
+<br />
+<br />
 
 ```js title=controllers/user.js {5-10,38-44}
 // this code continues from the previous code

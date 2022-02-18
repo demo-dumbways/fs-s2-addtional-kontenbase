@@ -58,6 +58,13 @@ exports.getUsers = async (req, res) => {
 
 Selanjutnya yang akan kita lakukan adalah mengirimkan response ketika data berhasil difetching ataupun gagal. Response ketika sukses akan kita letakkan kedalam bagian `try`, sedangkan ketika gagal akan kita masukkan kedalam bagian `catch`.
 
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+Contoh code
+</a>
+
+<br />
+<br />
+
 ```js {10-15,17-20} title=user.js
 // this code continues from the above code
 exports.getUsers = async (req, res) => {
@@ -84,6 +91,13 @@ exports.getUsers = async (req, res) => {
 ```
 
 Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses fetching multiple data, agar nantinya pengguna bisa melihat seluruh baris data didalam table user.
+
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+Contoh code
+</a>
+
+<br />
+<br />
 
 ```js {7,11} title=routes/index.js
 const express = require('express')

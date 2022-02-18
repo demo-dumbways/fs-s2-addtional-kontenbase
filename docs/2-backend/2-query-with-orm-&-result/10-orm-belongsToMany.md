@@ -12,6 +12,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Pada rancangan database yang memiliki relasi Many to Many adalah product &rarr; category. Sehingga kita membutuhkan satu tabel untuk menjadi `jembatan` yang menyimpan `foreignkey` untuk dua tabel tersebut. Di sini, tabel `jembatan` kami adalah `productCategory`. Mari kita definisikan Many to Many menggunakan metode `ManyToMany()` pada model product dan category.
 
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+Contoh code
+</a>
+
+<br />
+<br />
+
 ```js title=models/product.js {12-19}
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
@@ -38,6 +45,13 @@ module.exports = (sequelize, DataTypes) => {
 };
 ```
 
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+Contoh code
+</a>
+
+<br />
+<br />
+
 ```js title=models/category.js {5-12}
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
@@ -62,6 +76,12 @@ module.exports = (sequelize, DataTypes) => {
 
 Setelah menentukan relasi pada model product dan categiry, maka selanjutnya kita akan melakukan proses untuk melakukan fetching data category product. Pada bagian sebelumnya kita telah membuat proses fetching product, maka kali ini kita cukup menambahkan proses `fetching multitable` yakni table product dan category. Melakukan fethcing multitable make kita perlu menjadikan properti `include` menyimpan data berupa `array of object`
 
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+Contoh code
+</a>
+
+<br />
+<br />
 
 ```js title=controllers/product.js {6,14-26}
 const { product, user } = require('../../models')
