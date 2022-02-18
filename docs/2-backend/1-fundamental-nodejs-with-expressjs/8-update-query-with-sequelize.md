@@ -24,15 +24,15 @@ exports.updateUser = async (req, res) => {
     await db.sequelize.query(query);
 
     res.send({
-      status: 'success',
+      status: "success",
       message: `Update user id: ${id} finished`,
       data: req.body,
     });
   } catch (error) {
     console.log(error);
     res.send({
-      status: 'failed',
-      message: 'Server Error',
+      status: "failed",
+      message: "Server Error",
     });
   }
 };
@@ -42,12 +42,12 @@ exports.updateUser = async (req, res) => {
 
 ## 8.2 Route
 
-Buat route untuk controller `updateUser` menggunakan HTTP method `patch`
+Tahap akhir yang perlu kita lakukan adalah buat sebuah route untuk menjalakan atau mengakases fungsi pada controller `updateUser` menggunakan HTTP method `patch`
 
 ```js {1,3} title=src/routes/index.js
-const { updateUser } = require('../controllers/user');
+const { updateUser } = require("../controllers/user");
 
-router.patch('/user/:id', updateUser);
+router.patch("/user/:id", updateUser);
 ```
 
 ## 8.3 Penggunaan
