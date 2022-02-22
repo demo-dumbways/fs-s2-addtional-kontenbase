@@ -10,13 +10,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Hal pertama yang kita lakukan adalah mengimport `model user` dengan cara melakukan `object destructuring` terhadap folder models
 
-```js title=user.js
+```js title=controllers/user.js
 const { user } = require('../../models')
 ```
 
 Selanjutnya kita akan membuat sebuah `modul` yang nantinya akan menangani terkait proses entri data kedalam database. Modul ini akan berjalan secara asynchronous agar bisa tetap berjalan tanpa mengganggu proses lainnya. Pada modul ini juga akan menangani `error handling` dengan menggunakan `try and catch`.
 
-```js {3-9} title=user.js
+```js {3-9} title=controllers/user.js
 const { user } = require('../../models')
 
 exports.addUser = async (req, res) => {
@@ -30,7 +30,7 @@ exports.addUser = async (req, res) => {
 
 Pada bagian `try`, kita akan melakukan proses entri data kedalam database. Diawali dengan menampung data inputan formulir kedalam variabel. Variabel yang telah berisikan data inputan, selanjutnya akan kita entri kedalam database menggunakan method `create()`
 
-```js {5-7} title=user.js
+```js {5-7} title=controllers/user.js
 const { user } = require('../../models')
 
 exports.addUser = async (req, res) => {
@@ -46,14 +46,14 @@ exports.addUser = async (req, res) => {
 
 Selanjutnya yang akan kita lakukan adalah mengirimkan response ketika data berhasil dimasukkan kedalam database ataupun gagal. Response ketika sukses akan kita letakkan kedalam bagian `try`, sedangkan ketika gagal akan kita masukkan kedalam bagian `catch`.
 
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/1-orm-sequelize/src/controllers/user.js">
 Contoh code
 </a>
 
 <br />
 <br />
 
-```js {9-12,14-17} title=user.js
+```js {9-12,14-17} title=controllers/user.js
 const { user } = require('../../models')
 
 exports.addUser = async (req, res) => {
@@ -77,7 +77,7 @@ exports.addUser = async (req, res) => {
 
 Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses entri data kedalam database, agar nantinya pengguna bisa melakukan penambahan data user ketika melakukan registrasi
 
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/1-orm-sequelize/src/routes/index.js">
 Contoh code
 </a>
 

@@ -48,6 +48,11 @@ Sebelum melakakukan migrasi model yang telah dibuat, maka kita akan menambahkan 
 - Relasi Model profile
     
     Pada model profile akan berelasi dengan model users, field yang menjadi penghubung adalah idUser pada model profile dan field id pada model user
+    <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/7-orm-sequelize/migrations/20210712032234-create-profile.js">
+    Contoh code
+    </a>
+    <br />
+    <br />
 
     ```js title=migrations/20211221140540-create-profile.js {4-12}
       address: {
@@ -71,6 +76,13 @@ Sebelum melakakukan migrasi model yang telah dibuat, maka kita akan menambahkan 
 - Relasi Model product
     
     Pada model product akan berelasi dengan model users, field yang menjadi penghubung adalah idUser pada model product dan field id pada model user
+
+    <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/7-orm-sequelize/migrations/20210712032356-create-product.js">
+    Contoh code
+    </a>
+
+    <br />
+    <br />
 
     ```js title=migrations/20211221140540-create-product.js {4-12}
       qty: {
@@ -96,6 +108,13 @@ Sebelum melakakukan migrasi model yang telah dibuat, maka kita akan menambahkan 
     Pada model transaction akan berelasi dengan model users dan model product. 
     - Field yang menjadi penghubung antara transaction dan user adalah idUser pada model transaction dan field id pada model user. 
     - Field yang menjadi penghubung antara transaction dan product adalah idProduct pada model transaction dan field id pada model product.
+
+    <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/7-orm-sequelize/migrations/20210712033433-create-transaction.js">
+    Contoh code
+    </a>
+    
+    <br />
+    <br />
 
     ```js title=migrations/20211221140540-create-transaction.js {7-33}
       id: {
@@ -141,6 +160,13 @@ Sebelum melakakukan migrasi model yang telah dibuat, maka kita akan menambahkan 
     Pada model categoryProduct akan berelasi dengan model product dan model category 
     - Field yang menjadi penghubung antara categoryProduct dan product adalah idProduct pada model categoryProduct dan field id pada model product. 
     - Field yang menjadi penghubung antara categoryProduct dan category adalah idCategory pada model categoryProduct dan field id pada model category.
+
+    <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/7-orm-sequelize/migrations/20210712034946-create-product-category.js">
+    Contoh code
+    </a>
+    
+    <br />
+    <br />
 
     ```js title=migrations/20211221140540-create-categoryproduct.js {7-24}
       id: {
