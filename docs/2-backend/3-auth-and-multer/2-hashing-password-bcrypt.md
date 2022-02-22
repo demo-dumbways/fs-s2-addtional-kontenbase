@@ -56,14 +56,14 @@ const newUser = await user.create({
 ```
 
 Selanjutnya kita implementasikan, berikut contoh codenya:
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/1-expressjs-fundamental/index.js">
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/2-auth-and-multer/src/controllers/auth.js">
 Contoh code
 </a>
 
 <br />
 <br />
 
-```js title=controllers/auth.js {4,23-24,29,73-79} 
+```js title=src/controllers/auth.js {4,23-24,29,73-79} 
 const { user } = require("../../models");
 
 const Joi = require("joi");
@@ -161,10 +161,10 @@ exports.login = async (req, res) => {
 };
 ```
 
-<img alt="image1-2" src={useBaseUrl('img/docs/image-4-1.png')} width="60%"/>
+<!-- <img alt="image1-2" src={useBaseUrl('img/docs/image-4-1.png')} width="60%"/>
 
 <br />
-<br />
+<br /> -->
 
 <div>
 <a class="btn-demo" href="https://ebook-code-results-stage-2-backend-git-1-e-bef277-demo-dumbways.vercel.app/">
