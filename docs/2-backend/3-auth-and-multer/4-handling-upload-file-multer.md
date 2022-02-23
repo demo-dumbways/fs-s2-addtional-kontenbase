@@ -108,7 +108,7 @@ return (req, res, next) => {
 
 Selanjutnya kita akan mencoba implementasikan, berikut contoh codenya:
 
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/1-expressjs-fundamental/index.js">
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/4-auth-and-multer/src/middlewares/uploadFile.js">
 Contoh code
 </a>
 
@@ -186,8 +186,15 @@ exports.uploadFile = (imageFile) => {
 };
 ```
 
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/4-auth-and-multer/index.js">
+Contoh code
+</a>
+
+<br />
+<br />
+
 Selanjutnya kita buat path di index.js agar gambar bisa tampil
-```js {16}
+```js title=index.js {16}
 // import dotenv and call config function to load environment
 require('dotenv').config()
 const express = require('express')
@@ -290,7 +297,14 @@ exports.addProduct = async (req, res) => {
 
 Selanjutnya import middleware uploadFile.js yang sebelumnya dibuat, kemudian pasangkan pada route product, agar ketika form upload file akan di handle dengan middlewares yang sudah kita buat.
 
-```js title=routes/index.js {13,23}
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/4-auth-and-multer/src/routes/index.js">
+Contoh code
+</a>
+
+<br />
+<br />
+
+```js title=src/routes/index.js {13,23}
 const express = require('express')
 
 const router = express.Router()
@@ -324,10 +338,10 @@ router.post('/login', login)
 module.exports = router
 ```
 
-<img alt="image1-2" src={useBaseUrl('img/docs/image-4-1.png')} width="60%"/>
+<!-- <img alt="image1-2" src={useBaseUrl('img/docs/image-4-1.png')} width="60%"/>
 
 <br />
-<br />
+<br /> -->
 
 <div>
 <a class="btn-demo" href="https://ebook-code-results-stage-2-backend-git-1-e-bef277-demo-dumbways.vercel.app/">
