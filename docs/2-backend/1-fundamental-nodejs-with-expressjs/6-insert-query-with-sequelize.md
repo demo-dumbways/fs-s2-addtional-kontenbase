@@ -11,13 +11,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Untuk menambahkan data ke tabel yang ada didatabase, kita perlu memanggil `setup connection database`.
 
 ```js title=src/controllers/user.js
-const db = require('../database/connection');
+const db = require("../database/connection");
 ```
 
 Lalu kita membuat sebuah controller yang menghandle proses penambahan data ke tabel seperti berikut:
 
 ```js {1-25} title=src/controllers/user.js
-const db = require('../database/connection');
+const db = require("../database/connection");
 
 exports.addUsers = async (req, res) => {
   try {
@@ -28,14 +28,14 @@ exports.addUsers = async (req, res) => {
     await db.sequelize.query(query);
 
     res.send({
-      status: 'success',
-      message: 'Add user finished',
+      status: "success",
+      message: "Add user finished",
     });
   } catch (error) {
     console.log(error);
     res.send({
-      status: 'failed',
-      message: 'Server Error',
+      status: "failed",
+      message: "Server Error",
     });
   }
 };
@@ -43,12 +43,12 @@ exports.addUsers = async (req, res) => {
 
 ## 6.2 Route
 
-Buat route untuk controller `addUsers` menggunakan HTTP method `post`
+Tahap akhir yang perlu kita lakukan adalah buat sebuah route untuk menjalakan atau mengakases fungsi pada controller `addUsers` menggunakan HTTP method `post`
 
 ```js {1,3} title=src/routes/index.js
-const { addUsers } = require('../controllers/user');
+const { addUsers } = require("../controllers/user");
 
-router.post('/user', addUsers);
+router.post("/user", addUsers);
 ```
 
 ## 6.3 Penggunaan

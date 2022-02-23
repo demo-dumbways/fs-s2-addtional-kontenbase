@@ -39,6 +39,8 @@ function App() {
 export default App;
 ```
 
+Pada code di bawah ini kita akan mengimplementasikan sebuah `Form` sederhana menggunakan `React Bootstrap` yang dimana kita perlu mengimport component `React Bootrstap` terlebih dahulu sebelum kita menggunakan component seperti `Form` dan `Row`.
+
 ```jsx title=components/Form.js {1,68-77}
 import { Form, Col } from "react-bootstrap";
 import cssModules from "./Form.module.css";
@@ -123,8 +125,6 @@ function FormComponent() {
 
 export default FormComponent;
 ```
-
-Dari code implementasi diatas kita membuat `Form` menggunakan `React Bootstrap` yang dimana terdapat component react bootrstap `Form` dan `Row`, harus di import terlebih dahulu agar bisa digunakan.
 
 <img alt="image1-2" src={useBaseUrl('img/docs/image-2-3.png')} width="100%"/>
 

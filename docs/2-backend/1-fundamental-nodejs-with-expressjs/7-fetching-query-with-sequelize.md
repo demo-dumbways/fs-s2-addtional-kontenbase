@@ -15,18 +15,18 @@ Mulai dengan membuat sebuah `controller` yang menghandle proses `pengambilan dat
   ```js {1-25} title=src/controllers/user.js
   exports.getUsers = async (req, res) => {
     try {
-      const query = 'SELECT * FROM users';
+      const query = "SELECT * FROM users";
       const data = await db.sequelize.query(query, { type: QueryTypes.SELECT });
 
       res.send({
-        status: 'success',
+        status: "success",
         data,
       });
     } catch (error) {
       console.log(error);
       res.send({
-        status: 'failed',
-        message: 'Server Error',
+        status: "failed",
+        message: "Server Error",
       });
     }
   };
@@ -45,14 +45,14 @@ Mulai dengan membuat sebuah `controller` yang menghandle proses `pengambilan dat
       );
 
       res.send({
-        status: 'success',
+        status: "success",
         data,
       });
     } catch (error) {
       console.log(error);
       res.send({
-        status: 'failed',
-        message: 'Server Error',
+        status: "failed",
+        message: "Server Error",
       });
     }
   };
@@ -60,13 +60,13 @@ Mulai dengan membuat sebuah `controller` yang menghandle proses `pengambilan dat
 
 ## 7.2 Route
 
-Buat route untuk controller `getUsers` dan `getUser` menggunakan HTTP method `get`
+Tahap akhir yang perlu kita lakukan adalah buat sebuah route untuk menjalakan atau mengakases fungsi pada controller `getUsers` dan `getUser` menggunakan HTTP method `get`
 
 ```js {1,3-4} title=src/routes/index.js
-const { getUsers, getUser } = require('../controllers/user');
+const { getUsers, getUser } = require("../controllers/user");
 
-router.get('/users', getUsers);
-router.get('/user/:id', getUser);
+router.get("/users", getUsers);
+router.get("/user/:id", getUser);
 ```
 
 ## 7.3 Penggunaan

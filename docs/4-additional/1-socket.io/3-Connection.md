@@ -25,7 +25,7 @@ Untuk menginisialisasi koneksi antara klien dan server, kita dapat menambahkan c
   module.exports = socketIo;
   ```
 
-  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-socket-io-backend/blob/master/src/socket/index.js">
+  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-socket-io/blob/2.socket.io-connection/server/src/socket/index.js">
     Contoh Code
     </a>
 
@@ -41,7 +41,7 @@ Untuk menginisialisasi koneksi antara klien dan server, kita dapat menambahkan c
   require('./src/socket')(io);
   ```
 
-  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-socket-io-backend/blob/master/index.js">
+  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-socket-io/blob/2.socket.io-connection/server/index.js">
     Contoh Code
     </a>
 
@@ -73,6 +73,10 @@ Untuk menginisialisasi koneksi antara klien dan server, kita dapat menambahkan c
     };
   }, []);
   ```
+
+   <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-socket-io/blob/2.socket.io-connection/client/src/pages/Complain.js">
+    Contoh Code
+    </a>
 
 ## 3.3 Result
 

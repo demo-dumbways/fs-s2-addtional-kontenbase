@@ -82,6 +82,13 @@ exports.updateUser = async (req, res) => {
 
 Selanjutnya yang akan kita lakukan adalah mengirimkan response ketika data berhasil diupdate ataupun gagal. Response ketika sukses akan kita letakkan kedalam bagian `try`, sedangkan ketika gagal akan kita masukkan kedalam bagian `catch`.
 
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/4-orm-sequelize/src/controllers/user.js">
+Contoh code
+</a>
+
+<br />
+<br />
+
 ```js {13-17,19-22} title=user.js
 // this code continues from the above code
 exports.updateUser = async (req, res) => {
@@ -111,7 +118,14 @@ exports.updateUser = async (req, res) => {
 
 Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses update data, agar nantinya pengguna bisa melakukan update data pada tabel user sesuai id yang dikirimkan.
 
-```js {9,15} title=index.js
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/4-orm-sequelize/src/routes/index.js">
+Contoh code
+</a>
+
+<br />
+<br />
+
+```js {9,15} title=routes/index.js
 const express = require('express')
 
 const router = express.Router()
@@ -125,7 +139,7 @@ const {
 
 router.post('/user', addUser)
 router.get('/users', getUsers)
-router.get('/user', getUser)
+router.get('/user/:id', getUser)
 router.patch('/user/:id', updateUser)
 
 module.exports = router

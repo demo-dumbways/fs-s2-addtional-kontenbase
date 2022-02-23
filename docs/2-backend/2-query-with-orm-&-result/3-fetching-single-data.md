@@ -65,6 +65,13 @@ exports.getUser = async (req, res) => {
 
 Selanjutnya yang akan kita lakukan adalah mengirimkan response ketika data berhasil difetching ataupun gagal. Response ketika sukses akan kita letakkan kedalam bagian `try`, sedangkan ketika gagal akan kita masukkan kedalam bagian `catch`.
 
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/3-orm-sequelize/src/controllers/user.js">
+Contoh code
+</a>
+
+<br />
+<br />
+
 ```js {13-18,20-23} title=user.js
 // this code continues from the above code
 exports.getUser = async (req, res) => {
@@ -95,7 +102,14 @@ exports.getUser = async (req, res) => {
 
 Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses fetching single data, agar nantinya pengguna bisa melihat baris data dari table user sesuai id yang dikirimkan.
 
-```js {8,13} title=index.js
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/3-orm-sequelize/src/routes/index.js">
+Contoh code
+</a>
+
+<br />
+<br />
+
+```js {8,13} title=routes/index.js
 const express = require('express')
 
 const router = express.Router()
@@ -108,7 +122,7 @@ const {
 
 router.post('/user', addUser)
 router.get('/users', getUsers)
-router.get('/user', getUser)
+router.get('/user/:id', getUser)
 
 module.exports = router
 ```

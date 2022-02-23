@@ -47,7 +47,7 @@ Di `Socket.io` kita dapat menggunakan method `on()` dan `emit()` untuk mengdefin
   module.exports = socketIo;
   ```
 
-  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-socket-io-backend/blob/master/src/socket/index.js">
+  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-socket-io/blob/3.socket.io-event-contacts/server/src/socket/index.js">
   Contoh code
   </a>
 
@@ -80,7 +80,7 @@ Di `Socket.io` kita dapat menggunakan method `on()` dan `emit()` untuk mengdefin
   };
   ```
 
-  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-socket-io-frontend/blob/master/src/pages/Complain.js">
+  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-socket-io/blob/3.socket.io-event-contacts/client/src/pages/Complain.js">
   Contoh code
   </a>
 

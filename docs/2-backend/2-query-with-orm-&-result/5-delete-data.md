@@ -79,6 +79,13 @@ exports.deleteUser = async (req, res) => {
 
 Selanjutnya yang akan kita lakukan adalah mengirimkan response ketika data berhasil di delete ataupun gagal. Response ketika sukses akan kita letakkan kedalam bagian `try`, sedangkan ketika gagal akan kita masukkan kedalam bagian `catch`.
 
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/5-orm-sequelize/src/controllers/user.js">
+Contoh code
+</a>
+
+<br />
+<br />
+
 ```js {12-16,18-22} title=user.js
 // this code continues from the above code
 exports.deleteUser = async (req, res) => {
@@ -107,7 +114,14 @@ exports.deleteUser = async (req, res) => {
 
 Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses delete data, agar nantinya pengguna bisa menghapus data pada tabel user sesuai id yang dikirimkan.
 
-```js {10,17} title=index.js
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/5-orm-sequelize/src/routes/index.js">
+Contoh code
+</a>
+
+<br />
+<br />
+
+```js {10,17} title=routes/index.js
 const express = require('express')
 
 const router = express.Router()
@@ -122,7 +136,7 @@ const {
 
 router.post('/user', addUser)
 router.get('/users', getUsers)
-router.get('/user', getUser)
+router.get('/user/:id', getUser)
 router.patch('/user/:id', updateUser)
 router.delete('/user/:id', deleteUser)
 
