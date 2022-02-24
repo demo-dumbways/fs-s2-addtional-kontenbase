@@ -24,7 +24,7 @@ Setelah melakukan registrasi akun, maka kita perlu melakukan konfigurasi notifik
     <br/>
 
 2. Finish Redirect URL <br/>
-   **Finish Redirect URL** adalah konfigurasi yang digunakan untuk menentukan URL yang akan dituju pelanggan saat transaksi selesai.
+   **Finish Redirect URL** adalah konfigurasi yang digunakan untuk menentukan URL yang akan dituju pelanggan saat transaksi selesai. `Value` yang kita isikan didapatkan dari url yang disediakan oleh `local tunnel pada sisi client` ketika dijalankan.
 
     <center>
     <img alt="image1-2" src={useBaseUrl('img/docs/image-payment-4.png')} width="100%"/>
