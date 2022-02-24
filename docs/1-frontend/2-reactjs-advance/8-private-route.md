@@ -72,7 +72,7 @@ function App() {
 export default App;
 ```
 
-Dari code implementasi diatas kita membuat `private route` untuk component About, Profile dan Detail User, yang hanya bisa diakses ketika `islogin true`, jika mengakses private route ketika `islogin false `akan dialihkan ke component `SignIn`.
+Dari code implementasi diatas kita membuat `private route` untuk component About, Profile dan Detail User, yang hanya bisa diakses ketika `islogin true`, jika mengakses private route ketika `islogin false` akan dialihkan ke component `SignIn`.
 
 <img alt="image1-2" src={useBaseUrl('img/docs/image-2-8.png')} width="100%"/>
 

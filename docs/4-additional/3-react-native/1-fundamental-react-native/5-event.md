@@ -48,7 +48,7 @@ export default function Event() {
 }
 ```
 
-Keterangan code diatas adalah kita membuat `button` dengan menggunakan tag `TouchableOpacity` yang dimana kalau di tekan akan akan menjalankan function yang sudah dibuat.
+Keterangan code diatas adalah jika kita membuat sebuah `button` dengan menggunakan tag `TouchableOpacity` yang dimana jika tag tersebut terpicu akan menjalankan sebuah fungsi yang telah dibuat.
 
 Selanjutnya kita import component `event` pada App.js
 <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2/tree/3-frontend-react-js-fundamental/src">

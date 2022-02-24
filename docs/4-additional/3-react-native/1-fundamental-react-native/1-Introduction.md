@@ -18,18 +18,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 **React Native** adalah sebuah framework JavaScript untuk membuat aplikasi mobile di dua sistem operasi secara bersamaan, yaitu Android dan iOS.
 
-
 Referensi: [Link](https://reactnative.dev/)
 
 ## 1.3 Kelebihan React Native
-Kelbihan dalam menggunakan React Native adalah:
+
+Kelebihan dalam menggunakan React Native adalah:
 
 - Menghemat biaya <br />
-Dengan menggunakan react native dapat menghemat biaya pengembangan, dikarenakan tidak perlu mencari dua orang developer untuk membuat aplikasi pada sistem operasi Android dan IOS.
+  Dengan menggunakan react native dapat menghemat biaya pengembangan, dikarenakan tidak perlu mencari dua orang developer untuk membuat aplikasi pada sistem operasi Android dan IOS.
 
 - Menghemat waktu <br />
-Dapat menghemat waktu dikarenakan dalam pembuatan aplikasinya menggunakan component jadi dapat digunakan kembali tanpa harus merubah banyak codenya. 
+  Dapat menghemat waktu dikarenakan dalam pembuatan aplikasinya menggunakan component jadi dapat digunakan kembali tanpa harus merubah banyak codenya.
 
 - Memiliki komunitas yang besar <br />
-React Native adalah framework JavaScript yang bersifat open source sehingga para pengembang dapat saling berkontribusi selama mengikuti aturan dari komunitas.
-
+  React Native adalah framework JavaScript yang bersifat open source sehingga para pengembang dapat saling berkontribusi selama mengikuti aturan dari komunitas.

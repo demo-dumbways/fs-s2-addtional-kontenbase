@@ -39,7 +39,7 @@ export default function EmbedExpression() {
 }
 ```
 
-Keterangan code diatas adalah kita membuat function dan variabel dan kita gabungkan dengan text, untuk menggabungkannya atau memanggilnya harus menggunakan kurung kurawal `{}`.
+Keterangan code diatas adalah kita membuat sebuah fungsi dan variabel dimana dari fungsi tersebut akan kita gabungkan dengan text, untuk menggabungkan atau memanggil fungsi tersebut kita dapat menggunakan kurung kurawal `{}`.
 
 Selanjutnya kita import component `EmbedExpression` pada App.js
 <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2/tree/3-frontend-react-js-fundamental/src">

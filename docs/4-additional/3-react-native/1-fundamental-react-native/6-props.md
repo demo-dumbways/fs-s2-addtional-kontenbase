@@ -6,7 +6,7 @@ sidebar_position: 6
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-**Props** adalah argumen yang diteruskan antar components. `Props` diteruskan dari `Component` melalui atribut HTML. Yang bisa dikirim dalam props bisa berupa `data`, `variables`, `function` dan bahkan sebuah `class`. Jadi initinya `Props` adalah suatu cara untuk `mengirim` dan `mengakses` data dari component ke component lain secara langsung.
+**Props** adalah argumen yang diteruskan antar components. `Props` diteruskan dari `Component` melalui attribute HTML. Yang bisa dikirim dalam props bisa berupa `data`, `variables`, `function` dan bahkan sebuah `class`. Jadi initinya `Props` adalah suatu cara untuk `mengirim` dan `mengakses` data dari component ke component lain secara langsung.
 
 Berikut contoh implementasi `Props`:
 
@@ -67,7 +67,7 @@ export default function Props() {
 }
 ```
 
-Pada implementasi `Props` diatas, kita mengirim data nama mobil ke component `List` melalui props yang diberi nama `data`. Perlu diperhatikan, didalam component terdapat Props `default` dan Props `yang dapat dibuat sesuai dengan ke inginan`. Pada tag `img` terdapat props `default` yaitu `alt` dan `src`, sedangkan pada component `List` terdapat props `costume-props` yaitu `data`.
+Pada implementasi `Props` diatas, kita mengirim kan sebuah data kumpulan nama mobil ke component `List` melalui props yang diberi nama `data`. Perlu diperhatikan, didalam component terdapat Props `default` dan Props `yang dapat dibuat sesuai dengan ke inginan`. Pada tag `img` terdapat props `default` yaitu `alt` dan `src`, sedangkan pada component `List` terdapat props `costume-props` yaitu `data`.
 
 Selanjutnya kita import component `props` pada App.js
 <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2/tree/3-frontend-react-js-fundamental/src">

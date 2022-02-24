@@ -6,37 +6,41 @@ sidebar_position: 2
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sebelum implementasi `React Native`, kita perlu melakukan beberapa persiapan seperti `installasi package`dan `refactor code`.
+Sebelum menggunakan `React Native`, kita perlu melakukan beberapa persiapan seperti `installasi package`dan `refactor code`.
 
 ## 2.1 Installasi React Native
 
-Kita perlu menginstall Expo global terlebih dahulu untuk implementasi `React Native Expo`
+Kita perlu menginstall Expo global terlebih dahulu Expo adalah adalah framework berbasis react native yang digunakan juga untuk mengembangkan aplikasi dengan tujuan yang sama yaitu dapat berjalan pada Android dan IOS.
 
 Install Expo Global
 
-  ```bash
-  npm install -g expo-cli
-  ```
+```bash
+npm install -g expo-cli
+```
 
 Selanjutnya kita buat project react native dengan nama `my-app` dengan perintah berikut:
-  ```bash
-  expo init my-app
-  ```
+
+```bash
+expo init my-app
+```
 
 Kemudian masuk ke direktori project yang berhasil dibuat
-  ```bash
-  cd my-app
-  ```
+
+```bash
+cd my-app
+```
+
 Jalankan project dengan perintah berikut:
-  ```bash
-  npm start
-  ```
+
+```bash
+npm start
+```
+
 <br />
 <center>
   <img alt="" src={useBaseUrl('img/docs/rn-2.png')} width="25%"/>
 </center>
-<br />  
-
+<br />
 
 ## 2.2 Struktur Folder
 

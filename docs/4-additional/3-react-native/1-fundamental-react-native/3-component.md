@@ -37,9 +37,9 @@ export default function header() {
 }
 ```
 
-Pada component header diatas terdapat `View` dan `Text`, View fungsinya sama seperti `div` pada html, yang berfungsi untuk membungkus blok code, selanjutnya tag `Text` digunakan untuk membungkus sebuah text, jika tidak di bungkus dengan tag `Text` maka code akan error.
+Pada component header diatas terdapat `View` dan `Text`, View berfungsi sama seperti `div` pada html, yang berfungsi untuk membungkus blok code, selanjutnya tag `Text` digunakan untuk membungkus sebuah text, pada `React Native` kita tidak bisa langsung memasukan sebuah text di dalam code jadi kita perlu membungkus dengan tag `Text` jika tidak maka code akan terjadi error.
 
-Selanjutnya kita buat component content
+Selanjutnya kita membuat component content
 <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2/tree/3-frontend-react-js-fundamental/src">
 Contoh code
 </a>
@@ -72,7 +72,7 @@ export default function content() {
 }
 ```
 
-Selanjutnya import component header dan content pada App.js
+Selanjutnya import component header dan content pada file App.js
 
 <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2/tree/3-frontend-react-js-fundamental/src">
 Contoh code
@@ -101,8 +101,7 @@ export default function App() {
 }
 ```
 
-Keterangan code diatas, kita menggabungkan component header dan content dalam App.js agar pertama kali project di jalankan menampilkan header dan content yang sudah digabungkan, kemudian fungsi `StatusBar` adalah agar seluruh tampilan dari aplikasi full sampai ke header.
-
+Penjelasan pada code diatas, Menggabungkan component header dan content dalam file `App.js` agar pertama kali saat project di jalankan akan menampilkan component tersebut selain itu kita juga menambahkan `StatusBar` pada file `App.js` dimana fungsi dari `StatusBar` adalah agar seluruh component dapat memiliki tampilan headers `StatusBar` yang selaras dari satu screen maupun comonent yang lain.
 
 <div>
 <a class="btn-demo" href="https://snack.expo.dev/@demo.dumbways/github.com-demo-dumbways-fundamental-react-native@1.component">

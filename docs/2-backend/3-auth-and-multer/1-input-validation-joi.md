@@ -16,9 +16,10 @@ npm install joi
 
 ### 1.1 Register
 
-Selanjutnya kita implementasikan pada function controller register, seperti berikut:
+Selanjutnya kita implementasikan pada fungsi controller register, seperti berikut:
 
 - import package joi yang sudah diinstal sebelumnya
+
 ```js title=src/controllers/auth.js
 const Joi = require("joi");
 ```
@@ -40,20 +41,17 @@ exports.register = async (req, res) => {
     password: Joi.string().min(6).required(),
   });
 
-    if (error)
+  if (error)
     return res.status(400).send({
       error: {
         message: error.details[0].message,
       },
     });
 
-    try {
-
-    } catch (error) {
-      
-    }
-  }
-  ```
+  try {
+  } catch (error) {}
+};
+```
 
 Selanjutnya Pada bagian `try`, kita akan melakukan proses entri data kedalam database. dan ketika proses memasukan data kedalam database gagal kita akan masukan ke `catch`
 
@@ -102,10 +100,9 @@ exports.register = async (req, res) => {
 };
 ```
 
-
 ### 1.2 Login
 
-- Buatlah handle form input login dan buat kondisi ketika yang diinputkan tidak sesuai dengan yang dibuat maka akan menampilkan error.
+- Buatlah handle form input login dan buat kondisi ketika yang diinputkan tidak sesuai dengan yang dibuat maka akan menampilkan error. Lakukan langkah pengerjaan yang sama seperti pada saat membuat fungsi pada controller register.
 
 ```js title=src/controllers/auth.js
 // this code continues from the previous code
@@ -116,19 +113,15 @@ exports.register = async (req, res) => {
   });
 
   if (error)
-  return res.status(400).send({
-    error: {
-      message: error.details[0].message,
-    },
-  });
+    return res.status(400).send({
+      error: {
+        message: error.details[0].message,
+      },
+    });
 
   try {
-
-  } catch (error) {
-
-  }
-
-}
+  } catch (error) {}
+};
 ```
 
 ```js title=src/controllers/auth.js {17-46}
@@ -181,7 +174,7 @@ exports.login = async (req, res) => {
 };
 ```
 
-Selanjutnya import controller dan tambahkan route login dan register
+Selanjutnya import controller dan tambahkan route login dan register pada file `src/routes/index.js`
 
 <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/1-auth-and-multer/src/routes/index.js">
 Contoh code

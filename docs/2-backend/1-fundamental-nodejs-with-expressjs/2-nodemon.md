@@ -31,7 +31,7 @@ yarn global add nodemon
 selain itu kita dapat menginstall `nodemon` secara lokal dengan menginstal spesifik project yang akan kita pasang `nodemon`. ketika kita melakukan installasi `nodemon` secara lokal kita dapat menginstall `nodemon` sebagai depedency `dev` dengan (`--dev`)
 
 ```bash
-npm add nodemon --dev
+npm install nodemon --dev
 ```
 
 atau menggunakan `yarn` :
@@ -93,7 +93,7 @@ Contoh code
 <br />
 <br />
 
-untuk menjalankan `Nodemon` juga dapat di setup seperti file berikut :
+untuk menjalankan `Nodemon` kita juga dapat melakukan setup seperti file berikut :
 
 ```json {7} title=package.json
 {
@@ -116,7 +116,7 @@ untuk menjalankan `Nodemon` juga dapat di setup seperti file berikut :
 }
 ```
 
-Jalankan nodemon dengan perintah berikut ...
+Jalankan nodemon dengan perintah berikut
 
 ```
 npm start
