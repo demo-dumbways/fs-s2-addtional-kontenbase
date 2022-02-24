@@ -19,7 +19,6 @@ npm install joi
 Selanjutnya kita implementasikan pada function controller register, seperti berikut:
 
 - import package joi yang sudah diinstal sebelumnya
-<<<<<<< HEAD
 ```js title=src/controllers/auth.js
 const Joi = require("joi");
 ```
@@ -40,21 +39,6 @@ exports.register = async (req, res) => {
     email: Joi.string().email().min(6).required(),
     password: Joi.string().min(6).required(),
   });
-=======
-  ```js title=controllers/auth.js
-  const Joi = require("joi");
-  ```
-
-- Buatlah handle form input register dan buat kondisi ketika yang diinputkan tidak sesuai dengan yang dibuat maka akan menampilkan error.
-
-  ```js title=controllers/auth.js
-  exports.register = async (req, res) => {
-    const schema = Joi.object({
-      name: Joi.string().min(5).required(),
-      email: Joi.string().email().min(6).required(),
-      password: Joi.string().min(6).required(),
-    });
->>>>>>> 923ee0aaa3ac7075d84d279e4401ab543bf0eff4
 
     if (error)
     return res.status(400).send({
