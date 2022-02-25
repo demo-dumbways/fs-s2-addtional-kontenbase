@@ -221,7 +221,7 @@ Cara mengambil data menggunakan `Postman` sebagai berikut:
 - Contoh endpoint :
 
   ```
-  http://localhost:5000/orm/api/v1/products
+  https://ebook-code-results-stage-2-be.herokuapp.com/orm/api/v1/products
   ```
   ```
   https://ebook-code-results-stage-2-be.herokuapp.com/orm/api/v1/add-product
