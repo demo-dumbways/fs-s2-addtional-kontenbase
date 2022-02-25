@@ -142,3 +142,9 @@ router.delete('/user/:id', deleteUser)
 
 module.exports = router
 ```
+
+Berikut contoh endpoint yang dapat Anda gunakan untuk melakukan proses delete data:
+
+```
+https://ebook-code-results-stage-2-be.herokuapp.com/orm/api/v1/user/1
+```

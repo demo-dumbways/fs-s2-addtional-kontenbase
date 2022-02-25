@@ -126,3 +126,9 @@ router.get('/user/:id', getUser)
 
 module.exports = router
 ```
+
+Berikut contoh endpoint yang dapat Anda gunakan untuk melakukan proses fetching single data:
+
+```
+https://ebook-code-results-stage-2-be.herokuapp.com/orm/api/v1/user/1
+```

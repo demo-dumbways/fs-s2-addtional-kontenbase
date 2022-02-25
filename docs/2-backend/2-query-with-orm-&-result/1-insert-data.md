@@ -95,3 +95,9 @@ router.post('/user', addUser)
 
 module.exports = router
 ```
+
+Berikut contoh endpoint yang dapat Anda gunakan untuk melakukan proses insert data:
+
+```
+https://ebook-code-results-stage-2-be.herokuapp.com/orm/api/v1/user
+```

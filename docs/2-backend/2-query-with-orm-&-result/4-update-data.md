@@ -144,3 +144,9 @@ router.patch('/user/:id', updateUser)
 
 module.exports = router
 ```
+
+Berikut contoh endpoint yang dapat Anda gunakan untuk melakukan proses update data:
+
+```
+https://ebook-code-results-stage-2-be.herokuapp.com/orm/api/v1/user/1
+```

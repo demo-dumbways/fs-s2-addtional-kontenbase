@@ -114,3 +114,9 @@ router.get('/users', getUsers)
 
 module.exports = router
 ```
+
+Berikut contoh endpoint yang dapat Anda gunakan untuk melakukan proses fetching multiple data:
+
+```
+https://ebook-code-results-stage-2-be.herokuapp.com/orm/api/v1/users
+```

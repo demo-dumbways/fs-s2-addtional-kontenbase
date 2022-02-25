@@ -204,7 +204,7 @@ Cara mengambil data menggunakan `Postman` sebagai berikut:
 - Contoh endpoint
 
   ```
-  http://localhost:5000/api/v1/user-products
+  http://localhost:5000/orm/api/v1/user-products
   ```
 - Silakan tekan tombol `Send` 
         

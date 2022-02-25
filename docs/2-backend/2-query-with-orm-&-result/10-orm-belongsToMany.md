@@ -146,7 +146,7 @@ Cara mengambil data menggunakan `Postman` sebagai berikut:
 - Contoh endpoint :
 
   ```
-  http://localhost:5000/api/v1/products
+  http://localhost:5000/orm/api/v1/products
   ```
 
 - Tekan tombol `Send` dan pastikan response yang Anda terima sesuai dengan data yang tersimpan pada tabel `product` dan `category`
