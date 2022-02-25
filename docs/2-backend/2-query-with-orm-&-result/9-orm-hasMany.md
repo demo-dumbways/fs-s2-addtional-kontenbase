@@ -198,13 +198,13 @@ module.exports = router
 
 Cara mengambil data menggunakan `Postman` sebagai berikut:
 
-- Buat dua request baru, yang bernama `user product`
+- Buat request baru, yang bernama `user-products`
 - Gunakan HTTP Method: `GET`
 - Gunakan endpoint: `/user-products
 - Contoh endpoint
 
   ```
-  http://localhost:5000/orm/api/v1/user-products
+  https://ebook-code-results-stage-2-be.herokuapp.com/orm/api/v1/user-products
   ```
 - Silakan tekan tombol `Send` 
         

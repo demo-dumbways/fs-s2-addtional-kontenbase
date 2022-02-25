@@ -224,7 +224,7 @@ Cara mengambil data menggunakan `Postman` sebagai berikut:
   http://localhost:5000/orm/api/v1/products
   ```
   ```
-  http://localhost:5000/orm/api/v1/add-product
+  https://ebook-code-results-stage-2-be.herokuapp.com/orm/api/v1/add-product
   ```
 - Tekan tombol `Send` dan pastikan response yang Anda terima sesuai dengan data yang tersimpan pada tabel `product`
 

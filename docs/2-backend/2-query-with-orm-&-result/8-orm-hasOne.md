@@ -147,7 +147,7 @@ Cara mengambil data menggunakan `Postman` sebagai berikut:
 - Contoh endpoint pengambilan data user berdasarkan `id`:
 
   ```
-  http://localhost:5000/orm/api/v1/user/1
+ https://ebook-code-results-stage-2-be.herokuapp.com/orm/api/v1/user/1
   ```
   \*Angka `1` merupakan `id` dari `user`
 - Silakan tekan tombol `Send` dan pastikan response yang Anda terima sesuai dengan data yang tersimpan pada tabel `user`
