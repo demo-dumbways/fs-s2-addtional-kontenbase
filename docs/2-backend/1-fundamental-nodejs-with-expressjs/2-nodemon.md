@@ -86,6 +86,8 @@ Output
 `Successed` app listening on port 3000!
 ```
 
+untuk menjalankan `Nodemon` juga dapat di setup seperti file berikut :
+
 <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/2-expressjs-fundamental/package.json">
 Contoh code
 </a>
@@ -93,8 +95,11 @@ Contoh code
 <br />
 <br />
 
+<<<<<<< HEAD
+=======
 untuk menjalankan `Nodemon` kita juga dapat melakukan setup seperti file berikut :
 
+>>>>>>> 06681e885a6db92592726b6f8e4447b2fc747376
 ```json {7} title=package.json
 {
   "name": "backend-concept",

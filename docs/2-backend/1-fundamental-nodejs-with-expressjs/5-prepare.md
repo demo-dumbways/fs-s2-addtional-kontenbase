@@ -57,14 +57,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ## 5.2 Database
 
 - Buat sebuah database terlebih dahulu (Contoh: `course-express`)
-- Atur konfigurasi koneksi antara aplikasi `express-api-app` dengan database
+- Atur konfigurasi koneksi antara aplikasi `express-api-app` dengan `database`
+
   ```json {2-8} title=config/config.json
   {
     "development": {
       "username": "root",
-      "password": null,
-      "database": "database_development",
-      "host": "127.0.0.1",
+      "password": "root",
+      "database": "course-express",
+      "host": "localhost",
+      "port": 5432,
       "dialect": "PostgreSQL"
     },
     "test": {
@@ -83,6 +85,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
     }
   }
   ```
+
 - Buat sebuah tabel beserta attribute didalamnya menggunakan `sequelize-cli` seperti berikut:
 
   ```bash

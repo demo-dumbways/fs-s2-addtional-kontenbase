@@ -29,7 +29,7 @@ Ket :
 
 **API** adalah `Application Programming Interface` adalah antarmuka yang dapat menghubungkan satu aplikasi dengan aplikasi lain. Dengan demikian, API bertindak sebagai perantara antara aplikasi yang berbeda, baik dalam aplikasi yang sama platform atau lintas platform.
 
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/2-expressjs-fundamental/package.json">
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/3-expressjs-fundamental/index.js">
 Contoh code
 </a>
 

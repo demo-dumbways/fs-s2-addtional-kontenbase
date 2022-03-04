@@ -31,6 +31,13 @@ express-api-app
 
 **Controller** berfungsi sebagai handler. Ketika client mengakses `route`, maka selanjutnya system akan membawa ke `controller` yang dituju kemudian akan mengeksekusi code yang terdapat didalam `controller` tersebut.
 
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/4-expressjs-fundamental/src/controllers/todo.js">
+Contoh code
+</a>
+
+<br />
+<br />
+
 ```js {1-17,19-34,36-54,56-73,75-102,104-122} title=todo.js
 let todos = [
   {
@@ -160,6 +167,13 @@ exports.deleteTodo = async (req, res) => {
 
 Pada file ini terdapat proses penghubung antara `route` dan `controller`.
 
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/4-expressjs-fundamental/src/routes/index.js">
+Contoh code
+</a>
+
+<br />
+<br />
+
 ```js {6-12,15-19} title=index.js
 const express = require('express');
 
@@ -188,6 +202,13 @@ module.exports = router;
 
 Pada bagian ini kita melakukan `grouping` berdasarkan `route` yang telah dibuat pada folder `routes`.
 
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/4-expressjs-fundamental/index.js">
+Contoh code
+</a>
+
+<br />
+<br />
+
 ```js {4,13} title=index.js
 const express = require('express');
 
@@ -205,10 +226,6 @@ app.use('/api/v1/', router);
 
 app.listen(port, () => console.log(`Listening on port ${port}!`));
 ```
-
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/4-expressjs-fundamental">
-Contoh code
-</a>
 
 ### 4.5 Akses API Group route dengan Postman
 
@@ -230,4 +247,8 @@ Untuk menggunakan grouping route, Anda dapat menambahkan `baseUrl` terlebih dahu
 
 ```
 https://ebook-code-results-stage-2-backend-git-4-e-a80eda-demo-dumbways.vercel.app/api/v1/todos
+```
+
+```
+
 ```
