@@ -1,14 +1,14 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
-# 4. Fetching
+# 5. Fetching
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Berikut langkah-langkah mengambil data dari `Server`:
 
-### 4.1 Product (Customer)
+### 5.1 Product (Customer)
 
 > Path: `client/src/pages/Product.js`
 
@@ -77,7 +77,11 @@ Berikut langkah-langkah mengambil data dari `Server`:
     Demo
     </a>
 
-### 4.2 Product (Admin)
+    Silakan login menggunakan akun `customer` dibawah ini:
+    - email: `customer@mail.com`
+    - password: `123456`
+
+### 5.2 Product (Admin)
 
 > Path: `client/src/pages/ProductAdmin.js`
 
@@ -98,7 +102,11 @@ Berikut langkah-langkah mengambil data dari `Server`:
     Demo
     </a>
 
-### 4.3 Detail Product
+    Silakan login menggunakan akun `admin` dibawah ini:
+    - email: `admin@mail.com`
+    - password: `123456`
+
+### 5.3 Detail Product
 
 > Path: `client/src/pages/DetailProduct.js`
 
@@ -119,7 +127,11 @@ Berikut langkah-langkah mengambil data dari `Server`:
     Demo
     </a>
 
-### 4.4 Profile & Transaction
+    Silakan login menggunakan akun `customer` dibawah ini:
+    - email: `customer@mail.com`
+    - password: `123456`
+
+### 5.5 Profile & Transaction
 
 > Path: `client/src/pages/Profile.js`
 
@@ -140,7 +152,11 @@ Berikut langkah-langkah mengambil data dari `Server`:
     Demo
     </a>
 
-### 4.5 Category
+    Silakan login menggunakan akun `customer` dibawah ini:
+    - email: `customer@mail.com`
+    - password: `123456`
+
+### 5.5 Category
 
 > Path: `client/src/pages/CategoryAdmin.js`
 
@@ -160,3 +176,7 @@ Berikut langkah-langkah mengambil data dari `Server`:
     <a class="btn-demo" href="https://ebook-code-results-stage-2-integration-frontend-ruby.vercel.app/category-admin">
     Demo
     </a>
+
+    Silakan login menggunakan akun `admin` dibawah ini:
+    - email: `admin@mail.com`
+    - password: `123456`

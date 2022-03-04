@@ -1,14 +1,14 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 ---
 
-# 5. Update
+# 6. Update
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Berikut langkah-langkah mengupdate data:
 
-### 5.1 Product
+### 6.1 Product
 
 `Login as Admin`
 
@@ -126,7 +126,11 @@ Berikut langkah-langkah mengupdate data:
     Demo
     </a>
 
-### 5.2 Category
+    Silakan login menggunakan akun `admin` dibawah ini:
+    - email: `admin@mail.com`
+    - password: `123456`
+
+### 6.2 Category
 
 `Login as Admin`
 
@@ -148,3 +152,7 @@ Berikut langkah-langkah mengupdate data:
     <a class="btn-demo" href="https://ebook-code-results-stage-2-integration-frontend-ruby.vercel.app/category-admin">
     Demo
     </a>
+
+    Silakan login menggunakan akun `admin` dibawah ini:
+    - email: `admin@mail.com`
+    - password: `123456`

@@ -1,8 +1,8 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
-# 3. Handling Login with useContext
+# 4. Handling Login with useContext
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -10,9 +10,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Oleh karena itu kita perlu `useContext` untuk membuat `sistem` yang dapat mengecek apakah `user` tersebut telah `login` ke `sistem` dan jika browser di `refresh` status user akan `tetap login` disetiap komponent.
 
-## 3.1 Server Side
+## 4.1 Server Side
 
 Pada sisi `Server` kita perlu membuat sebuah `endpoint` yang dapat menangani pengecekan `token` yang dikirim dari `client`.
+
+
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-integration-backend/blob/main/src/controllers/auth.js">
+    Contoh Code
+</a>
+
+<br />
+<br />
 
 ```js {4,6-13,15-19,24-29} title=src/controllers/auth.js
 exports.checkAuth = async (req, res) => {
@@ -56,11 +64,8 @@ exports.checkAuth = async (req, res) => {
 };
 ```
 
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-integration-backend/blob/main/src/controllers/auth.js">
-    Contoh Code
-</a>
 
-## 3.2 Client Side
+## 4.2 Client Side
 
 - Pada file `App.js`, tambahkan code berikut:
 
@@ -145,13 +150,17 @@ exports.checkAuth = async (req, res) => {
     }, []);
     ```
 
-    <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-integration-frontend/blob/main/src/App.js">
-        Contoh Code
-    </a>
+  - Klik tombol dibawah ini untuk melihat `full code`
 
-    <br />
-    <br />
-    <br />
+    <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-integration-frontend/blob/main/src/App.js">
+          Contoh Code
+      </a>
+
+      <br />
+      <br />
+      <br />
+
+
 
 - Pada file `userContext.js`, tambahkan code berikut:
 
@@ -218,6 +227,7 @@ exports.checkAuth = async (req, res) => {
       );
     };
     ```
+  - Klik tombol dibawah ini untuk melihat `full code`
 
     <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-integration-frontend/blob/main/src/context/userContext.js">
         Contoh Code

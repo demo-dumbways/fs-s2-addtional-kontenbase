@@ -1,22 +1,16 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
-# 1. Prepare
+# 2. Prepare
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sebelum melakukan `Integration`, kita perlu melakukan beberapa persiapan seperti mengatur `struktur folder`, `installasi package`, dan `refactor code`.
 
-## 1.1 Struktur Folder
+## 2.1 Struktur Folder
 
 Buatlah sebuah folder yang akan menambung aplikasi `Frontend` (Client) dan `Backend` (Server), seperti berikut:
-
-```text {2,3}
-DumbGram Integration
-┣ client
-┗ server
-```
 
 <a class="btn-example-code" href="https://github.com/demo-dumbways/-ebook-code-results-stage-2-integration">
 Contoh Folder
@@ -25,9 +19,15 @@ Contoh Folder
 <br />
 <br />
 
+```text {2,3}
+DumbGram Integration
+┣ client
+┗ server
+```
+
 Folder `client` berisikan aplikasi `ReactJs` (Frontend) dan Folder `Server` berisikan aplikasi `ExpressJS` (Backend)
 
-## 1.2 Installasi Package
+## 2.2 Installasi Package
 
 Kita perlu menginstall beberapa package yang akan digunakan untuk keperluan proses `Integration`
 
@@ -65,13 +65,20 @@ Kita perlu menginstall beberapa package yang akan digunakan untuk keperluan pros
 
   For more info about `React-Query` please refer to this [Link](https://react-query.tanstack.com/overview)
 
-## 1.3 Code
+## 2.3 Code
 
 Kita juga perlu menambahkan beberapa code dibawah ini, baik pada `Server Side` dan `Client Side`
 
 ### Code for `Server Side`
 
 - Tambahkan code dibawah ini pada file `package.json`
+
+  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-integration-backend/blob/main/package.json">
+  Contoh Code
+  </a>
+
+  <br />
+  <br />
 
   ```json title=server/package.json
   "scripts": {
@@ -81,10 +88,6 @@ Kita juga perlu menambahkan beberapa code dibawah ini, baik pada `Server Side` d
   },
   ```
 
-  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-integration-backend/blob/main/package.json">
-  Contoh Code
-  </a>
-
   Code diatas bertujuan jika kita ingin menjalankan kedua aplikasi (Client & Server) secara `bersamaan`, maka kita dapat menggunakan perintah:
 
   ```bash
@@ -92,6 +95,13 @@ Kita juga perlu menambahkan beberapa code dibawah ini, baik pada `Server Side` d
   ```
 
 - Tambahkan code dibawah ini pada file `index.js`
+
+  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-integration-backend/blob/main/index.js">
+  Contoh Code
+  </a>
+
+  <br />
+  <br />
 
   ```js {1,3,5} title=server/index.js
   const cors = require('cors');
@@ -101,15 +111,19 @@ Kita juga perlu menambahkan beberapa code dibawah ini, baik pada `Server Side` d
   app.use(cors());
   ```
 
-  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-integration-backend/blob/main/index.js">
-  Contoh Code
-  </a>
 
   Code diatas adalah cara memasang `cors` pada aplikasi `backend` dan mengambil value `PORT` dari `server hosting` jika kita telah melakukan `deploy`.
 
 ### Code for `Client Side`
 
 - Tambahkan code dibawah ini pada file `api.js`
+
+  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-integration-frontend/blob/main/src/config/api.js">
+  Contoh Code
+  </a>
+
+  <br />
+  <br />
 
   ```js {1,3-6,8-14} title=client/src/config/api.js
   import axios from 'axios';
@@ -128,9 +142,6 @@ Kita juga perlu menambahkan beberapa code dibawah ini, baik pada `Server Side` d
   };
   ```
 
-  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-integration-frontend/blob/main/src/config/api.js">
-  Contoh Code
-  </a>
 
   Code diatas terdapat 2 function, Function `API` untuk setup baseURL atau `Server Url` agar `client` dapat mengetahui `server` yang akan dituju, `Server Url` dapat diambil dari `Environment Variable` `REACT_APP_SERVER_URL` jika telah melakukan `deploy`. Function `setAuthToken` bertujuan agar dapat menyimpan token kedalam `headers`.
 
@@ -143,6 +154,13 @@ Kita juga perlu menambahkan beberapa code dibawah ini, baik pada `Server Side` d
   ```
 
   Init Client and set QueryClientProvider:
+
+  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-integration-frontend/blob/main/src/index.js">
+  Contoh Code
+  </a>
+
+  <br />
+  <br />
 
   ```jsx {1,6,10}
   const client = new QueryClient();
@@ -161,8 +179,5 @@ Kita juga perlu menambahkan beberapa code dibawah ini, baik pada `Server Side` d
   );
   ```
 
-  <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-integration-frontend/blob/main/src/index.js">
-  Contoh Code
-  </a>
 
   Menggunakan component `QueryClientProvider` untuk `menghubungkan` dan `menyediakan` `QueryClient` ke aplikasi.

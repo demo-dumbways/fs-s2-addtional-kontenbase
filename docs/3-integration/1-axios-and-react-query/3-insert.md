@@ -1,14 +1,14 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
-# 2. Insert
+# 3. Insert
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Berikut langkah-langkah mengirim data ke `Server`:
 
-## 2.1 Register
+## 3.1 Register
 
 > Path: `client/src/components/auth/Register.js`
 
@@ -95,7 +95,7 @@ Berikut langkah-langkah mengirim data ke `Server`:
     Demo
     </a>
 
-## 2.2 Login
+## 3.2 Login
 
 > Path: `client/src/components/auth/Login.js`
 
@@ -111,11 +111,21 @@ Berikut langkah-langkah mengirim data ke `Server`:
   <br />
   <br />
 
-    <a class="btn-demo" href="https://ebook-code-results-stage-2-integration-frontend-ruby.vercel.app/auth">
-    Demo
-    </a>
+  <a class="btn-demo" href="https://ebook-code-results-stage-2-integration-frontend-ruby.vercel.app/auth">
+  Demo
+  </a>
 
-## 2.3 Product
+  Silakan `login` menggunakan akun yang telah Anda `daftarkan` atau gunakan akun dibawah ini:
+
+  - Akun Admin:
+    - email: `admin@mail.com`
+    - password: `123456`
+  - Akun Customer:
+    - email: `customer@mail.com`
+    - password: `123456`
+
+
+## 3.3 Product
 
 > Path: `client/src/pages/AddProductAdmin.js`
 
@@ -171,7 +181,11 @@ Karena didalam data `product` terdapat data berupa `file` yaitu file `gambar pro
     Demo
     </a>
 
-## 2.4 Category
+    Silakan login menggunakan akun `admin` dibawah ini:
+    - email: `admin@mail.com`
+    - password: `123456`
+
+## 3.4 Category
 
 > Path: `client/src/pages/AddCategoryAdmin.js`
 
@@ -193,3 +207,7 @@ Karena didalam data `product` terdapat data berupa `file` yaitu file `gambar pro
     <a class="btn-demo" href="https://ebook-code-results-stage-2-integration-frontend-ruby.vercel.app/add-product">
     Demo
     </a>
+
+    Silakan login menggunakan akun `admin` dibawah ini:
+    - email: `admin@mail.com`
+    - password: `123456`
