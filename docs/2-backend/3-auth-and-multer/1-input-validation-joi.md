@@ -16,48 +16,46 @@ npm install joi
 
 ### 1.1 Register
 
-Selanjutnya kita implementasikan pada function controller register, seperti berikut:
+Selanjutnya kita implementasikan pada fungsi controller register, seperti berikut:
 
 - import package joi yang sudah diinstal sebelumnya
-  ```js title=controllers/auth.js
-  const Joi = require("joi");
-  ```
+
+```js title=src/controllers/auth.js
+const Joi = require("joi");
+```
 
 - Buatlah handle form input register dan buat kondisi ketika yang diinputkan tidak sesuai dengan yang dibuat maka akan menampilkan error.
 
-  ```js title=controllers/auth.js
-  exports.register = async (req, res) => {
-    const schema = Joi.object({
-      name: Joi.string().min(5).required(),
-      email: Joi.string().email().min(6).required(),
-      password: Joi.string().min(6).required(),
-    });
-
-    if (error)
-    return res.status(400).send({
-      error: {
-        message: error.details[0].message,
-      },
-    });
-
-    try {
-
-    } catch (error) {
-      
-    }
-  }
-  ```
-
-Selanjutnya Pada bagian `try`, kita akan melakukan proses entri data kedalam database. dan ketika proses memasukan data kedalam database gagal kita akan masukan ke `catch`
-
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/1-expressjs-fundamental/index.js">
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/1-auth-and-multer/src/controllers/auth.js">
 Contoh code
 </a>
 
 <br />
 <br />
 
-```js js title=controllers/auth.js {21-40}
+```js title=src/controllers/auth.js
+exports.register = async (req, res) => {
+  const schema = Joi.object({
+    name: Joi.string().min(5).required(),
+    email: Joi.string().email().min(6).required(),
+    password: Joi.string().min(6).required(),
+  });
+
+  if (error)
+    return res.status(400).send({
+      error: {
+        message: error.details[0].message,
+      },
+    });
+
+  try {
+  } catch (error) {}
+};
+```
+
+Selanjutnya Pada bagian `try`, kita akan melakukan proses entri data kedalam database. dan ketika proses memasukan data kedalam database gagal kita akan masukan ke `catch`
+
+```js js title=src/controllers/auth.js {21-40}
 const { user } = require("../../models");
 
 const Joi = require("joi");
@@ -102,12 +100,11 @@ exports.register = async (req, res) => {
 };
 ```
 
-
 ### 1.2 Login
 
-- Buatlah handle form input login dan buat kondisi ketika yang diinputkan tidak sesuai dengan yang dibuat maka akan menampilkan error.
+- Buatlah handle form input login dan buat kondisi ketika yang diinputkan tidak sesuai dengan yang dibuat maka akan menampilkan error. Lakukan langkah pengerjaan yang sama seperti pada saat membuat fungsi pada controller register.
 
-```js title=controllers/auth.js
+```js title=src/controllers/auth.js
 // this code continues from the previous code
 exports.register = async (req, res) => {
   const schema = Joi.object({
@@ -116,29 +113,18 @@ exports.register = async (req, res) => {
   });
 
   if (error)
-  return res.status(400).send({
-    error: {
-      message: error.details[0].message,
-    },
-  });
+    return res.status(400).send({
+      error: {
+        message: error.details[0].message,
+      },
+    });
 
   try {
-
-  } catch (error) {
-
-  }
-
-}
+  } catch (error) {}
+};
 ```
 
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/1-expressjs-fundamental/index.js">
-Contoh code
-</a>
-
-<br />
-<br />
-
-```js title=controllers/auth.js {17-46}
+```js title=src/controllers/auth.js {17-46}
 // this code continues from the previous code
 exports.login = async (req, res) => {
   const schema = Joi.object({
@@ -188,9 +174,16 @@ exports.login = async (req, res) => {
 };
 ```
 
-Selanjutnya import controller dan tambahkan route login dan register
+Selanjutnya import controller dan tambahkan route login dan register pada file `src/routes/index.js`
 
-```js title=routes/index.js {18,32-33}
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/1-auth-and-multer/src/routes/index.js">
+Contoh code
+</a>
+
+<br />
+<br />
+
+```js title=src/routes/index.js {18,32-33}
 const express = require("express");
 
 const router = express.Router();
@@ -228,10 +221,10 @@ router.post("/login", login);
 module.exports = router;
 ```
 
-<img alt="image1-2" src={useBaseUrl('img/docs/image-4-1.png')} width="60%"/>
+<!-- <img alt="image1-2" src={useBaseUrl('img/docs/image-4-1.png')} width="60%"/>
 
 <br />
-<br />
+<br /> -->
 
 <div>
 <a class="btn-demo" href="https://ebook-code-results-stage-2-backend-git-1-e-bef277-demo-dumbways.vercel.app/">

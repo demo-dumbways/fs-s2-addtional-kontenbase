@@ -58,7 +58,7 @@ exports.getUsers = async (req, res) => {
 
 Selanjutnya yang akan kita lakukan adalah mengirimkan response ketika data berhasil difetching ataupun gagal. Response ketika sukses akan kita letakkan kedalam bagian `try`, sedangkan ketika gagal akan kita masukkan kedalam bagian `catch`.
 
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/2-orm-sequelize/src/controllers/user.js">
 Contoh code
 </a>
 
@@ -92,7 +92,7 @@ exports.getUsers = async (req, res) => {
 
 Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses fetching multiple data, agar nantinya pengguna bisa melihat seluruh baris data didalam table user.
 
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/2-orm-sequelize/src/routes/index.js">
 Contoh code
 </a>
 
@@ -113,4 +113,10 @@ router.post('/user', addUser)
 router.get('/users', getUsers)
 
 module.exports = router
+```
+
+Berikut contoh endpoint yang dapat Anda gunakan untuk melakukan proses fetching multiple data:
+
+```
+https://ebook-code-results-stage-2-be.herokuapp.com/orm/api/v1/users
 ```

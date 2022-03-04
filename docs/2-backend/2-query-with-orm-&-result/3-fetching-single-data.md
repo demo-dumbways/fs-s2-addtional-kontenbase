@@ -65,7 +65,7 @@ exports.getUser = async (req, res) => {
 
 Selanjutnya yang akan kita lakukan adalah mengirimkan response ketika data berhasil difetching ataupun gagal. Response ketika sukses akan kita letakkan kedalam bagian `try`, sedangkan ketika gagal akan kita masukkan kedalam bagian `catch`.
 
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/3-orm-sequelize/src/controllers/user.js">
 Contoh code
 </a>
 
@@ -102,7 +102,7 @@ exports.getUser = async (req, res) => {
 
 Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses fetching single data, agar nantinya pengguna bisa melihat baris data dari table user sesuai id yang dikirimkan.
 
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/3-orm-sequelize/src/routes/index.js">
 Contoh code
 </a>
 
@@ -122,7 +122,13 @@ const {
 
 router.post('/user', addUser)
 router.get('/users', getUsers)
-router.get('/user', getUser)
+router.get('/user/:id', getUser)
 
 module.exports = router
+```
+
+Berikut contoh endpoint yang dapat Anda gunakan untuk melakukan proses fetching single data:
+
+```
+https://ebook-code-results-stage-2-be.herokuapp.com/orm/api/v1/user/1
 ```

@@ -14,7 +14,7 @@ Pada rancangan database yang memiliki relasi One to Many adalah user &rarr; prod
 
 Kita akan mencoba melakukan fetching . oleh karna itu pertama kita perlu menentukan relasi `hasMany` kedalam model user.
 
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/9-orm-sequelize/models/user.js">
 Contoh code
 </a>
 
@@ -118,7 +118,7 @@ exports.getUserProducts = async (req, res) => {
 
 Selanjutnya yang akan kita lakukan adalah mengirimkan response ketika data berhasil dimasukkan kedalam database ataupun gagal. Response ketika sukses akan kita letakkan kedalam bagian `try`, sedangkan ketika gagal akan kita masukkan kedalam bagian `catch`.
 
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/9-orm-sequelize/src/controllers/user.js">
 Contoh code
 </a>
 
@@ -156,7 +156,7 @@ exports.getUserProducts = async (req, res) => {
 
 Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses fetching data user product
 
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/9-orm-sequelize/src/routes/index.js">
 Contoh code
 </a>
 
@@ -182,7 +182,7 @@ const { getProducts, addProduct } = require('../controllers/product')
 
 router.post('/user', addUser)
 router.get('/users', getUsers)
-router.get('/user', getUser)
+router.get('/user/:id', getUser)
 router.patch('/user/:id', updateUser)
 router.delete('/user/:id', deleteUser)
 
@@ -198,13 +198,13 @@ module.exports = router
 
 Cara mengambil data menggunakan `Postman` sebagai berikut:
 
-- Buat dua request baru, yang bernama `user product`
+- Buat request baru, yang bernama `user-products`
 - Gunakan HTTP Method: `GET`
 - Gunakan endpoint: `/user-products
 - Contoh endpoint
 
   ```
-  http://localhost:5000/api/v1/user-products
+  https://ebook-code-results-stage-2-be.herokuapp.com/orm/api/v1/user-products
   ```
 - Silakan tekan tombol `Send` 
         

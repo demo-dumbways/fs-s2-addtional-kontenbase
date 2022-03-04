@@ -8,29 +8,29 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Berikut langkah-langkah mengirim data ke `Server`:
 
-### 2.1 Register
+## 2.1 Register
 
 > Path: `client/src/components/auth/Register.js`
 
 - Import `useMutation` dari package `react-query` :
 
   ```js
-  import { useMutation } from 'react-query';
+  import { useMutation } from "react-query";
   ```
 
 - Ambil konfigurasi `baseURL` dari function `API`
 
   ```js
-  import { API } from '../../config/api';
+  import { API } from "../../config/api";
   ```
 
 - Deklarsi `useState` untuk menyimpan data dari form
 
   ```js {1-5,7}
   const [form, setForm] = useState({
-    name: '',
-    email: '',
-    password: '',
+    name: "",
+    email: "",
+    password: "",
   });
 
   const { name, email, password } = form;
@@ -57,7 +57,7 @@ Berikut langkah-langkah mengirim data ke `Server`:
       //Konfigurasi
       const config = {
         headers: {
-          'Content-type': 'application/json',
+          "Content-type": "application/json",
         },
       };
 
@@ -65,7 +65,7 @@ Berikut langkah-langkah mengirim data ke `Server`:
       const body = JSON.stringify(form);
 
       //Mengirim data ke Server melalui API endpoint '/register'
-      await API.post('/register', body, config);
+      await API.post("/register", body, config);
     } catch (error) {
       console.log(error);
     }
@@ -95,7 +95,7 @@ Berikut langkah-langkah mengirim data ke `Server`:
     Demo
     </a>
 
-### 2.2 Login
+## 2.2 Login
 
 > Path: `client/src/components/auth/Login.js`
 
@@ -115,7 +115,7 @@ Berikut langkah-langkah mengirim data ke `Server`:
     Demo
     </a>
 
-### 2.3 Product
+## 2.3 Product
 
 > Path: `client/src/pages/AddProductAdmin.js`
 
@@ -133,21 +133,21 @@ Karena didalam data `product` terdapat data berupa `file` yaitu file `gambar pro
       // Configuration
       const config = {
         headers: {
-          'Content-type': 'multipart/form-data',
+          "Content-type": "multipart/form-data",
         },
       };
 
       // Store data with FormData as object
       const formData = new FormData();
-      formData.set('image', form.image[0], form.image[0].name);
-      formData.set('name', form.name);
-      formData.set('desc', form.desc);
-      formData.set('price', form.price);
-      formData.set('qty', form.qty);
-      formData.set('categoryId', categoryId);
+      formData.set("image", form.image[0], form.image[0].name);
+      formData.set("name", form.name);
+      formData.set("desc", form.desc);
+      formData.set("price", form.price);
+      formData.set("qty", form.qty);
+      formData.set("categoryId", categoryId);
 
       // Insert product data
-      const response = await API.post('/product', formData, config);
+      const response = await API.post("/product", formData, config);
     } catch (error) {
       console.log(error);
     }
@@ -171,7 +171,7 @@ Karena didalam data `product` terdapat data berupa `file` yaitu file `gambar pro
     Demo
     </a>
 
-### 2.4 Category
+## 2.4 Category
 
 > Path: `client/src/pages/AddCategoryAdmin.js`
 

@@ -71,14 +71,14 @@ const token = jwt.sign({id: newUser.id}, SECRET_KEY)
 
 Selanjutnya kita implementasikan, berikut contoh codenya:
 
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/1-expressjs-fundamental/index.js">
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/3-auth-and-multer/src/controllers/auth.js">
 Contoh code
 </a>
 
 <br />
 <br />
 
-```js title=controllers/auth.js {6,36-37,90-91}
+```js title=src/controllers/auth.js {6,36-37,90-91}
 const { user } = require("../../models");
 
 const Joi = require("joi");
@@ -192,7 +192,14 @@ exports.login = async (req, res) => {
 ```
 Selanjutnya buat folder middlewares kemudian buat file auth.js, kemudian ketikan configurasi agar kita data memverifikasi data user ketika mengakses route kita nanti, jika user tidak memiliki token atau token yang dimasukan salah maka user tidak akan bisa mengakses route yang sudah kita buat. 
 
-```js title=middlewares/auth.js
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/3-auth-and-multer/src/middlewares/auth.js">
+Contoh code
+</a>
+
+<br />
+<br />
+
+```js title=src/middlewares/auth.js
 const jwt = require("jsonwebtoken");
 
 exports.auth = (req, res, next) => {
@@ -219,7 +226,14 @@ exports.auth = (req, res, next) => {
 ```
 Selanjutnya kita buat route atau endpoint apa saja yang membutuhkan token, disini kita akan mencontohkan pada route atau endpoint /users, jadi ketika kita ingin mengakses route users kita memerlukan token, jika tidak  memiliki token atau token yang dimasukan salah maka controller getUsers tidak di jalankan dan akan menampilkan error dari configurasi auth.js yang kita buat sebelumnya.
 
-```js title=routes/index.js {13,17}
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/3-auth-and-multer/src/routes/index.js">
+Contoh code
+</a>
+
+<br />
+<br />
+
+```js title=src/routes/index.js {13,17}
 const express = require('express')
 
 const router = express.Router()
@@ -253,10 +267,10 @@ router.post('/login', login)
 module.exports = router
 ```
 
-<img alt="image1-2" src={useBaseUrl('img/docs/image-4-1.png')} width="60%"/>
+<!-- <img alt="image1-2" src={useBaseUrl('img/docs/image-4-1.png')} width="60%"/>
 
 <br />
-<br />
+<br /> -->
 
 <div>
 <a class="btn-demo" href="https://ebook-code-results-stage-2-backend-git-1-e-bef277-demo-dumbways.vercel.app/">

@@ -17,7 +17,7 @@ Pada rancangan database yang memiliki relasi One to One adalah
 
 Kita akan mencoba melakukan fetching dan insert data product. oleh karna itu pertama kita perlu menentukan relasi `belongsTo` kedalam model - model yang saling berkaitan yakni product.
 
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/7-orm-sequelize/models/product.js">
 Contoh code
 </a>
 
@@ -150,7 +150,7 @@ exports.addProduct = async (req, res) => {
 
 Selanjutnya yang akan kita lakukan adalah mengirimkan response ketika data berhasil dimasukkan kedalam database ataupun gagal. Response ketika sukses akan kita letakkan kedalam bagian `try`, sedangkan ketika gagal akan kita masukkan kedalam bagian `catch`.
 
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/7-orm-sequelize/src/controllers/product.js">
 Contoh code
 </a>
 
@@ -179,7 +179,7 @@ exports.addProduct = async (req, res) => {
 
 Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses fetching dan insert data product
 
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/7-orm-sequelize/src/routes/index.js">
 Contoh code
 </a>
 
@@ -201,7 +201,7 @@ const {
 
 router.post('/user', addUser)
 router.get('/users', getUsers)
-router.get('/user', getUser)
+router.get('/user/:id', getUser)
 router.patch('/user/:id', updateUser)
 router.delete('/user/:id', deleteUser)
 
@@ -221,10 +221,10 @@ Cara mengambil data menggunakan `Postman` sebagai berikut:
 - Contoh endpoint :
 
   ```
-  http://localhost:5000/api/v1/products
+  https://ebook-code-results-stage-2-be.herokuapp.com/orm/api/v1/products
   ```
   ```
-  http://localhost:5000/api/v1/add-product
+  https://ebook-code-results-stage-2-be.herokuapp.com/orm/api/v1/add-product
   ```
 - Tekan tombol `Send` dan pastikan response yang Anda terima sesuai dengan data yang tersimpan pada tabel `product`
 
