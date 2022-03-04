@@ -192,5 +192,11 @@ const sendEmail = async (status, transactionId) => {
 };
 ```
 
+berikut adalah hasil notifikasi email yang dikirimkan menggunakan `nodemailer` ketika ada perubahan status transaksi pembayaran 
+
+<center>
+<img alt="image1-2" src={useBaseUrl('img/docs/image-nodemailer-5.png')} width="100%"/>
+</center>
+
 
 
