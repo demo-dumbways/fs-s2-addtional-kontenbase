@@ -338,13 +338,58 @@ router.post('/login', login)
 module.exports = router
 ```
 
-<!-- <img alt="image1-2" src={useBaseUrl('img/docs/image-4-1.png')} width="60%"/>
+## 4.1 Penggunaan
+
+Cara menambah data menggunakan `Postman` sebagai berikut:
+
+- Buat sebuah request baru, yang bernama `product`
+- Gunakan HTTP Method: `POST`
+- Gunakan endpoint: `/product`
+  ```
+  http://localhost:5000/api/v1/product
+  ```
+- Pilih `Body` &rarr; `form-data` &rarr;
+- Ketik pada bagian `Form Data` seperti berikut:
+- Pada bagian Key Image ubah `Text` menjadi `File`
+  ```js title=Request
+  
+    KEY         Value
+    name      Baju Olahraga,
+    desc      Baju olahraga,
+    price     90000,
+    image     File,
+    qty       10,
+    category  Sports,
+  
+  ```
+
+- Silakan tekan tombol `Send`, kemudian Anda akan mendapatkan `Response` seperti berikut:
+
+  ```json title=Response
+  {
+    "status": "success",
+    "data": {
+      "name": "user 1",
+      "desc": "user1@mail.com",
+      "price": "90000",
+      "image": "image.png",
+      "qty": "10",
+      "category": "Sports"
+    }
+  }
+  ```
+## 4.2 Practice
+
+Sesuaikan code Anda dengan contoh code berikut:
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/4-auth-and-multer/src">
+Contoh code
+</a>
 
 <br />
-<br /> -->
+<br />
 
-<div>
-<a class="btn-demo" href="https://ebook-code-results-stage-2-backend-git-1-e-bef277-demo-dumbways.vercel.app/">
-Demo
-</a>
-</div>
+Berikut contoh endpoint yang dapat Anda gunakan:
+
+```
+https://ebook-code-results-stage-2-be.herokuapp.com/auth-and-multer/api/v1/product
+```
