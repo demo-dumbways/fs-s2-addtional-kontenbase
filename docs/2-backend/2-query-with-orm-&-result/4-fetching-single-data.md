@@ -1,8 +1,8 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
-# 3. Fetching Single Data 
+# 4. Fetching Single Data
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -13,54 +13,49 @@ Sama halnya seperti proses entri data sebelumnya, proses kali ini juga akan kita
 ```js {24-30} title=user.js
 // this code continues from the previous code
 exports.getUsers = async (req, res) => {
-    try {
-      const users = await user.findAll({
-        attributes: {
-          exclude: ['password', 'createdAt', 'updatedAt']
-        }
-      })
+  try {
+    const users = await user.findAll({
+      attributes: {
+        exclude: ["password", "createdAt", "updatedAt"],
+      },
+    });
 
-      res.send({
-        status: 'success',
-        data: {
-          users
-        }
-      })
-    } catch (error) {
-      res.send({
-        status: 'failed',
-        message: 'Server Error'
-      })
-    }
-}
+    res.send({
+      status: "success",
+      data: {
+        users,
+      },
+    });
+  } catch (error) {
+    res.send({
+      status: "failed",
+      message: "Server Error",
+    });
+  }
+};
 
 exports.getUser = async (req, res) => {
-    try {
-        
-    } catch (error) {
-
-    }
-}
+  try {
+  } catch (error) {}
+};
 ```
 
-Proses melakukan fetching, kita bisa mengirimkan `parameter` berupa `object`. Parameter yang dikirimkan tentu berupa kondisi data yang akan ditampilkan. Ataupun field - field yang tidak ingin kita fetching . 
+Proses melakukan fetching, kita bisa mengirimkan `parameter` berupa `object`. Parameter yang dikirimkan tentu berupa kondisi data yang akan ditampilkan. Ataupun field - field yang tidak ingin kita fetching .
 
 ```js {4-11} title=user.js
 // this code continues from the above code
 exports.getUser = async (req, res) => {
-    try {
-      const user = await user.findOne({
-        where: {
-          id: id
-        },
-        attributes: {
-          exclude: ['password', 'createdAt', 'updatedAt']
-        }
-      })
-    } catch (error) {
-
-    }
-}
+  try {
+    const user = await user.findOne({
+      where: {
+        id: id,
+      },
+      attributes: {
+        exclude: ["password", "createdAt", "updatedAt"],
+      },
+    });
+  } catch (error) {}
+};
 ```
 
 Selanjutnya yang akan kita lakukan adalah mengirimkan response ketika data berhasil difetching ataupun gagal. Response ketika sukses akan kita letakkan kedalam bagian `try`, sedangkan ketika gagal akan kita masukkan kedalam bagian `catch`.
@@ -75,29 +70,29 @@ Contoh code
 ```js {13-18,20-23} title=user.js
 // this code continues from the above code
 exports.getUser = async (req, res) => {
-    try {
-      const user = await user.findOne({
-        where: {
-          id: id
-        },
-        attributes: {
-          exclude: ['password', 'createdAt', 'updatedAt']
-        }
-      })
+  try {
+    const user = await user.findOne({
+      where: {
+        id: id,
+      },
+      attributes: {
+        exclude: ["password", "createdAt", "updatedAt"],
+      },
+    });
 
-      res.send({
-        status: 'success',
-        data: {
-          user
-        }
-      })
-    } catch (error) {
-      res.send({
-        status: 'failed',
-        message: 'Server Error'
-      })
-    }
-}
+    res.send({
+      status: "success",
+      data: {
+        user,
+      },
+    });
+  } catch (error) {
+    res.send({
+      status: "failed",
+      message: "Server Error",
+    });
+  }
+};
 ```
 
 Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses fetching single data, agar nantinya pengguna bisa melihat baris data dari table user sesuai id yang dikirimkan.
@@ -110,21 +105,17 @@ Contoh code
 <br />
 
 ```js {8,13} title=routes/index.js
-const express = require('express')
+const express = require("express");
 
-const router = express.Router()
+const router = express.Router();
 
-const {
-    addUsers,
-    getUsers,
-    getUser
-} = require('../controllers/user')
+const { addUsers, getUsers, getUser } = require("../controllers/user");
 
-router.post('/user', addUser)
-router.get('/users', getUsers)
-router.get('/user/:id', getUser)
+router.post("/user", addUser);
+router.get("/users", getUsers);
+router.get("/user/:id", getUser);
 
-module.exports = router
+module.exports = router;
 ```
 
 Berikut contoh endpoint yang dapat Anda gunakan untuk melakukan proses fetching single data:

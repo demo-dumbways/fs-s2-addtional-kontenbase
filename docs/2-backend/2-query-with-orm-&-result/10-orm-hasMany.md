@@ -1,14 +1,14 @@
 ---
-sidebar_position: 9
+sidebar_position: 10
 ---
 
-# 9. Relation hasMany
+# 10. Relation hasMany
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## 9.1 Models
+## 10.1 Models
 
-**Method hasMany** merupakan sebuah method yang digunakan pada tabel yang berelasi dengan relasi `One to Many` (ada hubungan antara A dan B, dengan `foreignkey` didefinisikan dalam model target (B)).  Relasi **One to Many** ada ketika satu record di tabel ke-1 memiliki hubungan lebih dari satu record di tabel ke-2.
+**Method hasMany** merupakan sebuah method yang digunakan pada tabel yang berelasi dengan relasi `One to Many` (ada hubungan antara A dan B, dengan `foreignkey` didefinisikan dalam model target (B)). Relasi **One to Many** ada ketika satu record di tabel ke-1 memiliki hubungan lebih dari satu record di tabel ke-2.
 
 Pada rancangan database yang memiliki relasi One to Many adalah user &rarr; product
 
@@ -57,9 +57,9 @@ module.exports = (sequelize, DataTypes) => {
 };
 ```
 
-## 9.2 Controllers
+## 10.2 Controllers
 
-Setelah menentukan relasi pada model user, maka selanjutnya kita akan melakukan proses fetching data akan kita simpan kedalam sebuah modul. Pada modul ini juga akan menangani error handling dengan menggunakan try and catch. 
+Setelah menentukan relasi pada model user, maka selanjutnya kita akan melakukan proses fetching data akan kita simpan kedalam sebuah modul. Pada modul ini juga akan menangani error handling dengan menggunakan try and catch.
 
 ```js title=controllers/user.js {25-31}
 // this code continues from the previous code
@@ -88,14 +88,11 @@ exports.deleteUser = async (req, res) => {
 
 exports.getUserProducts = async (req, res) => {
   try {
-      
-  } catch (error) {
-
-  }
-}
+  } catch (error) {}
+};
 ```
 
-Melakukan fetching data sama saja seperti proses fecthing sebelumnya, yakni bisa menggunakan metode `findAll()`. Pada proses melakukan fetching, kita bisa mengirimkan `parameter` berupa `object`. Parameter yang dikirimkan dapat berupa sebuah kondisi field - field yang tidak ingin kita fetching dan tentunya adalah `model yang akan direlasikan` yakni model `product`. 
+Melakukan fetching data sama saja seperti proses fecthing sebelumnya, yakni bisa menggunakan metode `findAll()`. Pada proses melakukan fetching, kita bisa mengirimkan `parameter` berupa `object`. Parameter yang dikirimkan dapat berupa sebuah kondisi field - field yang tidak ingin kita fetching dan tentunya adalah `model yang akan direlasikan` yakni model `product`.
 
 ```js title=controllers/user.js {4-12}
 //  this code continues from the above code
@@ -104,16 +101,14 @@ exports.getUserProducts = async (req, res) => {
     const data = await user.findAll({
       include: {
         model: product,
-        as: "products"
+        as: "products",
       },
       attributes: {
-        exclude: ['createdAt', 'updatedAt']
-      }
-    })      
-  } catch (error) {
-
-  }
-}
+        exclude: ["createdAt", "updatedAt"],
+      },
+    });
+  } catch (error) {}
+};
 ```
 
 Selanjutnya yang akan kita lakukan adalah mengirimkan response ketika data berhasil dimasukkan kedalam database ataupun gagal. Response ketika sukses akan kita letakkan kedalam bagian `try`, sedangkan ketika gagal akan kita masukkan kedalam bagian `catch`.
@@ -132,27 +127,27 @@ exports.getUserProducts = async (req, res) => {
     const data = await user.findAll({
       include: {
         model: product,
-        as: "products"
+        as: "products",
       },
       attributes: {
-        exclude: ['createdAt', 'updatedAt']
-      }
-    })
+        exclude: ["createdAt", "updatedAt"],
+      },
+    });
 
     res.send({
       status: "success",
-      data
-    });      
+      data,
+    });
   } catch (error) {
     res.send({
       status: "failed",
       message: "Server Error",
     });
   }
-}
+};
 ```
 
-## 9.3 Routes
+## 10.3 Routes
 
 Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses fetching data user product
 
@@ -164,37 +159,36 @@ Contoh code
 <br />
 
 ```js {11,26} title=routes/index.js
-const express = require('express')
+const express = require("express");
 
-const router = express.Router()
+const router = express.Router();
 
 const {
-    addUsers,
-    getUsers,
-    getUser,
-    updateUser,
-    deleteUser,
-    getUserProducts
-} = require('../controllers/user')
+  addUsers,
+  getUsers,
+  getUser,
+  updateUser,
+  deleteUser,
+  getUserProducts,
+} = require("../controllers/user");
 
-const { getProducts, addProduct } = require('../controllers/product')
+const { getProducts, addProduct } = require("../controllers/product");
 
+router.post("/user", addUser);
+router.get("/users", getUsers);
+router.get("/user/:id", getUser);
+router.patch("/user/:id", updateUser);
+router.delete("/user/:id", deleteUser);
 
-router.post('/user', addUser)
-router.get('/users', getUsers)
-router.get('/user/:id', getUser)
-router.patch('/user/:id', updateUser)
-router.delete('/user/:id', deleteUser)
+router.get("/products", getProducts);
+router.post("/product", addProduct);
 
-router.get('/products', getProducts)
-router.post('/product', addProduct)
+router.get("/user-products", getUserProducts);
 
-router.get('/user-products', getUserProducts)
-
-module.exports = router
+module.exports = router;
 ```
 
-## 9.4 Penggunaan
+## 10.4 Penggunaan
 
 Cara mengambil data menggunakan `Postman` sebagai berikut:
 
@@ -206,5 +200,5 @@ Cara mengambil data menggunakan `Postman` sebagai berikut:
   ```
   https://ebook-code-results-stage-2-be.herokuapp.com/orm/api/v1/user-products
   ```
-- Silakan tekan tombol `Send` 
-        
+
+- Silakan tekan tombol `Send`
