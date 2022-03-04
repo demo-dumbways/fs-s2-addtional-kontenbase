@@ -84,7 +84,7 @@ exports.register = async (req, res) => {
     });
 
     res.status(200).send({
-      status: "success...",
+      status: "success",
       data: {
         name: newUser.name,
         email: newUser.email,
@@ -100,7 +100,40 @@ exports.register = async (req, res) => {
 };
 ```
 
-### 1.2 Login
+## 1.2 Penggunaan
+
+Cara menambah data menggunakan `Postman` sebagai berikut:
+
+- Buat sebuah request baru, yang bernama `register`
+- Gunakan HTTP Method: `POST`
+- Gunakan endpoint: `/register`
+  ```
+  http://localhost:5000/api/v1/register
+  ```
+- Pilih `Body` &rarr; `raw` &rarr; ubah `Text` menjadi `JSON`
+- Ketik pada bagian `Request Body` seperti berikut:
+
+  ```json title=Request
+  {
+    "name": "user 1",
+    "email": "user1@mail.com",
+    "password": "123456",
+  }
+  ```
+
+- Silakan tekan tombol `Send`, kemudian Anda akan mendapatkan `Response` seperti berikut:
+
+  ```json title=Response
+  {
+    "status": "success",
+    "data": {
+      "name": "user 1",
+      "email": "user1@mail.com",
+    }
+  }
+  ```
+
+### 1.3 Login
 
 - Buatlah handle form input login dan buat kondisi ketika yang diinputkan tidak sesuai dengan yang dibuat maka akan menampilkan error. Lakukan langkah pengerjaan yang sama seperti pada saat membuat fungsi pada controller register.
 
@@ -176,7 +209,7 @@ exports.login = async (req, res) => {
 
 Selanjutnya import controller dan tambahkan route login dan register pada file `src/routes/index.js`
 
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/blob/1-auth-and-multer/src/routes/index.js">
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/1-auth-and-multer/src">
 Contoh code
 </a>
 
@@ -221,13 +254,50 @@ router.post("/login", login);
 module.exports = router;
 ```
 
-<!-- <img alt="image1-2" src={useBaseUrl('img/docs/image-4-1.png')} width="60%"/>
+
+## 1.4 Penggunaan
+
+Cara menambah data menggunakan `Postman` sebagai berikut:
+
+- Buat sebuah request baru, yang bernama `login`
+- Gunakan HTTP Method: `POST`
+- Gunakan endpoint: `/login`
+  ```
+  http://localhost:5000/api/v1/login
+  ```
+- Pilih `Body` &rarr; `raw` &rarr; ubah `Text` menjadi `JSON`
+- Ketik pada bagian `Request Body` seperti berikut:
+
+  ```json title=Request
+  {
+    "email": "user1@mail.com",
+    "password": "123456",
+  }
+  ```
+
+- Silakan tekan tombol `Send`, kemudian Anda akan mendapatkan `Response` seperti berikut:
+
+  ```json title=Response
+  {
+    "status": "success",
+    "data": {
+      "name": "user 1",
+      "email": "user1@mail.com",
+    }
+  }
+  ```
+## 1.5 Practice
+
+Sesuaikan code Anda dengan contoh code berikut:
+<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2-backend/tree/5-expressjs-fundamental/src">
+Contoh code
+</a>
 
 <br />
-<br /> -->
+<br />
 
-<div>
-<a class="btn-demo" href="https://ebook-code-results-stage-2-backend-git-1-e-bef277-demo-dumbways.vercel.app/">
-Demo
-</a>
-</div>
+Berikut contoh endpoint yang dapat Anda gunakan:
+
+```
+https://ebook-code-results-stage-2-be.herokuapp.com/auth-and-multer/api/v1/login
+```
