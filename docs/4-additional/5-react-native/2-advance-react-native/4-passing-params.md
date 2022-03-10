@@ -6,11 +6,9 @@ sidebar_position: 4
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Selanjutnya kita akan mempelajari terkait passing params kedalam route, yang dimana kita akan mengirimkan data lewat params.
+Selanjutnya kita akan mempelajari bagaimana mempassing sebuah data melalui parameter melalui route, yang dimana berfungsi untuk mengkomunikasikan sebuah data dari satu screen ke screen lain.
 
-Kita implementasikan dengan code berikut:
-
-Sebelumnya kita buat data dummy social media
+Langkah pertama ada kita perlu membuat satu buah screen dimana screen tersebut memiliki sebuah `data dummy` yang berisikan list Platform Video Player, Silakan kalian ketikan code berikut dan berikan nama `listSoc.js`
 
 ```jsx title="src/screens/listSoc.js" {6}
 import * as React from "react";
@@ -28,13 +26,13 @@ export default function Hello({ navigation }) {
       alignItems="center"
       justifyContent="center"
       p={10}
-    >
-    </Box>
+    ></Box>
   );
 }
 ```
 
-Kemudian buat function handlePress untuk mengirimkan data
+Langkah berikut nya kita akan membuat sebuah function yang bernama `handlePress` dimana fungsi ini bertugas untuk mengirimkan data ke screen yang nantinya akan kita tuju yaitu `Detail Social`.
+
 ```jsx title="src/screens/listSoc.js" {8-10}
 import * as React from "react";
 import { Text, Box, FlatList, Pressable } from "native-base";
@@ -55,8 +53,7 @@ export default function Hello({ navigation }) {
       alignItems="center"
       justifyContent="center"
       p={10}
-    >
-    </Box>
+    ></Box>
   );
 }
 ```
@@ -105,8 +102,6 @@ export default function Hello({ navigation }) {
   );
 }
 ```
-
-
 
 <a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2/tree/3-frontend-react-js-fundamental/src">
 Contoh code
@@ -159,7 +154,6 @@ export default function ListSoc({ navigation }) {
     </Box>
   );
 }
-
 ```
 
 <div>

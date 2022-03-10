@@ -6,16 +6,16 @@ sidebar_position: 1
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+`React Navigation` adalah salah satu solusi kita untuk menavigasi tampilan di React Native. React Navigation memberikan kemudahan dalam mengatur pemidahan tampilan dengan menyediakan beberapa kemampuan seperti stack, Drawer, Tab dan Custome navigation pattern yang dapat berjalan pada dua sistem operasi Android maupun IOS.
 
-`React Navigation` adalah salah satu solusi kita untuk menavigasi tampilan di React Native. React Navigation memberikan kemudahan dalam menavigasi tampilan dengan menyediakan kemampuan stack dan tab navigation pattern yang dapat berjalan baik di OS Android maupun IOS.
+Untuk dapat mengimplementasikan `React Navigation`, kita perlu melakukan `instalasi` react navigation terlebih dahulu.
 
-Sebelum implementasi `React Navigation`, kita perlu melakukan persiapan untuk melakukan `instalasi` react navigation.
-
-  ```bash
-  npm install @react-navigation/native
-  ```
+```bash
+npm install @react-navigation/native
+```
 
 Jika menggunakan expo lakukan perintah instal seperti berikut:
-  ```bash
-  expo install react-native-screens react-native-safe-area-context
-  ```
+
+```bash
+expo install react-native-screens react-native-safe-area-context
+```
