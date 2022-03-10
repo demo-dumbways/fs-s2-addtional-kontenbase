@@ -95,11 +95,8 @@ Contoh code
 <br />
 <br />
 
-<<<<<<< HEAD
-=======
 untuk menjalankan `Nodemon` kita juga dapat melakukan setup seperti file berikut :
 
->>>>>>> 06681e885a6db92592726b6f8e4447b2fc747376
 ```json {7} title=package.json
 {
   "name": "backend-concept",

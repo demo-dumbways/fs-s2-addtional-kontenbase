@@ -1,14 +1,14 @@
 ---
-sidebar_position: 8
+sidebar_position: 9
 ---
 
-# 8. Relation hasOne
+# 9. Relation hasOne
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## 8.1 Models
+## 9.1 Models
 
-**Method hasOne** merupakan sebuah method yang digunakan pada tabel yang berelasi dengan relasi `One to One` (ada hubungan antara A dan B, dengan `foreignkey` didefinisikan dalam model target (B)).  Relasi **One to One** ada ketika satu record di tabel ke-1 memiliki hubungan dengan hanya satu record di tabel ke-2, dan dengan cara yang sama, kita dapat mengatakan bahwa satu record di tabel ke-2 terkait dengan hanya satu record di tabel ke-1.
+**Method hasOne** merupakan sebuah method yang digunakan pada tabel yang berelasi dengan relasi `One to One` (ada hubungan antara A dan B, dengan `foreignkey` didefinisikan dalam model target (B)). Relasi **One to One** ada ketika satu record di tabel ke-1 memiliki hubungan dengan hanya satu record di tabel ke-2, dan dengan cara yang sama, kita dapat mengatakan bahwa satu record di tabel ke-2 terkait dengan hanya satu record di tabel ke-1.
 
 Pada rancangan database yang memiliki relasi One to One adalah user &rarr; profile
 
@@ -50,7 +50,7 @@ module.exports = (sequelize, DataTypes) => {
 };
 ```
 
-## 8.2 Controllers
+## 9.2 Controllers
 
 Setelah menentukan relasi pada model user, maka selanjutnya kita akan melakukan proses untuk melakukan fetching data user. Pada bagian sebelumnya kita telah membuat proses CRUD terkait data user, maka kali ini kita cukup menambahkan proses `fetching multitable` yakni table profile dan user.
 
@@ -128,16 +128,16 @@ exports.getUser = async (req, res) => {
 // continuation code is the same as in the template
 ```
 
-## 8.3 Routes
+## 9.3 Routes
 
-Routes yang digunakan untuk melakukan fetching data user beserta profilenya masih sama dengan section sebelumnya, yakni 
+Routes yang digunakan untuk melakukan fetching data user beserta profilenya masih sama dengan section sebelumnya, yakni
 
 ```
 router.get('/users', getUsers)
 router.get('/user/:id', getUser)
 ```
 
-## 8.4 Penggunaan
+## 9.4 Penggunaan
 
 Cara mengambil data menggunakan `Postman` sebagai berikut:
 
@@ -147,8 +147,9 @@ Cara mengambil data menggunakan `Postman` sebagai berikut:
 - Contoh endpoint pengambilan data user berdasarkan `id`:
 
   ```
- https://ebook-code-results-stage-2-be.herokuapp.com/orm/api/v1/user/1
+  https://ebook-code-results-stage-2-be.herokuapp.com/orm/api/v1/user/1
   ```
+
   \*Angka `1` merupakan `id` dari `user`
+
 - Silakan tekan tombol `Send` dan pastikan response yang Anda terima sesuai dengan data yang tersimpan pada tabel `user`
-        

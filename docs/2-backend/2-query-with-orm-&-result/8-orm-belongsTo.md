@@ -1,16 +1,17 @@
 ---
-sidebar_position: 7
+sidebar_position: 8
 ---
 
-# 7. Relation belongsTo
+# 8. Relation belongsTo
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## 7.1 Models
+## 8.1 Models
 
-**Method belongsTo** merupakan sebuah method yang digunakan pada tabel yang berelasi dengan relasi `One to One` (ada hubungan antara A dan B, dengan `foreignkey` didefinisikan dalam model target (A)).  Relasi **One to One** ada ketika satu record di tabel ke-1 memiliki hubungan dengan hanya satu record di tabel ke-2, dan dengan cara yang sama, kita dapat mengatakan bahwa satu record di tabel ke-2 terkait dengan hanya satu record di tabel ke-1.
+**Method belongsTo** merupakan sebuah method yang digunakan pada tabel yang berelasi dengan relasi `One to One` (ada hubungan antara A dan B, dengan `foreignkey` didefinisikan dalam model target (A)). Relasi **One to One** ada ketika satu record di tabel ke-1 memiliki hubungan dengan hanya satu record di tabel ke-2, dan dengan cara yang sama, kita dapat mengatakan bahwa satu record di tabel ke-2 terkait dengan hanya satu record di tabel ke-1.
 
 Pada rancangan database yang memiliki relasi One to One adalah
+
 - profile &rarr; user
 - product &rarr; user
 - transaction &rarr; user
@@ -41,88 +42,84 @@ module.exports = (sequelize, DataTypes) => {
 };
 ```
 
-## 7.2 Controllers
+## 8.2 Controllers
 
-### 7.2.1 getProducts
+### 8.2.1 getProducts
+
 Setelah menentukan relasi pada setiap model, maka selanjutnya kita akan melakukan proses untuk melakukan fetching data product. Pertama kita akan melakukan import model - model yang nantinya akan kita gunakan yakni model product dan user.
 
 ```js title=controllers/product.js
-const { product, user } = require('../../models')
+const { product, user } = require("../../models");
 ```
 
 Selanjutnya melakukan proses fetching data akan kita simpan kedalam sebuah `modul`. Pada modul ini juga akan menangani `error handling` dengan menggunakan `try and catch`.
 
 ```js title=controllers/product.js {3-9}
-const { product, user } = require('../../models')
+const { product, user } = require("../../models");
 
 exports.getProducts = async (req, res) => {
   try {
-
-  } catch (error) {
-
-  }
+  } catch (error) {}
 };
 ```
 
-Melakukan fetching data sama saja seperti proses fecthing sebelumnya, yakni bisa menggunakan metode `findAll()` ataupun `findOne()`. Pada proses melakukan fetching, kita bisa mengirimkan `parameter` berupa `object`. Parameter yang dikirimkan dapat berupa sebuah kondisi field - field yang tidak ingin kita fetching dan tentunya adalah `model yang akan direlasikan` yakni model `user`. 
+Melakukan fetching data sama saja seperti proses fecthing sebelumnya, yakni bisa menggunakan metode `findAll()` ataupun `findOne()`. Pada proses melakukan fetching, kita bisa mengirimkan `parameter` berupa `object`. Parameter yang dikirimkan dapat berupa sebuah kondisi field - field yang tidak ingin kita fetching dan tentunya adalah `model yang akan direlasikan` yakni model `user`.
 
 ```js title=controllers/product.js {5-16}
-const { product, user } = require('../../models')
+const { product, user } = require("../../models");
 
 exports.getProducts = async (req, res) => {
   try {
     const data = await product.findAll({
       include: {
         model: user,
-        as: 'user',
+        as: "user",
         attributes: {
-          exclude: ['createdAt', 'updatedAt', 'password']
-        }
+          exclude: ["createdAt", "updatedAt", "password"],
+        },
       },
       attributes: {
-        exclude: ['createdAt', 'updatedAt', 'idUser']
-      }
-    })
-  } catch (error) {
-
-  }
+        exclude: ["createdAt", "updatedAt", "idUser"],
+      },
+    });
+  } catch (error) {}
 };
 ```
 
 Selanjutnya yang akan kita lakukan adalah mengirimkan response ketika data berhasil difetching ataupun gagal. Response ketika sukses akan kita letakkan kedalam bagian `try`, sedangkan ketika gagal akan kita masukkan kedalam bagian `catch`.
 
 ```js title=controllers/product.js {18-21,23-26}
-const { product, user } = require('../../models')
+const { product, user } = require("../../models");
 
 exports.getProducts = async (req, res) => {
   try {
     const data = await product.findAll({
       include: {
         model: user,
-        as: 'user',
+        as: "user",
         attributes: {
-          exclude: ['createdAt', 'updatedAt', 'password']
-        }
+          exclude: ["createdAt", "updatedAt", "password"],
+        },
       },
       attributes: {
-        exclude: ['createdAt', 'updatedAt', 'idUser']
-      }
-    })
+        exclude: ["createdAt", "updatedAt", "idUser"],
+      },
+    });
 
     res.send({
-      status: 'success...',
-      data
-    })
+      status: "success...",
+      data,
+    });
   } catch (error) {
     res.send({
-      status: 'failed',
-      message: 'Server Error'
-    })
+      status: "failed",
+      message: "Server Error",
+    });
   }
 };
 ```
 
-### 7.2.2 addProduct
+### 8.2.2 addProduct
 
 Selanjutnya melakukan proses insert data akan kita simpan kedalam sebuah `modul`. Pada modul ini juga akan menangani `error handling` dengan menggunakan `try and catch`.
 
@@ -132,7 +129,7 @@ exports.addProduct = async (req, res) => {
   try {
 
   } catch (error) {
-    
+
   }
 ```
 
@@ -144,7 +141,7 @@ exports.addProduct = async (req, res) => {
     const data = req.body
     await product.create(data)
   } catch (error) {
-    
+
   }
 ```
 
@@ -175,7 +172,7 @@ exports.addProduct = async (req, res) => {
   }
 ```
 
-## 7.3 Routes
+## 8.3 Routes
 
 Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses fetching dan insert data product
 
@@ -187,31 +184,33 @@ Contoh code
 <br />
 
 ```js {7-10,19-20} title=routes/index.js
-const express = require('express')
+const express = require("express");
 
-const router = express.Router()
+const router = express.Router();
 
-const { addUsers, getUsers, getUser, updateUser, deleteUser } = require("../controllers/user");
+const {
+  addUsers,
+  getUsers,
+  getUser,
+  updateUser,
+  deleteUser,
+} = require("../controllers/user");
 
-const { 
-    getProducts, 
-    addProduct 
-} = require('../controllers/product')
+const { getProducts, addProduct } = require("../controllers/product");
 
+router.post("/user", addUser);
+router.get("/users", getUsers);
+router.get("/user/:id", getUser);
+router.patch("/user/:id", updateUser);
+router.delete("/user/:id", deleteUser);
 
-router.post('/user', addUser)
-router.get('/users', getUsers)
-router.get('/user/:id', getUser)
-router.patch('/user/:id', updateUser)
-router.delete('/user/:id', deleteUser)
+router.get("/products", getProducts);
+router.post("/product", addProduct);
 
-router.get('/products', getProducts)
-router.post('/product', addProduct)
-
-module.exports = router
+module.exports = router;
 ```
 
-## 7.4 Penggunaan
+## 8.4 Penggunaan
 
 Cara mengambil data menggunakan `Postman` sebagai berikut:
 
@@ -223,31 +222,32 @@ Cara mengambil data menggunakan `Postman` sebagai berikut:
   ```
   https://ebook-code-results-stage-2-be.herokuapp.com/orm/api/v1/products
   ```
+
   ```
   https://ebook-code-results-stage-2-be.herokuapp.com/orm/api/v1/add-product
   ```
+
 - Tekan tombol `Send` dan pastikan response yang Anda terima sesuai dengan data yang tersimpan pada tabel `product`
 
 - Proses menambahkan product, maka tambahkan proses berikut
 
-    - Pilih `Body` &rarr; `form-data` &rarr; 
-    - Ketik pada bagian `Key` dan `value` seperti berikut:
+  - Pilih `Body` &rarr; `form-data` &rarr;
+  - Ketik pada bagian `Key` dan `value` seperti berikut:
 
-        | KEY       | VALUE                  |
-        | --------- | ---------------------- |
-        | name      | kemeja kerah           |
-        | desc      | kemeja outfit kekinian |
-        | price     | 120000                 | 
-        | image     | kemeja.png             |
-        | qty       | 130                    |
-        | idUser    | 7                      |
-        | category  | null                   |
+    | KEY      | VALUE                  |
+    | -------- | ---------------------- |
+    | name     | kemeja kerah           |
+    | desc     | kemeja outfit kekinian |
+    | price    | 120000                 |
+    | image    | kemeja.png             |
+    | qty      | 130                    |
+    | idUser   | 7                      |
+    | category | null                   |
 
-    - Silakan tekan tombol `Send`, kemudian Anda akan mendapatkan `Response` seperti berikut:
+  - Silakan tekan tombol `Send`, kemudian Anda akan mendapatkan `Response` seperti berikut:
 
-    ```json title=Response
-    {
-        "status": "success"
-    }
-    ```
-        
+  ```json title=Response
+  {
+    "status": "success"
+  }
+  ```

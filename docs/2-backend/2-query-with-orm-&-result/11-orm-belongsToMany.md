@@ -1,14 +1,14 @@
 ---
-sidebar_position: 10
+sidebar_position: 11
 ---
 
-# 10. Relation belongsToMany
+# 11. Relation belongsToMany
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## 10.1 Models
+## 11.1 Models
 
-**Method belongsToMany** merupakan sebuah method yang digunakan pada tabel yang berelasi dengan relasi `Many to Many`.  Relasi **Many to Many** ada ketika satu record di tabel ke-1 memiliki hubungan lebih dari satu record di tabel ke-2, dan dengan cara yang sama, kita dapat mengatakan bahwa satu record di tabel ke-2 terkait dengan lebih dari satu record di tabel ke-1.
+**Method belongsToMany** merupakan sebuah method yang digunakan pada tabel yang berelasi dengan relasi `Many to Many`. Relasi **Many to Many** ada ketika satu record di tabel ke-1 memiliki hubungan lebih dari satu record di tabel ke-2, dan dengan cara yang sama, kita dapat mengatakan bahwa satu record di tabel ke-2 terkait dengan lebih dari satu record di tabel ke-1.
 
 Pada rancangan database yang memiliki relasi Many to Many adalah product &rarr; category. Sehingga kita membutuhkan satu tabel untuk menjadi `jembatan` yang menyimpan `foreignkey` untuk dua tabel tersebut. Di sini, tabel `jembatan` kami adalah `productCategory`. Mari kita definisikan Many to Many menggunakan metode `ManyToMany()` pada model product dan category.
 
@@ -69,10 +69,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   // continuation code is the same as in the template
 };
-
 ```
 
-## 10.2 Controllers
+## 11.2 Controllers
 
 Setelah menentukan relasi pada model product dan categiry, maka selanjutnya kita akan melakukan proses untuk melakukan fetching data category product. Pada bagian sebelumnya kita telah membuat proses fetching product, maka kali ini kita cukup menambahkan proses `fetching multitable` yakni table product dan category. Melakukan fethcing multitable make kita perlu menjadikan properti `include` menyimpan data berupa `array of object`
 
@@ -129,25 +128,24 @@ exports.getProducts = async (req, res) => {
 // continuation code is the same as in the template
 ```
 
-## 10.3 Routes
+## 11.3 Routes
 
-Routes yang digunakan untuk melakukan fetching data product beserta category nya masih sama dengan section sebelumnya, yakni 
+Routes yang digunakan untuk melakukan fetching data product beserta category nya masih sama dengan section sebelumnya, yakni
 
 ```
 router.get('/products', getProducts)
 ```
 
-## 10.4 Penggunaan
+## 11.4 Penggunaan
 
 Cara mengambil data menggunakan `Postman` sebagai berikut:
 
 - Gunakan HTTP Method: `GET`
-- Gunakan endpoint: `/products` 
+- Gunakan endpoint: `/products`
 - Contoh endpoint :
 
   ```
- https://ebook-code-results-stage-2-be.herokuapp.com/orm/api/v1/products
+  https://ebook-code-results-stage-2-be.herokuapp.com/orm/api/v1/products
   ```
 
 - Tekan tombol `Send` dan pastikan response yang Anda terima sesuai dengan data yang tersimpan pada tabel `product` dan `category`
-        

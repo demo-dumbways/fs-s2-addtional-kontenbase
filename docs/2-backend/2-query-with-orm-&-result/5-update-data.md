@@ -1,8 +1,8 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
-# 4. Update Data 
+# 5. Update Data
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -13,37 +13,34 @@ Sama halnya seperti proses fetching data sebelumnya, proses kali ini juga akan k
 ```js {27-33} title=user.js
 // this code continues from the previous code
 exports.getUser = async (req, res) => {
-    try {
-      const user = await user.findOne({
-        where: {
-          id: id
-        },
-        attributes: {
-          exclude: ['password', 'createdAt', 'updatedAt']
-        }
-      })
+  try {
+    const user = await user.findOne({
+      where: {
+        id: id,
+      },
+      attributes: {
+        exclude: ["password", "createdAt", "updatedAt"],
+      },
+    });
 
-      res.send({
-        status: 'success',
-        data: {
-          user
-        }
-      })
-    } catch (error) {
-      res.send({
-        status: 'failed',
-        message: 'Server Error'
-      })
-    }
-}
+    res.send({
+      status: "success",
+      data: {
+        user,
+      },
+    });
+  } catch (error) {
+    res.send({
+      status: "failed",
+      message: "Server Error",
+    });
+  }
+};
 
 exports.updateUser = async (req, res) => {
-    try {
-        
-    } catch (error) {
-
-    }
-}
+  try {
+  } catch (error) {}
+};
 ```
 
 Sebelum melakukan proses update, maka kita membutuhkan `id` dari data yang akan diupdate. **Id** akan kita kirimkan melalui `query string`, sehingga untuk mendapatkannya bersumber dari `req.params`. Selain id, tentunya kita membutuhkan data yang akan menjadi data terbaru dari baris data yang akan diupate.
@@ -51,13 +48,11 @@ Sebelum melakukan proses update, maka kita membutuhkan `id` dari data yang akan 
 ```js {4-5} title=user.js
 // this code continues from the above code
 exports.updateUser = async (req, res) => {
-    try {
-      const { id } = req.params
-      const newdata = req.body
-    } catch (error) {
-
-    }
-}
+  try {
+    const { id } = req.params;
+    const newdata = req.body;
+  } catch (error) {}
+};
 ```
 
 Pada proses update data, kita bisa mengirimkan `parameter` berupa `object`. Parameter yang dikirimkan tentu berupa data update serta id baris data yang dilakukan update.
@@ -65,19 +60,17 @@ Pada proses update data, kita bisa mengirimkan `parameter` berupa `object`. Para
 ```js {7-11} title=user.js
 // this code continues from the above code
 exports.updateUser = async (req, res) => {
-    try {
-      const { id } = req.params
-      const newdata = req.body
+  try {
+    const { id } = req.params;
+    const newdata = req.body;
 
-      await user.update(newdata, {
-        where: {
-          id
-        }
-      })
-    } catch (error) {
-
-    }
-}
+    await user.update(newdata, {
+      where: {
+        id,
+      },
+    });
+  } catch (error) {}
+};
 ```
 
 Selanjutnya yang akan kita lakukan adalah mengirimkan response ketika data berhasil diupdate ataupun gagal. Response ketika sukses akan kita letakkan kedalam bagian `try`, sedangkan ketika gagal akan kita masukkan kedalam bagian `catch`.
@@ -92,28 +85,28 @@ Contoh code
 ```js {13-17,19-22} title=user.js
 // this code continues from the above code
 exports.updateUser = async (req, res) => {
-    try {
-      const { id } = req.params
-      const newdata = req.body
+  try {
+    const { id } = req.params;
+    const newdata = req.body;
 
-      await user.update(newdata, {
-        where: {
-          id
-        }
-      })
+    await user.update(newdata, {
+      where: {
+        id,
+      },
+    });
 
-      res.send({
-        status: 'success',
-        message: `Update user id: ${id} finished`,
-        data: newdata
-      })
-    } catch (error) {
-      res.send({
-        status: 'failed',
-        message: 'Server Error'
-      })
-    }
-}
+    res.send({
+      status: "success",
+      message: `Update user id: ${id} finished`,
+      data: newdata,
+    });
+  } catch (error) {
+    res.send({
+      status: "failed",
+      message: "Server Error",
+    });
+  }
+};
 ```
 
 Hal terakhir yang perlu kita lakukan adalah menyedikan route API untuk menangani proses update data, agar nantinya pengguna bisa melakukan update data pada tabel user sesuai id yang dikirimkan.
@@ -126,23 +119,23 @@ Contoh code
 <br />
 
 ```js {9,15} title=routes/index.js
-const express = require('express')
+const express = require("express");
 
-const router = express.Router()
+const router = express.Router();
 
 const {
-    addUsers,
-    getUsers,
-    getUser,
-    updateUser
-} = require('../controllers/user')
+  addUsers,
+  getUsers,
+  getUser,
+  updateUser,
+} = require("../controllers/user");
 
-router.post('/user', addUser)
-router.get('/users', getUsers)
-router.get('/user/:id', getUser)
-router.patch('/user/:id', updateUser)
+router.post("/user", addUser);
+router.get("/users", getUsers);
+router.get("/user/:id", getUser);
+router.patch("/user/:id", updateUser);
 
-module.exports = router
+module.exports = router;
 ```
 
 Berikut contoh endpoint yang dapat Anda gunakan untuk melakukan proses update data:
