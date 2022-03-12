@@ -63,7 +63,7 @@ Visit: [heroku](https://www.heroku.com)
 
 - Pada website [heroku](https://www.heroku.com), silakan buat app dan deploy code backend Anda
 
-- Pada bagian `Resources` pastikan `toggle` pada `Release` telah active
+- Pada bagian `Resources` pastikan `toggle` pada `Release` telah `active`
     <center>
     <img src={useBaseUrl('img/docs/heroku-1.png')} style={{ width: '70%'}} />
     </center>
