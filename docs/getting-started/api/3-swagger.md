@@ -14,7 +14,7 @@ Swagger merupakan open source project dan juga salah satu framework API populer 
 
 Dokumentasi adalah salah satu hal terpenting. Mengapa? Karena dokumentasi menjadi nilai jual kepada client atau manager. Client akan jadi sangat senang dan terbantu dengan adanya dokumentasi, daripada jika diperlihatkan dengan setumpuk baris code. Dengan adanya swagger, kita dapat melakukan request ataupun melihat response dari API. Sehingga menjadikan Swagger sebagai framework komplit untuk project API
 
-## Create Documentation
+## Create Documentation API
 
 - Install package swagger-autogen dan swagger-ui-express menggunakan command 
     ```shell
