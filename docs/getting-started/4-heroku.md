@@ -61,7 +61,7 @@ Visit: [heroku](https://www.heroku.com)
   web: node index.js
   ```
 
-- Pada website [heroku.com](heroku.com), silakan buat app dan deploy code backend Anda
+- Pada website [heroku](heroku.com), silakan buat app dan deploy code backend Anda
 
 - Pada bagian `Resources` pastikan `toggle` pada `Release` telah active
     <center>
