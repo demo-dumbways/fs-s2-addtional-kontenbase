@@ -21,8 +21,6 @@ Postman adalah sebuah aplikasi yang berfungsi sebagai REST CLIENT untuk uji coba
 
 Untuk Mencoba API yang sudah kita buat kita memerlukan sebuah aplikasi yang dapat mengakses dan menyajian data dari sebuah API. untuk itu pastikan kalian sudah memiliki aplikasi yang bernama Postman, jika belum bisa mendownload melalui link dibawah ini
 
-**Postman :[Download](https://www.postman.com/downloads/?utm_source=postman-home)**
-
 **Dokumentasi Penggunaan Lebih lengkap : [Here](https://learning.postman.com/docs/sending-requests/requests/)**
 
 ```link title=baseUrl
