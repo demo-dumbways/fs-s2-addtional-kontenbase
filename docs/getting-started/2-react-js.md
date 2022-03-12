@@ -37,7 +37,7 @@ Keterangan:
 Hasil setelah menjalankan perintah untuk membuat Aplikasi ReactJs:
 
 <center>
-<img alt="image" src={useBaseUrl('img/docs/image-started-reactjs-1.png')} width="70%"/>
+<img alt="image" src={useBaseUrl('img/docs/image-started-reactjs-1.png')} width="100%"/>
 </center>
 
 ## Menjalankan Aplikasi ReactJs
@@ -57,5 +57,5 @@ npm start
 Secara default Aplikasi ReactJs, akan berjalan pada port `3000`. Sehingga Anda dapat mengakses Aplikasi ReactJs menggunakan url berikut `localhost:3000`
 
 <center>
-<img alt="image" src={useBaseUrl('img/docs/image-started-reactjs-2.png')} width="70%"/>
+<img alt="image" src={useBaseUrl('img/docs/image-started-reactjs-2.png')} width="100%"/>
 </center>

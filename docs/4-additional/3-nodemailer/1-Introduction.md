@@ -24,6 +24,6 @@ Fitur - Fitur Nodemailer
 ## 1.2 Explanation
 
 Pada materi ini kita akan membuat fitur `pengiriman email` menggunakan package nodemailer. Email yang dikirimkan berupa email notifikasi terkait pembayaran yang dilakukan pada section sebelumnya.
-
+  
 
 
