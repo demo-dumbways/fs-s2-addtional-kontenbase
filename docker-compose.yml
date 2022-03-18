@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+        ebook:
+             build: .
+             container_name: fs-s2-rn-advance
+             image: registry.mejik.xyz/ebook/fs-s2-rn-advance
+             ports:
+                     - 3013:3000
