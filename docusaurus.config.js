@@ -1,5 +1,5 @@
 // @ts-check
-
+require('dotenv').config()
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
@@ -8,7 +8,7 @@ const config = {
   title: "Full-Stack e-Book Guide",
   tagline: "e-Book guide for full-stack mentor",
   url: "http://0.0.0.0",
-  baseUrl: "/",
+  baseUrl: process.env.BASE_URL,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
