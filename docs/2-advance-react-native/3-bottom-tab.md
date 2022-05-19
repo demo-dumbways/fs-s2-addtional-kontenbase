@@ -26,10 +26,10 @@ Selanjut nya kita akan mencoba mengimplementasikan `Bottom Tabs Navigator` pada 
 
   ```jsx title="Container.js"{4-5}
   // Import Stack Navigation
-  import { createStackNavigator } from "@react-navigation/stack";
+  import { createStackNavigator } from '@react-navigation/stack';
 
   // Import Bottom Tab Navigation
-  import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+  import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
   ```
 
 - Langkah Berikutnya kita perlu mengImport `Icon` yang nantinya akan kita tambahkan pada `Bottom Tabs Navigator`.
@@ -37,7 +37,7 @@ Selanjut nya kita akan mencoba mengimplementasikan `Bottom Tabs Navigator` pada 
   ```jsx title="Container.js"
   // this code continues from the previous code
 
-  import { Ionicons } from "@expo/vector-icons";
+  import { Ionicons } from '@expo/vector-icons';
   ```
 
 - Langkah Berikutnya kita perlu mendeklarasikan kembali `createBottomTabNavigator` yang telah di import pada section di atas dimana agar kita dapat menggunakan Buttom navigation.
@@ -65,24 +65,24 @@ Selanjut nya kita akan mencoba mengimplementasikan `Bottom Tabs Navigator` pada 
       <Tab.Navigator
         initialRouteName="Hello"
         screenOptions={({ route }) => ({
-          headerMode: "screen",
-          headerTintColor: "white",
-          headerStyle: { backgroundColor: theme.colors.primary["300"] },
+          headerMode: 'screen',
+          headerTintColor: 'white',
+          headerStyle: { backgroundColor: theme.colors.primary['300'] },
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
 
-            if (route.name === "Hello") {
-              iconName = focused ? "ios-home" : "ios-home-outline";
-            } else if (route.name === "Form") {
+            if (route.name === 'Hello') {
+              iconName = focused ? 'ios-home' : 'ios-home-outline';
+            } else if (route.name === 'Form') {
               iconName = focused
-                ? "ios-information-circle"
-                : "ios-information-circle-outline";
+                ? 'ios-information-circle'
+                : 'ios-information-circle-outline';
             }
 
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-          tabBarActiveTintColor: theme.colors.primary["800"],
-          tabBarInactiveTintColor: "gray",
+          tabBarActiveTintColor: theme.colors.primary['800'],
+          tabBarInactiveTintColor: 'gray',
         })}
       >
         <Tab.Screen name="Hello" component={Hello} />
@@ -114,10 +114,10 @@ Selanjut nya kita akan mencoba mengimplementasikan `Bottom Tabs Navigator` pada 
             name="IncDec"
             component={IncDec}
             options={{
-              title: "Increment & Decrement",
-              headerMode: "screen",
-              headerTintColor: "white",
-              headerStyle: { backgroundColor: theme.colors.primary["300"] },
+              title: 'Increment & Decrement',
+              headerMode: 'screen',
+              headerTintColor: 'white',
+              headerStyle: { backgroundColor: theme.colors.primary['300'] },
             }}
           />
         </Stack.Navigator>
@@ -126,37 +126,30 @@ Selanjut nya kita akan mencoba mengimplementasikan `Bottom Tabs Navigator` pada 
   }
   ```
 
-Contoh full code :
-
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2/tree/3-frontend-react-js-fundamental/src">
-Contoh code
-</a>
-
-<br />
-<br />
+Full code :
 
 ```jsx title="Container.js" {10,13,27,30-62,71-74}
-import * as React from "react";
+import * as React from 'react';
 
 //Import Navigation Container
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer } from '@react-navigation/native';
 
 // Import Stack Navigation
-import { createStackNavigator } from "@react-navigation/stack";
+import { createStackNavigator } from '@react-navigation/stack';
 
 // Import Bottom Tab Navigation
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 //Import Icon
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons } from '@expo/vector-icons';
 
 // Import Theme Native Base
-import { useTheme } from "native-base";
+import { useTheme } from 'native-base';
 
 // Import Screen
-import FormNativeBase from "./src/screens/formNativeBase";
-import Hello from "./src/screens/hello";
-import IncDec from "./src/screens/incDec";
+import FormNativeBase from './src/screens/formNativeBase';
+import Hello from './src/screens/hello';
+import IncDec from './src/screens/incDec';
 
 // Create Stack Navigation
 const Stack = createStackNavigator();
@@ -173,24 +166,24 @@ function MyTab() {
     <Tab.Navigator
       initialRouteName="Hello"
       screenOptions={({ route }) => ({
-        headerMode: "screen",
-        headerTintColor: "white",
-        headerStyle: { backgroundColor: theme.colors.primary["300"] },
+        headerMode: 'screen',
+        headerTintColor: 'white',
+        headerStyle: { backgroundColor: theme.colors.primary['300'] },
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
-          if (route.name === "Hello") {
-            iconName = focused ? "ios-home" : "ios-home-outline";
-          } else if (route.name === "Form") {
+          if (route.name === 'Hello') {
+            iconName = focused ? 'ios-home' : 'ios-home-outline';
+          } else if (route.name === 'Form') {
             iconName = focused
-              ? "ios-information-circle"
-              : "ios-information-circle-outline";
+              ? 'ios-information-circle'
+              : 'ios-information-circle-outline';
           }
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: theme.colors.primary["800"],
-        tabBarInactiveTintColor: "gray",
+        tabBarActiveTintColor: theme.colors.primary['800'],
+        tabBarInactiveTintColor: 'gray',
       })}
     >
       <Tab.Screen name="Hello" component={Hello} />
@@ -216,10 +209,10 @@ export default function Container() {
           name="IncDec"
           component={IncDec}
           options={{
-            title: "Increment & Decrement",
-            headerMode: "screen",
-            headerTintColor: "white",
-            headerStyle: { backgroundColor: theme.colors.primary["300"] },
+            title: 'Increment & Decrement',
+            headerMode: 'screen',
+            headerTintColor: 'white',
+            headerStyle: { backgroundColor: theme.colors.primary['300'] },
           }}
         />
       </Stack.Navigator>
@@ -230,6 +223,6 @@ export default function Container() {
 
 <div>
   <a class="btn-demo" href="https://snack.expo.dev/@demo.dumbways/github.com-demo-dumbways-advance-react-native@3.bottom-tabs-navigation">
-  Demo
+  Full code & Demo
   </a>
 </div>

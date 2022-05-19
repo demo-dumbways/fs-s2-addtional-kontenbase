@@ -11,12 +11,12 @@ Selanjutnya kita akan mempelajari bagaimana mempassing sebuah data melalui param
 Langkah pertama ada kita perlu membuat satu buah screen dimana screen tersebut memiliki sebuah `data dummy` yang berisikan list Platform Video Player, Silakan kalian ketikan code berikut dan berikan nama `listSoc.js`
 
 ```jsx title="src/screens/listSoc.js" {6}
-import * as React from "react";
-import { Text, Box, FlatList, Pressable } from "native-base";
+import * as React from 'react';
+import { Text, Box, FlatList, Pressable } from 'native-base';
 
 export default function Hello({ navigation }) {
   // Set Dummy Data with Array
-  const socialMedia = ["Netflix", "YouTube", "Instagram"];
+  const socialMedia = ['Netflix', 'YouTube', 'Instagram'];
 
   return (
     <Box
@@ -34,15 +34,15 @@ export default function Hello({ navigation }) {
 Langkah berikut nya kita akan membuat sebuah function yang bernama `handlePress` dimana fungsi ini bertugas untuk mengirimkan data ke screen yang nantinya akan kita tuju yaitu `Detail Social`.
 
 ```jsx title="src/screens/listSoc.js" {8-10}
-import * as React from "react";
-import { Text, Box, FlatList, Pressable } from "native-base";
+import * as React from 'react';
+import { Text, Box, FlatList, Pressable } from 'native-base';
 
 export default function Hello({ navigation }) {
   // Set Dummy Data with Array
-  const socialMedia = ["Netflix", "YouTube", "Instagram"];
+  const socialMedia = ['Netflix', 'YouTube', 'Instagram'];
 
   const handlePress = (value) => {
-    navigation.navigate("Detail Social", { value });
+    navigation.navigate('Detail Social', { value });
   };
 
   return (
@@ -61,15 +61,15 @@ export default function Hello({ navigation }) {
 Selanjutnya looping data dummy menggunakan flatlist
 
 ```jsx title="src/screens/listSoc.js" {21-37}
-import * as React from "react";
-import { Text, Box, FlatList, Pressable } from "native-base";
+import * as React from 'react';
+import { Text, Box, FlatList, Pressable } from 'native-base';
 
 export default function Hello({ navigation }) {
   // Set Dummy Data with Array
-  const socialMedia = ["Netflix", "YouTube", "Instagram"];
+  const socialMedia = ['Netflix', 'YouTube', 'Instagram'];
 
   const handlePress = (value) => {
-    navigation.navigate("Detail Social", { value });
+    navigation.navigate('Detail Social', { value });
   };
 
   return (
@@ -103,25 +103,20 @@ export default function Hello({ navigation }) {
 }
 ```
 
-<a class="btn-example-code" href="https://github.com/demo-dumbways/ebook-code-results-stage-2/tree/3-frontend-react-js-fundamental/src">
-Contoh code
-</a>
-
-<br />
-<br />
+Full Code:
 
 ```jsx title="src/screens/listSoc.js" {7,10-12,24-40}
-import * as React from "react";
-import { Text, Box, FlatList, Pressable } from "native-base";
+import * as React from 'react';
+import { Text, Box, FlatList, Pressable } from 'native-base';
 
 // Add Props in Hello({navigation})
 export default function ListSoc({ navigation }) {
   // Set Dummy Data with Array
-  const socialMedia = ["Netflix", "YouTube", "Instagram"];
+  const socialMedia = ['Netflix', 'YouTube', 'Instagram'];
 
   // Make Function handle press to get value per list
   const handlePress = (value) => {
-    navigation.navigate("Detail Social", { value });
+    navigation.navigate('Detail Social', { value });
   };
 
   return (
@@ -157,7 +152,7 @@ export default function ListSoc({ navigation }) {
 ```
 
 <div>
-  <a class="btn-demo" href="https://snack.expo.dev/@demo.dumbways/github.com-demo-dumbways-advance-react-native@3.bottom-tabs-navigation">
-  Demo
+  <a class="btn-demo" href="https://snack.expo.dev/@demo.dumbways/github.com-demo-dumbways-advance-react-native@4.passing-params-to-route">
+  Full Code & Demo
   </a>
 </div>

@@ -1,31 +1,31 @@
 // @ts-check
-require('dotenv').config()
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+require('dotenv').config();
+const lightCodeTheme = require('prism-react-renderer/themes/github');
+const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Full-Stack e-Book Guide",
-  tagline: "e-Book guide for full-stack mentor",
-  url: "http://0.0.0.0",
+  title: 'Full-Stack e-Book Guide',
+  tagline: 'e-Book guide for full-stack mentor',
+  url: 'http://0.0.0.0',
   baseUrl: process.env.BASE_URL,
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
-  organizationName: "dumbways",
-  projectName: "dumbways-ebooks",
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
+  favicon: 'img/favicon.ico',
+  organizationName: 'dumbways',
+  projectName: 'dumbways-ebooks',
 
   presets: [
     [
-      "@docusaurus/preset-classic",
+      '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
-          routeBasePath: "/",
+          sidebarPath: require.resolve('./sidebars.js'),
+          routeBasePath: '/',
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: require.resolve('./src/css/custom.css'),
         },
       }),
     ],
@@ -35,14 +35,14 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "Full-Stack e-Book Guide",
+        title: 'Full-Stack e-Book Guide',
         logo: {
-          alt: "DumbWays Logo",
-          src: "img/logo.svg",
+          alt: 'DumbWays Logo',
+          src: 'img/logo.svg',
         },
       },
       footer: {
-        style: "dark",
+        style: 'dark',
         copyright: `Copyright © ${new Date().getFullYear()} DumbWays Indonesia`,
       },
       prism: {
