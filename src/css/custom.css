@@ -50,7 +50,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   text-decoration: none;
   background-color: #146a9c;
 }
-
 .main-wrapper img {
   border: 1px solid black;
+  border-radius: 5px;
 }
