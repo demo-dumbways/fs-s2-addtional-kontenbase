@@ -15,7 +15,7 @@ Di dalam Project, Anda dapat membuat beberapa `Service`. `Service` sama halnya s
 - PATCH
 - DELETE
 
-Referensi: [Link](https://docs.kontenbase.com/overview/getting-started/)
+Referensi: [Link](https://docs.kontenbase.com/overview/getting-started/#service)
 
 ### 2.2 Create `Todo` Service
 

@@ -8,7 +8,7 @@ slug: /
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <center>
-    <img alt="image-4-rn" src={useBaseUrl('img/docs/logo-kontenbase.png')} width="80%" style={{border: 'none'}}/> 
+    <img alt="image-4-rn" src={useBaseUrl('img/docs/logo-kontenbase.png')} width="50%" style={{padding: '20px 40px', backgroundColor: 'white', border: 'none'}}/> 
 </center>
 
 ### Apa itu KontenBase
