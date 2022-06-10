@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Siapkan template code dan Install Package yang dibutuhkan.
 
-- Clone template code [Here](https://github.com/demo-dumbways/todo-app-with-kontenbase)
+- Clone template code [Here](https://github.com/DumbwaysDotId/reactNative-with-KontenBase-template)
 
 - Install Axios
 
@@ -33,50 +33,67 @@ Siapkan template code dan Install Package yang dibutuhkan.
   });
   ```
 
-\*Ambil API KEY dari Project KontenBase Anda
+  <a href="https://github.com/DumbwaysDotId/reactNative-with-KontenBase/blob/master/src/config/api.js" className="btn-example-code">Code</a>
+
+\*Ambil API KEY dari Project `KontenBase` Anda
 
 ### 6.3 Fetching Todo Data
 
 - Import useState dan useEffect
 
-  ```jsx title=src/App.js
+  ```jsx title=src/screens/Todos.js
   import { useState, useEffect } from 'react';
   ```
 
 - Import Config API KontenBase
 
-  ```jsx title=src/App.js
-  import kontenbase from './config/api';
+  ```jsx title=src/screens/Todos.js
+  import API from '../config/api';
   ```
 
 - Deklarasi tempat penyimpanan data menggunakan `useState`
 
-  ```jsx title=src/App.js
+  ```jsx title=src/screens/Todos.js
   const [todos, setTodos] = useState([]);
   ```
 
 - Buat function untuk handle pengambilan data
 
-  ```jsx title=src/App.js
+  ```jsx title=src/screens/Todos.js
   const getTodos = async () => {
-    const { data, error } = await kontenbase.service('Todos').find();
+    try {
+      setIsLoading(true);
+      const { data } = await API.get('/Todo');
 
-    if (error) {
-      return alert(error.message);
+      if (data) {
+        setTodos(data);
+      }
+
+      setIsLoading(false);
+    } catch (error) {
+      console.log(error);
     }
-
-    setTodos(data);
   };
   ```
 
 - Gunakan useEffect untuk trigger `Did Mount` untuk menjalankan function `getTodos`
 
-  ```jsx title=src/App.js
+  ```jsx title=src/screens/Todos.js
   useEffect(() => {
     getTodos();
   }, []);
   ```
 
+  <a href="https://github.com/DumbwaysDotId/reactNative-with-KontenBase/blob/master/src/screens/Todos.js" className="btn-example-code">Code</a>
+
+### 6.4 Full Code and Result
+
+- Anda dapat melihat `Full Code` implementasi KontenBase dengan React Native pada Tombol dibawah ini:
+
+  <a href="https://github.com/DumbwaysDotId/reactNative-with-KontenBase" className="btn-example-code">Full Code</a>
+
+- Aplikasi akan menampilkan list data Todo yang meliputi `title` dan `isDone` berupa checkbox seperti pada gambar dibawah ini
+
 <center>
-    <img alt="kb-img-14" src={useBaseUrl('img/docs/kb-14.png')} width="80%"/> 
+    <img alt="kb-img-26" src={useBaseUrl('img/docs/kb-26.jpeg')} width="30%"/> 
 </center>
